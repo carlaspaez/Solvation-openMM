@@ -1,0 +1,44 @@
+REMARK   1 CREATED WITH OPENMM 8.4, 2026-04-07
+CRYST1   29.225   29.225   29.225  60.00  60.00  90.00 P 1           1 
+HETATM    1  C1  TMP A   1      22.844  22.840  11.655  1.00  0.00           C  
+HETATM    2  C2  TMP A   1      23.193  21.348  11.222  1.00  0.00           C  
+HETATM    3  C3  TMP A   1      22.207  23.597  10.485  1.00  0.00           C  
+HETATM    4  C4  TMP A   1      21.842  20.619  10.880  1.00  0.00           C  
+HETATM    5  C5  TMP A   1      20.896  22.840  10.110  1.00  0.00           C  
+HETATM    6  C6  TMP A   1      21.063  21.334   9.818  1.00  0.00           C  
+HETATM    7  N1  TMP A   1      21.798  21.201   8.535  1.00  0.00           N  
+HETATM    8  H1  TMP A   1      22.181  22.847  12.523  1.00  0.00           H  
+HETATM    9  H2  TMP A   1      23.749  23.366  11.966  1.00  0.00           H  
+HETATM   10  H3  TMP A   1      23.853  21.371  10.353  1.00  0.00           H  
+HETATM   11  H4  TMP A   1      23.778  20.907  12.032  1.00  0.00           H  
+HETATM   12  H5  TMP A   1      22.012  24.633  10.770  1.00  0.00           H  
+HETATM   13  H6  TMP A   1      22.872  23.547   9.620  1.00  0.00           H  
+HETATM   14  H7  TMP A   1      22.142  19.611  10.586  1.00  0.00           H  
+HETATM   15  H8  TMP A   1      21.225  20.611  11.781  1.00  0.00           H  
+HETATM   16  H9  TMP A   1      20.182  22.963  10.927  1.00  0.00           H  
+HETATM   17  H10 TMP A   1      20.568  23.308   9.179  1.00  0.00           H  
+HETATM   18  H11 TMP A   1      20.078  20.860   9.836  1.00  0.00           H  
+HETATM   19  H12 TMP A   1      21.253  21.627   7.787  1.00  0.00           H  
+HETATM   20  H13 TMP A   1      21.887  20.232   8.235  1.00  0.00           H  
+TER      21      TMP A   1
+CONECT    1    8    9    2    3
+CONECT    2   10   11    1    4
+CONECT    3   12   13    1    5
+CONECT    4   14   15    2    6
+CONECT    5   16   17    3    6
+CONECT    6   18    4    5    7
+CONECT    7   19   20    6
+CONECT    8    1
+CONECT    9    1
+CONECT   10    2
+CONECT   11    2
+CONECT   12    3
+CONECT   13    3
+CONECT   14    4
+CONECT   15    4
+CONECT   16    5
+CONECT   17    5
+CONECT   18    6
+CONECT   19    7
+CONECT   20    7
+END

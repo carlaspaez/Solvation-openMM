@@ -1,0 +1,56 @@
+REMARK   1 CREATED WITH OPENMM 8.4, 2026-04-07
+CRYST1   30.930   30.930   30.930  60.00  60.00  90.00 P 1           1 
+HETATM    1  C1  TMP A   1      24.674  24.786  12.804  1.00  0.00           C  
+HETATM    2  C2  TMP A   1      22.255  25.158  12.225  1.00  0.00           C  
+HETATM    3  C3  TMP A   1      23.716  21.953   8.725  1.00  0.00           C  
+HETATM    4  C4  TMP A   1      21.473  22.489   9.773  1.00  0.00           C  
+HETATM    5  C5  TMP A   1      23.177  21.044  10.953  1.00  0.00           C  
+HETATM    6  C6  TMP A   1      23.719  23.602  10.685  1.00  0.00           C  
+HETATM    7  C7  TMP A   1      23.417  24.208  12.101  1.00  0.00           C  
+HETATM    8  C8  TMP A   1      22.990  22.273  10.132  1.00  0.00           C  
+HETATM    9  H1  TMP A   1      25.208  25.540  12.223  1.00  0.00           H  
+HETATM   10  H2  TMP A   1      24.459  25.219  13.784  1.00  0.00           H  
+HETATM   11  H3  TMP A   1      25.350  23.975  13.080  1.00  0.00           H  
+HETATM   12  H4  TMP A   1      22.536  26.009  11.600  1.00  0.00           H  
+HETATM   13  H5  TMP A   1      22.029  25.422  13.260  1.00  0.00           H  
+HETATM   14  H6  TMP A   1      21.365  24.671  11.823  1.00  0.00           H  
+HETATM   15  H7  TMP A   1      24.113  22.862   8.269  1.00  0.00           H  
+HETATM   16  H8  TMP A   1      23.015  21.591   7.970  1.00  0.00           H  
+HETATM   17  H9  TMP A   1      24.570  21.286   8.855  1.00  0.00           H  
+HETATM   18  H10 TMP A   1      21.003  21.504   9.758  1.00  0.00           H  
+HETATM   19  H11 TMP A   1      20.882  22.999  10.537  1.00  0.00           H  
+HETATM   20  H12 TMP A   1      21.339  23.068   8.857  1.00  0.00           H  
+HETATM   21  H13 TMP A   1      22.552  21.054  11.848  1.00  0.00           H  
+HETATM   22  H14 TMP A   1      22.826  20.187  10.375  1.00  0.00           H  
+HETATM   23  H15 TMP A   1      24.228  21.020  11.251  1.00  0.00           H  
+HETATM   24  H16 TMP A   1      23.573  24.393   9.946  1.00  0.00           H  
+HETATM   25  H17 TMP A   1      24.790  23.410  10.597  1.00  0.00           H  
+HETATM   26  H18 TMP A   1      23.172  23.389  12.781  1.00  0.00           H  
+TER      27      TMP A   1
+CONECT    1    9   10   11    7
+CONECT    2   12   13   14    7
+CONECT    3   15   16   17    8
+CONECT    4   18   19   20    8
+CONECT    5   21   22   23    8
+CONECT    6   24   25    7    8
+CONECT    7   26    1    2    6
+CONECT    8    3    4    5    6
+CONECT    9    1
+CONECT   10    1
+CONECT   11    1
+CONECT   12    2
+CONECT   13    2
+CONECT   14    2
+CONECT   15    3
+CONECT   16    3
+CONECT   17    3
+CONECT   18    4
+CONECT   19    4
+CONECT   20    4
+CONECT   21    5
+CONECT   22    5
+CONECT   23    5
+CONECT   24    6
+CONECT   25    6
+CONECT   26    7
+END

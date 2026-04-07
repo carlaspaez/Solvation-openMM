@@ -14,11 +14,11 @@ from openmm.app import (  # Importa clases para leer GROMACS y reportar.
 
 REPO_DIR = Path(__file__).resolve().parents[1]  # Calcula la raíz del repo.
 DATA_DIR = REPO_DIR / "DADES" / "v0.1" / "topgro"  # Ruta a los datos por defecto.
-TOP_IN = DATA_DIR / "mobley_7375018.top"  # Ruta del archivo .top específico.
-GRO_IN = DATA_DIR / "mobley_7375018.gro"  # Ruta del archivo .gro específico.
-OUT_DIR = REPO_DIR / "resultats" / "simulacio_mobley_7375018"   # Carpeta de salida. # CARLA: NO ENTENC PQ EM FA UNA SUBCARPETA DE RESULTATS QUE ES DIU SIMPLE
+TOP_IN = DATA_DIR / "mobley_186894.top"  # Ruta del archivo .top específico.
+GRO_IN = DATA_DIR / "mobley_186894.gro"  # Ruta del archivo .gro específico.
+OUT_DIR = REPO_DIR / "resultats" / "simulacio_mobley_186894"  # Carpeta de salida.
 OUT_DIR.mkdir(parents=True, exist_ok=True)  # Crea la carpeta de salida si no existe.
-MOBLEY_CODE = "7375018"  # Codi associat per a noms de fitxers de sortida.
+MOBLEY_CODE = "186894"  # Codi associat per a noms de fitxers de sortida.
 
 IGNORE_SOLVENT = True  # Cambia a False si quieres usar solvente explícito.
 

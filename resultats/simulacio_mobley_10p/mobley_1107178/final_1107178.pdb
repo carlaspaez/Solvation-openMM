@@ -1,0 +1,20 @@
+REMARK   1 CREATED WITH OPENMM 8.4, 2026-04-07
+CRYST1   28.023   28.023   28.023  60.00  60.00  90.00 P 1           1 
+HETATM    1  C1  TMP A   1      20.602  21.435  10.501  1.00  0.00           C  
+HETATM    2  C2  TMP A   1      22.057  22.030  10.407  1.00  0.00           C  
+HETATM    3  I1  TMP A   1      23.211  20.893   9.005  1.00  0.00           I  
+HETATM    4  H1  TMP A   1      20.788  20.387  10.746  1.00  0.00           H  
+HETATM    5  H2  TMP A   1      19.974  21.896  11.266  1.00  0.00           H  
+HETATM    6  H3  TMP A   1      20.164  21.668   9.528  1.00  0.00           H  
+HETATM    7  H4  TMP A   1      22.505  21.860  11.389  1.00  0.00           H  
+HETATM    8  H5  TMP A   1      22.021  23.118  10.307  1.00  0.00           H  
+TER       9      TMP A   1
+CONECT    1    4    5    6    2
+CONECT    2    7    8    1    3
+CONECT    3    2
+CONECT    4    1
+CONECT    5    1
+CONECT    6    1
+CONECT    7    2
+CONECT    8    2
+END
