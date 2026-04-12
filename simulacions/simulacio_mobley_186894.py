@@ -13,7 +13,7 @@ from openmm.app import (  # Importa clases para leer GROMACS y reportar.
 )
 
 REPO_DIR = Path(__file__).resolve().parents[1]  # Calcula la raíz del repo.
-DATA_DIR = REPO_DIR / "DADES" / "v0.1" / "topgro"  # Ruta a los datos por defecto.
+DATA_DIR = REPO_DIR / "DADES" / "v0.31" / "topgro"  # Ruta a los datos por defecto.
 TOP_IN = DATA_DIR / "mobley_186894.top"  # Ruta del archivo .top específico.
 GRO_IN = DATA_DIR / "mobley_186894.gro"  # Ruta del archivo .gro específico.
 OUT_DIR = REPO_DIR / "resultats" / "simulacio_mobley_186894"  # Carpeta de salida.

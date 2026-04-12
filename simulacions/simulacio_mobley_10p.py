@@ -13,7 +13,7 @@ from openmm.app import (  # Importa clases para leer GROMACS y reportar.
 )
 
 REPO_DIR = Path(__file__).resolve().parents[1]  # Raíz del repositorio.
-DATA_DIR = REPO_DIR / "DADES" / "v0.1" / "topgro"  # Carpeta con los .gro/.top de entrada.
+DATA_DIR = REPO_DIR / "DADES" / "v0.31" / "topgro"  # Carpeta con los .gro/.top de entrada.
 OUT_BASE = REPO_DIR / "resultats" / "simulacio_mobley_10p"  # Carpeta de salida del lote.
 OUT_BASE.mkdir(parents=True, exist_ok=True)  # Crea la carpeta base si no existe.
 
