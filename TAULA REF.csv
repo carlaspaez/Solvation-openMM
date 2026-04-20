@@ -1,0 +1,644 @@
+nom iupac molec,identificador,resultats a partir de bibliografia (kcal/mol),uncertesa calculada (kcal/mol),resultats experimentals (AMBER/GAFF) (kcal/mol),uncertesa experimental (kcal/mol)
+methyl hexanoate,mobley_1017962,-2.49,0.03,-2.49,0.60
+butan-1-ol,mobley_1019269,-4.72,0.02,-4.72,0.60
+"1,2,3,4-tetrachloro-5-(3,4-dichlorophenyl)benzene",mobley_1034539,-3.04,0.04,-3.04,0.10
+cyclohexanamine,mobley_1036761,-4.59,0.02,-4.59,0.60
+phenyl formate,mobley_1046331,-3.82,0.02,-3.82,0.60
+methyl propanoate,mobley_1075836,-2.93,0.02,-2.93,0.60
+"1,3-dichlorobenzene",mobley_1079207,-0.98,0.02,-0.98,0.60
+iodoethane,mobley_1107178,-0.74,0.02,-0.74,0.60
+"2,2,4-trimethylpentane",mobley_1139153,2.89,0.03,2.89,0.60
+ethoxyethane,mobley_1144156,-1.59,0.02,-1.59,0.60
+"(2R,5R)-2-methyl-5-(1-methylethenyl)-cyclohexanone",mobley_1160109,-3.75,0.02,-3.75,0.21
+2-chlorophenol,mobley_1178614,-4.55,0.03,-4.55,0.60
+methylsulfanylbenzene,mobley_1189457,-2.73,0.02,-2.73,0.60
+1-iodopropane,mobley_1199854,-0.53,0.02,-0.53,0.60 
+2-chloropropane,mobley_1231151,-0.25,0.02,-0.25,0.60
+1-nitropentane,mobley_1235151,-2.82,0.02,-2.82,0.60
+cycloheptanol,mobley_1244778,-5.48,0.05,-5.48,0.60
+neopentane,mobley_1261349,2.51,0.02,2.51,0.60
+hexachloroethane,mobley_1278715,-0.64,0.04,-0.64,0.10
+1-butoxybutane,mobley_129464,-0.83,0.03,-0.83,0.60
+triethylphosphate,mobley_1323538,-7.50,0.10,-7.50,0.20
+"1,1,2-trichloroethane",mobley_1328465,-1.99,0.03,-1.99,0.60
+methyl 4-nitrobenzoate,mobley_1328936,-6.88,0.03,-6.88,0.60
+pebulate,mobley_1352110,-3.64,0.04,-3.64,1.93
+"3,5-dimethylpyridine",mobley_1363784,-4.84,0.02,-4.84,0.60
+pentachloronitrobenzene,mobley_1396156,-5.22,0.05,-5.22,0.25
+captan,mobley_1417007,-9.01,0.04,-9.01,1.93
+m-xylene,mobley_1424265,-0.83,0.02,-0.83,0.60
+1-isopropyl-4-methyl-benzene,mobley_1449384,-0.68,0.03,-0.68,0.60
+"2,3-dichlorodibenzo-p-dioxin",mobley_1469079,-3.56,0.02,-3.56,1.00
+nonan-2-one,mobley_1502181,-2.49,0.03,-2.49,0.60
+4-methylpyridine,mobley_1520842,-4.93,0.02,-4.93,0.60
+flurbiprofen,mobley_1527293,-8.42,0.07,-8.42,0.16
+butane-1-thiol,mobley_1563176,-0.99,0.02,-0.99,0.60
+"2,3-dimethylphenol",mobley_1571523,-6.16,0.03,-6.16,0.60
+ethyl hexanoate,mobley_1592519,-2.23,0.04,-2.23,0.60
+2-isopropoxypropane,mobley_1615431,-0.53,0.02,-0.53,0.60
+methanol,mobley_1636752,-5.10,0.01,-5.10,0.60
+2-methylpropan-2-ol,mobley_1650157,-4.47,0.02,-4.47,0.60
+morpholine,mobley_1659169,-7.17,0.02,-7.17,0.60
+but-1-ene,mobley_1662128,1.38,0.02,1.38,0.60
+hex-1-yne,mobley_1674094,0.29,0.02,0.29,0.60
+methylsulfonylmethane,mobley_1708457,-10.08,0.03,-10.08,0.60
+methyl formate,mobley_1717215,-2.78,0.02,-2.78,0.60
+ethyl butanoate,mobley_1722522,-2.49,0.02,-2.49,0.60
+octafluorocyclobutane,mobley_1723043,3.43,0.04,3.43,0.03
+benzamide,mobley_1728386,-11.00,0.10,-11.00,0.20
+dibenzo-p-dioxin,mobley_172879,-3.15,0.02,-3.15,0.10
+4-bromophenol,mobley_1733799,-5.85,0.02,-5.85,0.83
+hexanoic acid,mobley_1735893,-6.21,0.03,-6.21,0.60
+diethyl butanedioate,mobley_1743409,-5.71,0.04,-5.71,0.60
+"2,6-dimethylphenol",mobley_1755375,-5.26,0.03,-5.26,0.60
+1-chloro-2-methyl-benzene,mobley_1760914,-1.14,0.02,-1.14,0.60
+"3-(dimethoxyphosphinothioylsulfanylmethyl)-1,2,3-benzotriazin-4-one",mobley_1770205,-10.03,0.04,-10.03,1.37
+"methyl 2,2-dimethylpropanoate",mobley_1781152,-2.40,0.02,-2.40,0.60
+"1,2-dibromoethane",mobley_1792062,-2.33,0.02,-2.33,0.60
+ethanethiol,mobley_1800170,-1.14,0.02,-1.14,0.60
+isopentane,mobley_1803862,2.38,0.02,2.38,0.60
+3-methyl-1H-indole,mobley_1821184,-5.88,0.03,-5.88,0.60
+hexanal,mobley_1827204,-2.81,0.02,-2.81,0.60
+"1,1,2-trichloro-1,2,2-trifluoro-ethane",mobley_1838110,1.77,0.02,1.77,0.60
+4-chlorophenyl)sulfanylmethylsulfanyl-diethoxy-thioxo-$l^{5}-phosphane,mobley_1849020,-6.50,0.05,-6.50,0.83
+"1,2,3,5-tetrachlorobenzene",mobley_1855337,-1.62,0.02,-1.62,0.60
+"1,2-dichloroethane",mobley_1857976,-1.79,0.02,-1.79,0.60
+2-phenylethanol,mobley_1858644,-6.79,0.03,-6.79,0.60
+propanethiol,mobley_186894,-1.10,0.10,-1.10,0.20
+toluene,mobley_1873346,-0.90,0.10,-0.90,0.20
+pentan-3-one,mobley_1875719,-3.41,0.10,-3.41,0.20
+pentan-2-one,mobley_1881249,-3.52,0.02,-3.52,0.60
+"1,1,1,2-tetrachloroethane",mobley_1893815,-1.43,0.02,-1.43,0.10
+1-chlorohexane,mobley_1893937,0.00,0.03,0.00,0.60
+"(2S,3R,4S,5R)-oxane-2,3,4,5-tetrol",mobley_1896013,-20.52,0.10,-20.52,0.27
+2-methylpent-1-ene,mobley_1899443,1.47,0.02,1.47,0.60
+butan-2-ol,mobley_1903702,-4.62,0.03,-4.62,0.60
+benzyl bromide,mobley_1905088,-2.38,0.10,-2.38,0.20
+methylparathion,mobley_1922649,-7.19,0.04,-7.19,0.10
+n-butane,mobley_1923244,2.10,0.10,2.10,0.20
+hydrogen sulfide,mobley_1929982,-0.70,0.01,-0.70,0.60
+bromacil,mobley_194273,-9.73,0.04,-9.73,1.93
+[2-benzhydryloxyethyl]-dimethyl-amine,mobley_1944394,-9.34,0.03,-9.34,0.62
+nitromethane,mobley_1952272,-4.02,0.01,-4.02,0.60
+N-methylacetamide,mobley_1963873,-10.00,0.03,-10.00,0.60
+acetaldehyde,mobley_1967551,-3.50,0.02,-3.50,0.60
+1-cyclopropylethanone,mobley_197466,-4.61,0.02,-4.61,0.60
+nonanal,mobley_1976156,-2.07,0.03,-2.07,0.60
+1-chloropropane,mobley_1977493,-0.33,0.02,-0.33,0.60
+mesitylene,mobley_1987439,-0.90,0.02,-0.90,0.60
+biphenyl,mobley_2005792,-2.70,0.10,-2.70,0.20
+ethane,mobley_2008055,1.83,0.01,1.83,0.60
+"2-chloro-2-(difluoromethoxy)-1,1,1-trifluoro-ethane",mobley_2023925,0.10,0.02,0.10,0.60
+1-cyclohexylethanone,mobley_2043882,-3.90,0.02,-3.90,0.60
+methylsulfanylethane,mobley_2049967,-1.50,0.10,-1.50,0.20
+phenol,mobley_20524,-6.60,0.10,-6.60,0.20
+propane,mobley_2068538,2.00,0.10,2.00,0.20
+ibuprofen,mobley_2078467,-7.00,0.07,-7.00,0.64
+ketoprofen,mobley_2099370,-10.78,0.10,-10.78,0.18
+2-iodopropane,mobley_210639,-0.46,0.02,-0.46,0.60
+4-hydroxybenzonitrile,mobley_2123854,-10.17,0.03,-10.17,0.60
+2-ethylphenol,mobley_2126135,-5.66,0.02,-5.66,0.10
+3-methylbut-1-ene,mobley_2143011,1.83,0.02,1.83,0.60
+formaldehyde,mobley_2146331,-2.75,0.01,-2.75,0.60
+1-chloro-pentane,mobley_2178600,-0.10,0.10,-0.10,0.20
+sec-butylbenzene,mobley_2183616,-0.45,0.03,-0.45,0.60
+decane,mobley_2197088,3.16,0.03,3.16,0.60
+chloroethane,mobley_2198613,-0.63,0.02,-0.63,0.60
+3-methylpentane,mobley_2213823,2.51,0.02,2.51,0.60
+2-methylpropan-1-ol,mobley_2245668,-4.50,0.02,-4.50,0.60
+acenaphthene,mobley_2261979,-3.15,0.03,-3.15,0.60
+naproxen,mobley_2269032,-10.21,0.10,-10.21,0.18
+trimethoxymethane,mobley_2279874,-4.42,0.03,-4.42,0.60
+ethyl formate,mobley_2294995,-2.56,0.02,-2.56,0.60
+methyl paraben,mobley_2295058,-9.51,0.05,-9.51,0.26
+ethanol,mobley_2310185,-5.00,0.03,-5.00,0.60
+"1-(2-hydroxyethylamino)-9,10-anthraquinone",mobley_2316618,-14.21,0.03,-14.21,1.10
+pentylcyclopentane,mobley_2328633,2.55,0.03,2.55,0.60
+methyl pentanoate,mobley_2341732,-2.56,0.02,-2.56,0.60
+3-ethylphenol,mobley_2354112,-6.25,0.03,-6.25,0.60
+butyl acetate,mobley_2364370,-2.64,0.02,-2.64,0.60
+"3,4-dimethylpyridine",mobley_2371092,-5.22,0.02,-5.22,0.60
+heptan-4-one,mobley_2390199,-2.92,0.02,-2.92,0.60
+diethyl propanedioate,mobley_2402487,-6.00,0.04,-6.00,0.60
+ethanamine,mobley_2410897,-4.50,0.02,-4.50,0.60
+1-methoxypropane,mobley_2422586,-1.66,0.02,-1.66,0.60
+"1,4-diamino-9,10-anthracenedione",mobley_242480,-11.85,0.02,-11.85,0.35
+benzonitrile,mobley_2451097,-4.10,0.02,-4.10,0.60
+3-methoxyphenol,mobley_2457863,-7.66,0.03,-7.66,0.60
+trichloro(nitro)methane,mobley_2481002,-1.45,0.02,-1.45,0.10
+benzyl chloride,mobley_2484519,-1.93,0.08,-1.93,0.20
+hexan-2-one,mobley_2487143,-3.28,0.02,-3.28,0.60
+"1,2-dichlorobenzene",mobley_2489709,-1.36,0.02,-1.36,0.60
+"1,1,1,2,2-pentachloroethane",mobley_2492140,-1.23,0.02,-1.23,0.10
+"1,1-dichloroethylene",mobley_2493732,0.25,0.02,0.25,0.60
+profluralin,mobley_2501588,-2.45,0.04,-2.45,1.37
+1-bromoheptane,mobley_2517158,0.34,0.03,0.34,0.60
+dialifor,mobley_2518989,-5.74,0.06,-5.74,1.93
+5-Amino-4-chloro-2-phenylpyridazin-3(2H)-one,mobley_2523689,-16.43,0.04,-16.43,1.93
+"2,2-dimethylpentane",mobley_252413,2.88,0.02,2.88,0.60
+pyrene,mobley_2577969,-4.52,0.03,-4.52,0.60
+hexyl acetate,mobley_2607611,-2.26,0.03,-2.26,0.60
+"3,3-dimethylpentane",mobley_2609604,2.56,0.03,2.56,0.60
+"1,2-dimethoxybenzene",mobley_2613240,-5.33,0.02,-5.33,0.10
+3-nitrooxypropyl nitrate,mobley_2636578,-4.80,0.02,-4.80,0.39
+"N,N-4-trimethylbenzamide",mobley_2659552,-9.76,0.05,-9.76,0.20
+3-hydroxybenzonitrile,mobley_2661134,-9.65,0.03,-9.65,0.60
+"1,3,5-trichlorobenzene",mobley_2681549,-0.78,0.02,-0.78,0.60
+cyclohexane,mobley_2689721,1.23,0.02,1.23,0.60
+2-isobutylpyrazine,mobley_2693089,-5.04,0.03,-5.04,0.60
+nitralin,mobley_2725215,-7.98,0.05,-7.98,1.93
+1-pyrrolidin-1-ylethanone,mobley_2725802,-9.80,0.02,-9.80,0.60
+5-iodouracil,mobley_2727678,-18.72,0.06,-18.72,0.64
+4-nitrophenol,mobley_2751110,-10.64,0.02,-10.64,0.60
+ethoxybenzene,mobley_2763835,-2.22,0.02,-2.22,0.60
+1-methylpiperazine,mobley_2771569,-7.77,0.03,-7.77,0.60
+phthalimide,mobley_2782339,-9.61,0.05,-9.61,0.50
+cyclopropane,mobley_2784376,0.75,0.02,0.75,0.60
+3-chloropyridine,mobley_2789243,-4.01,0.02,-4.01,0.60
+(2E)-hex-2-enal,mobley_2792521,-3.68,0.02,-3.68,0.60
+1-bromobutane,mobley_2802855,-0.40,0.02,-0.40,0.60
+naphthalene,mobley_282648,-2.40,0.02,-2.40,0.60
+pyrrole,mobley_2837389,-4.78,0.02,-4.78,0.60
+"1,2,3,7-tetrachlorodibenzo-p-dioxin",mobley_2844990,-3.84,0.03,-3.84,1.00
+"2,3,7,8-tetrachlorodibenzo-p-dioxin",mobley_2845466,-3.37,0.03,-3.37,1.00
+2-hydroxybenzaldehyde,mobley_2850833,-4.68,0.02,-4.68,0.10
+styrene,mobley_2859600,-1.24,0.02,-1.24,0.60
+pentan-2-ol,mobley_2864987,-4.39,0.02,-4.39,0.60
+isobutyl nitrate,mobley_2881590,-1.88,0.03,-1.88,0.10
+acetylsalicylic acid,mobley_2913224,-9.94,0.07,-9.94,0.18
+4-ethylphenol,mobley_2923700,-6.13,0.03,-6.13,0.60
+p-cresol,mobley_2925352,-6.13,0.02,-6.13,0.60
+3-methylbutanoic acid,mobley_2929847,-6.09,0.03,-6.09,0.60
+N-propylpropan-1-amine,mobley_2958326,-3.65,0.02,-3.65,0.60
+"1,2,3,4,7,8-hexachlorodibenzo-p-dioxin",mobley_2960202,-3.71,0.03,-3.71,1.00
+pyridine,mobley_296847,-4.69,0.02,-4.69,0.60
+"9,10-dihydroanthracene",mobley_2972345,-3.78,0.02,-3.78,0.10
+thiophene,mobley_2972906,-1.40,0.10,-1.40,0.20
+2-methylprop-1-ene,mobley_299266,1.16,0.02,1.16,0.60
+chloroform,mobley_2996632,-1.08,0.02,-1.08,0.60
+"2,2,2-trifluoroethanol",mobley_3006808,-4.31,0.03,-4.31,0.60
+prop-1-ene,mobley_303222,1.32,0.02,1.32,0.60
+acetic acid,mobley_3034976,-6.69,0.02,-6.69,0.60
+1-ethyl-2-methylbenzene,mobley_3040612,-0.85,0.02,-0.85,0.10
+"2-N-ethyl-6-(methylsulfanyl)-4-N-(propan-2-yl)-1,3,5-triazine-2,4-diamine",mobley_3047364,-7.65,0.04,-7.65,0.45
+benzene,mobley_3053621,-0.90,0.10,-0.90,0.20
+"2,2,5-trimethylhexane",mobley_3060426,2.93,0.03,2.93,0.60
+dimethoxymethane,mobley_3083321,-2.93,0.10,-2.93,0.20
+terbacil,mobley_3105103,-11.14,0.04,-11.14,1.93
+propan-1-ol,mobley_313406,-4.85,0.02,-4.85,0.60
+"2,5-dimethylphenol",mobley_3144334,-5.91,0.03,-5.91,0.60
+decan-1-ol,mobley_3151666,-3.64,0.03,-3.64,0.60
+octane,mobley_3167746,2.88,0.03,2.88,0.60
+2-chloroaniline,mobley_3169935,-4.91,0.03,-4.91,0.60
+"1,2,4-trimethylbenzene",mobley_3183805,-0.86,0.02,-0.86,0.60
+2-methylaniline,mobley_3187514,-5.53,0.03,-5.53,0.60
+pirimor,mobley_3201701,-9.41,0.04,-9.41,1.93
+"1,2-dinitroxypropane",mobley_3210206,-4.95,0.03,-4.95,0.10
+cyclohexene,mobley_3211679,0.14,0.02,0.14,0.10
+p-xylene,mobley_3234716,-0.80,0.02,-0.80,0.60
+glycerol,mobley_3259411,-13.43,0.06,-13.43,1.00
+naphthalen-2-amine,mobley_3264884,-7.47,0.03,-7.47,0.60
+2-chlorosyringaldehyde,mobley_3265457,-7.78,0.03,-7.78,0.77
+"N-methyl-N-(2,2,2-trifluoroethyl)aniline",mobley_3266352,-1.92,0.03,-1.92,0.60
+2-methoxypropane,mobley_3269565,-2.01,0.02,-2.01,0.60
+"1,2,3,4-tetrachloro-5-(3,4,5-trichlorophenyl)benzene",mobley_3269819,-3.17,0.04,-3.17,0.10
+"2-[(1R)-1-methylpropyl]-4,6-dinitro-phenolate",mobley_3274817,-6.23,0.04,-6.23,1.93
+nonan-5-one,mobley_3318135,-2.64,0.03,-2.64,0.60
+sulfolane,mobley_3323117,-8.61,0.05,-8.61,0.31
+trimethoxymethylbenzene,mobley_3325209,-4.04,0.04,-4.04,0.60
+4-propylguaiacol,mobley_3359593,-5.26,0.02,-5.26,0.18
+"1,1-difluoroethane",mobley_3370989,-0.11,0.02,-0.11,0.60
+5-fluorouracil,mobley_337666,-16.92,0.06,-16.92,0.88
+nonan-1-ol,mobley_3378420,-3.88,0.03,-3.88,0.60
+tetrahydropyran,mobley_3395921,-3.12,0.02,-3.12,0.60
+iodobenzene,mobley_3398536,-1.74,0.02,-1.74,0.60
+2-methylpentan-2-ol,mobley_3414356,-3.92,0.02,-3.92,0.60
+chloro-fluoro-methane,mobley_3425174,-0.77,0.01,-0.77,0.60
+"1,2,3-trimethylbenzene",mobley_3452749,-1.21,0.02,-1.21,0.60
+1-(p-tolyl)ethanone,mobley_349850,-4.70,0.03,-4.70,0.60
+2-methoxyphenol,mobley_3515580,-5.94,0.02,-5.94,0.10
+2-acetoxyethyl acetate,mobley_352111,-6.34,0.04,-6.34,0.60
+pentylbenzene,mobley_3525176,-0.23,0.03,-0.23,0.60
+hexan-1-ol,mobley_3546460,-4.40,0.02,-4.40,0.60
+pentyl propanoate,mobley_3572203,-2.11,0.03,-2.11,0.60
+heptan-2-one,mobley_3573480,-3.04,0.02,-3.04,0.60
+"2-chloro-1,1,1-trimethoxy-ethane",mobley_3589456,-4.59,0.04,-4.59,0.60
+octan-1-ol,mobley_36119,-4.09,0.03,-4.09,0.60
+1-chlorobutane,mobley_3639400,-0.16,0.02,-0.16,0.60
+naphthalen-2-ol,mobley_3663158,-8.11,0.03,-8.11,0.60
+cyclohexanone,mobley_3682850,-4.91,0.02,-4.91,0.60
+"1,1-diethoxyethane",mobley_3686115,-3.28,0.08,-3.28,0.20
+propyl butanoate,mobley_3690931,-2.28,0.03,-2.28,0.60
+non-1-ene,mobley_3709920,2.06,0.03,2.06,0.60
+"1,4-dimethylnaphthalene",mobley_3715043,-2.82,0.03,-2.82,0.60
+quinone,mobley_3727287,-6.50,0.10,-6.50,0.20
+1-bromo-pentane,mobley_3738859,-0.10,0.10,-0.10,0.20
+isopropenylbenzene,mobley_3746675,-1.24,0.02,-1.24,0.60
+"1,1,1-trichloroethane",mobley_3761215,-0.19,0.02,-0.19,0.60
+dichloromethane,mobley_3762186,-1.31,0.01,-1.31,0.60
+1-methylpyrrole,mobley_3775790,-2.89,0.02,-2.89,0.60
+3-nitroaniline,mobley_3777264,-8.84,0.03,-8.84,0.60
+hexyl nitrate,mobley_3802803,-1.66,0.02,-1.66,0.10
+naphthalen-1-amine,mobley_3843583,-7.28,0.03,-7.28,0.60
+acetone,mobley_3867265,-3.80,0.02,-3.80,0.60
+cyclopentanone,mobley_3968043,-4.70,0.02,-4.70,0.60
+methyl benzoate,mobley_3968739,-3.92,0.03,-3.92,0.60
+benzaldehyde,mobley_3969312,-4.02,0.02,-4.02,0.60
+ethyl benzoate,mobley_397645,-3.64,0.02,-3.64,0.60
+"1,2,3,4,7-pentachlorodibenzo-p-dioxin",mobley_3976574,-4.15,0.03,-4.15,1.00
+"1,2,3-trichlorobenzene",mobley_3980099,-1.24,0.02,-1.24,0.60
+methyl acetate,mobley_3982371,-3.13,0.02,-3.13,0.60
+"1,1-dichloroethane",mobley_3999471,-0.84,0.02,-0.84,0.60
+"2,4-dimethylpentan-3-one",mobley_4013838,-2.74,0.02,-2.74,0.60
+o-cresol,mobley_4035953,-5.90,0.10,-5.90,0.20
+5-bromouracil,mobley_4039055,-18.17,0.06,-18.17,0.55
+pent-1-ene,mobley_4043951,1.68,0.02,1.68,0.60
+2-methylhexane,mobley_4043987,2.93,0.03,2.93,0.60
+"1,4-dimethylpiperazine",mobley_4059279,-7.58,0.03,-7.58,0.60
+"2,7-dichlorodibenzo-p-dioxin",mobley_4149784,-3.67,0.02,-3.67,0.12
+"2,3,4-trimethylpentane",mobley_4177472,2.56,0.03,2.56,0.60
+"N,N-dimethylbenzamide",mobley_4188615,-9.29,0.04,-9.29,0.60
+nitrobenzene,mobley_4193752,-4.12,0.02,-4.12,0.60
+4-methoxyaniline,mobley_4218209,-7.48,0.03,-7.48,0.60
+"1,2,3,4-tetrachlorobenzene",mobley_4219614,-1.34,0.02,-1.34,0.60
+isobutylbenzene,mobley_4252724,0.16,0.02,0.16,0.60
+2-methylpyridine,mobley_4287564,-4.63,0.02,-4.63,0.60
+2-chloropyridine,mobley_4291494,-4.39,0.02,-4.39,0.60
+pent-1-yne,mobley_430089,0.01,0.02,0.01,0.60
+propanenitrile,mobley_4305650,-3.84,0.02,-3.84,0.60
+6-chlorouracil,mobley_4338603,-15.83,0.06,-15.83,1.22
+iodomethane,mobley_4364398,-0.89,0.01,-0.89,0.60
+"1-amino-4-hydroxy-9,10-anthracenedione",mobley_4371692,-9.53,0.02,-9.53,0.28
+nonane,mobley_4375719,3.13,0.03,3.13,0.60
+4-chloro-3-methyl-phenol,mobley_4395315,-6.79,0.03,-6.79,0.60
+chloromethane,mobley_4434915,-0.55,0.01,-0.55,0.60
+1-acetoxyethyl acetate,mobley_4463913,-4.97,0.10,-4.97,0.60
+"(Z)-1,2-dichloroethylene",mobley_4465023,-1.17,0.02,-1.17,0.60
+"1,1-diphenylethene",mobley_4479135,-2.78,0.02,-2.78,0.10
+fluorobenzene,mobley_4483973,-0.80,0.02,-0.80,0.60
+1-bromo-4-methyl-benzene,mobley_4494568,-1.39,0.02,-1.39,0.60
+"2-bromo-2-chloro-1,1,1-trifluoro-ethane",mobley_4506634,-0.11,0.02,-0.11,0.60
+"1,4-dichlorobenzene",mobley_4553008,-1.01,0.02,-1.01,0.60
+"2,3-dimethylbutane",mobley_4561957,2.34,0.02,2.34,0.60
+"2,6-dimethylpyridine",mobley_4584540,-4.59,0.02,-4.59,0.60
+"(2R,3R,4R,5R)-Hexan-1,2,3,4,5,6-hexol",mobley_4587267,-23.62,0.04,-23.62,0.32
+1-chloro-2-(2-chloroethoxy)ethane,mobley_4603202,-4.23,0.01,-4.23,0.20
+ethyl paraben,mobley_4609460,-9.20,0.06,-9.20,0.30
+1-benzylimidazole,mobley_4613090,-7.63,0.02,-7.63,0.12
+methyl cyclopropanecarboxylate,mobley_4620651,-4.10,0.04,-4.10,0.60
+"1,2-dimethoxyethane",mobley_4630641,-4.84,0.02,-4.84,0.60
+ethylene glycol,mobley_4639255,-9.30,0.03,-9.30,0.60
+m-bis(trifluoromethyl)benzene,mobley_4678740,1.07,0.04,1.07,0.20
+4-propylphenol,mobley_4683624,-5.21,0.02,-5.21,0.69
+2-propoxyethanol,mobley_4687447,-6.40,0.03,-6.40,0.60
+heptachlor,mobley_468867,-2.55,0.03,-2.55,0.10
+2-acetoxyethyl acetate,mobley_4689084,-6.34,0.06,-6.34,0.20
+"1,2-diethoxyethane",mobley_4690963,-3.54,0.03,-3.54,0.60
+octanal,mobley_4694328,-2.29,0.03,-2.29,0.60
+"1,2-dichloropropane",mobley_4699732,-1.27,0.02,-1.27,0.60
+"1,2-dimethylcyclohexane",mobley_4715906,1.58,0.02,1.58,0.60
+1-iodoheptane,mobley_4759887,0.27,0.03,0.27,0.60
+hept-1-ene,mobley_4762983,1.66,0.02,1.66,0.60
+"2,4-dimethylphenol",mobley_4780078,-6.01,0.03,-6.01,0.60
+pentanoic acid,mobley_4792268,-6.16,0.06,-6.16,0.60
+hexachlorobenzene,mobley_4845722,-2.33,0.04,-2.33,1.16
+methanesulfonyl chloride,mobley_4850657,-4.87,0.02,-4.87,0.60
+"2,6-dimethoxyphenol",mobley_486214,-6.96,0.02,-6.96,0.10
+aniline,mobley_4883284,-5.49,0.02,-5.49,0.60
+3-ethylpyridine,mobley_4884177,-4.59,0.02,-4.59,0.60
+pentanenitrile,mobley_4893032,-3.52,0.02,-3.52,0.60
+isopentyl formate,mobley_4924862,-2.13,0.02,-2.13,0.60
+hept-1-yne,mobley_49274,0.60,0.02,0.60,0.60
+diethoxymethoxybenzene,mobley_4934872,-5.23,0.04,-5.23,0.60
+"2-(2,3-dimethylphenyl)aminobenzoic acid",mobley_4936555,-6.78,0.03,-6.78,0.10
+nitroxyacetone,mobley_4964807,-5.99,0.02,-5.99,0.10
+ethylsulfanylethane,mobley_4983965,-1.46,0.02,-1.46,0.60
+"2-amino-9,10-anthraquinone",mobley_5003962,-11.53,0.03,-11.53,0.29
+4-(1-Methylethenyl)-1-cyclohexene-1-carboxaldehyde,mobley_5006685,-4.09,0.02,-4.09,0.17
+pyridine-4-carbonitrile,mobley_5026370,-6.02,0.02,-6.02,0.60
+1-propylsulfanylpropane,mobley_5052949,-1.28,0.02,-1.28,0.60
+2-methyltetrahydrofuran,mobley_5056289,-3.30,0.02,-3.30,0.60
+2-nitrophenol,mobley_5063386,-4.58,0.03,-4.58,0.60
+2-methoxyaniline,mobley_5072416,-6.12,0.03,-6.12,0.60
+"1-N,1-N-diethyl-2,6-dinitro-4-(trifluoromethyl)benzene-1,3-diamine",mobley_5076071,-5.66,0.04,-5.66,1.93
+heptan-1-ol,mobley_5079234,-4.21,0.02,-4.21,0.60
+indane,mobley_5094777,-1.46,0.02,-1.46,0.60
+"2,6-dimethylnaphthalene",mobley_5110043,-2.63,0.03,-2.63,0.60
+butadiene,mobley_511661,0.56,0.10,0.56,0.20
+4-methylpentan-2-ol,mobley_5123639,-3.73,0.02,-3.73,0.60
+isobutane,mobley_5157661,2.30,0.10,2.30,0.20
+aldicarb,mobley_5200358,-9.84,0.05,-9.84,0.10
+2-ethylpyrazine,mobley_5220185,-5.45,0.03,-5.45,0.60
+methanethiol,mobley_525934,-1.20,0.10,-1.20,0.20
+1-ethylnaphthalene,mobley_5263791,-2.40,0.03,-2.40,0.60
+"1,2-dinitroxyethane",mobley_52782,-5.73,0.02,-5.73,0.10
+Amitriptyline,mobley_5282042,-7.43,0.03,-7.43,0.60
+"1,4-dichlorobutane",mobley_5286200,-2.32,0.02,-2.32,0.60
+hex-1-ene,mobley_5310099,1.58,0.02,1.58,0.60
+phenylmethanol,mobley_5311804,-6.62,0.03,-6.62,0.60
+"N,N-dimethylaniline",mobley_5326154,-3.45,0.02,-3.45,0.60
+"3,3-dimethylbutan-2-one",mobley_5346580,-3.11,0.02,-3.11,0.60
+"2,2-dichloro-1,1-difluoro-1-methoxy-ethane",mobley_5347550,-1.12,0.02,-1.12,0.60
+2-chlorodibenzo-p-dioxin,mobley_5371840,-3.10,0.02,-3.10,0.10
+methyl butanoate,mobley_5390332,-2.83,0.02,-2.83,0.60
+diazinon,mobley_5393242,-6.48,0.05,-6.48,0.13
+cumene,mobley_5445548,-0.30,0.02,-0.30,0.60
+n-pentane,mobley_5449201,2.30,0.10,2.30,0.20
+"1,2,3,4,5-pentachloro-6-(2,3,4,5,6-pentachlorophenyl)benzene",mobley_5456566,-2.98,0.06,-2.98,1.00
+4-tert-butylphenol,mobley_5467162,-5.91,0.04,-5.91,0.60
+isopentyl acetate,mobley_5471704,-2.21,0.03,-2.21,0.60
+"2,3-dimethylnaphthalene",mobley_547634,-2.78,0.02,-2.78,0.60
+"1,1,2,3,3,3-hexafluoroprop-1-ene",mobley_5494918,2.93,0.02,2.93,0.60
+1-methylimidazole,mobley_5499659,-8.41,0.03,-8.41,0.60
+"1,1,1-trimethoxyethane",mobley_550662,-4.42,0.02,-4.42,0.60
+"1,2,3,4-tetrachlorodibenzo-p-dioxin",mobley_5510474,-3.81,0.03,-3.81,0.14
+4-methylaniline,mobley_5518547,-5.57,0.03,-5.57,0.60
+benzenethiol,mobley_5520946,-2.55,0.02,-2.55,0.60
+"1,3,5-trichloro-2-phenyl-benzene",mobley_5538249,-2.16,0.03,-2.16,0.10
+"1,3,5-trichloro-2-(2,6-dichlorophenyl)benzene",mobley_5561855,-1.96,0.04,-1.96,0.10
+"2,6-dimethylaniline",mobley_5571660,-5.21,0.03,-5.21,0.60
+"4-methoxy-N,N-dimethyl-benzamide",mobley_5600967,-11.01,0.04,-11.01,0.60
+"(2S,5R)-2-isopropyl-5-methylcyclohexanone",mobley_5616693,-2.53,0.02,-2.53,0.25
+2-methylpropanal,mobley_5627459,-2.86,0.02,-2.86,0.60
+ammonia,mobley_5631798,-4.29,0.01,-4.29,0.60
+"1,3-dimethylnaphthalene",mobley_5665561,-2.47,0.03,-2.47,0.60
+"hexa-1,5-diene",mobley_5690766,1.01,0.02,1.01,0.60
+N-methylmethanamine,mobley_5692472,-4.29,0.02,-4.29,0.60
+dicamba,mobley_5708811,-9.86,0.04,-9.86,1.93
+4-methyl-1H-imidazole,mobley_5732611,-10.27,0.03,-10.27,0.60
+1-methyl-2-nitro-benzene,mobley_5747188,-3.58,0.02,-3.58,0.60
+"1,1,1,2-tetramethoxyethane",mobley_5747981,-5.73,0.04,-5.73,0.60
+pentan-1-ol,mobley_5759258,-4.57,0.02,-4.57,0.60
+dimethyl sulfate,mobley_5760563,-5.10,0.02,-5.10,0.60
+2-methoxyethanol,mobley_5816127,-6.62,0.03,-6.62,0.40
+methylcyclopentane,mobley_5852491,1.59,0.02,1.59,0.60
+quinoline,mobley_5857,-5.72,0.02,-5.72,0.60
+2-butoxyethanol,mobley_5880265,-6.25,0.03,-6.25,0.60
+hexylbenzene,mobley_588781,-0.04,0.03,-0.04,0.60
+propyl propanoate,mobley_5890803,-2.44,0.02,-2.44,0.60
+ethyldisulfanylethane,mobley_590519,-1.64,0.02,-1.64,0.60
+4-methyl-2-methoxyphenol,mobley_5917842,-5.80,0.02,-5.80,0.10
+"2,2-dimethylbutane",mobley_5935995,2.51,0.02,2.51,0.60
+2-nitroaniline,mobley_5948990,-7.37,0.03,-7.37,0.60
+"1,1,2,2-tetrachloroethylene",mobley_5952846,0.10,0.02,0.10,0.60
+3-methylbutan-1-ol,mobley_5973402,-4.42,0.03,-4.42,0.60
+3-methylpyridine,mobley_5977084,-4.77,0.02,-4.77,0.60
+1-nitrobutane,mobley_6006813,-3.09,0.02,-3.09,0.60
+diflunisal,mobley_6055410,-9.40,0.10,-9.40,0.20
+hexan-1-amine,mobley_6060301,-3.95,0.02,-3.95,0.60
+oct-2-enal,mobley_6081058,-3.43,0.03,-3.43,0.60
+4-nitroaniline,mobley_6082662,-9.82,0.05,-9.82,0.10
+ethylene,mobley_6091882,1.28,0.01,1.28,0.60
+diphenyl ether,mobley_6102880,-2.87,0.02,-2.87,0.69
+trimethyl phosphate,mobley_6115639,-8.70,0.06,-8.70,0.10
+4-methylbenzaldehyde,mobley_6175884,-4.27,0.03,-4.27,0.60
+"1,1,2,2-tetrachloroethane",mobley_6190089,-2.37,0.02,-2.37,0.10
+"2,6-dichlorosyringaldehyde",mobley_6195751,-8.68,0.02,-8.68,0.76
+"2,3-diacetoxypropyl acetate",mobley_6198745,-8.84,0.10,-8.84,0.20
+propyl paraben,mobley_6201330,-9.37,0.06,-9.37,0.22
+pyridine-3-carbaldehyde,mobley_6232400,-7.10,0.03,-7.10,0.60
+2-chlorobutane,mobley_6235784,0.00,0.02,0.00,0.60
+cyanuric acid,mobley_6239320,-18.06,0.07,-18.06,0.27
+octan-1-amine,mobley_6248915,-3.65,0.03,-3.65,0.60
+1-iodohexane,mobley_6250025,0.08,0.02,0.08,0.60
+3-chloroaniline,mobley_6257907,-5.82,0.02,-5.82,0.60
+azetidine,mobley_6266306,-5.56,0.02,-5.56,0.60
+1-bromo-2-methyl-propane,mobley_627267,-0.03,0.02,-0.03,0.60
+"1,1,1-trifluoropropan-2-ol",mobley_628086,-4.16,0.03,-4.16,0.60
+"1,3-dichloro-2-(2,6-dichlorophenyl)benzene",mobley_628951,-2.28,0.04,-2.28,0.12
+4-ethylpyridine,mobley_6303022,-4.73,0.02,-4.73,0.60
+piperidine,mobley_6309289,-5.11,0.02,-5.11,0.60
+1-(4-methoxyphenyl)ethanone,mobley_632905,-4.40,0.03,-4.40,0.60
+"(1R)-2,2,2-trichloro-1-dimethoxyphosphoryl-ethanol",mobley_6334915,-12.74,0.04,-12.74,1.93
+terbutryn,mobley_6338073,-6.68,0.05,-6.68,0.42
+1-(3-pyridyl)ethanone,mobley_6353617,-8.26,0.03,-8.26,0.60
+"1,2-bis(trifluoromethyl)benzene",mobley_6358463,1.07,0.03,1.07,0.60
+carbon tetrachloride,mobley_6359135,0.08,0.02,0.08,0.60
+"1,4-dichloro-2-phenyl-benzene",mobley_6359156,-2.46,0.03,-2.46,0.10
+1-methylpiperidine,mobley_63712,-3.88,0.02,-3.88,0.60
+anthracene,mobley_637522,-3.95,0.03,-3.95,0.60
+propylcyclopentane,mobley_6416775,2.13,0.02,2.13,0.60
+propylbenzene,mobley_6430250,-0.53,0.02,-0.53,0.60
+isobutyl 2-methylpropanoate,mobley_6456034,-1.69,0.03,-1.69,0.60
+pyrrolidine,mobley_646007,-5.48,0.02,-5.48,0.60
+chloroethylene,mobley_6474572,-0.59,0.02,-0.59,0.60
+but-2-enal,mobley_6497672,-4.22,0.02,-4.22,0.60
+"2-chloro-1-(2,4-dichlorophenyl)ethenyl diethyl phosphate",mobley_6522117,-7.07,0.05,-7.07,1.37
+1-methylcyclohexene,mobley_6571751,0.67,0.02,0.67,0.60
+ethyl pentanoate,mobley_6619554,-2.49,0.03,-2.49,0.60
+carbofuran,mobley_6620221,-9.61,0.04,-9.61,0.30
+propanal,mobley_6632459,-3.43,0.02,-3.43,0.60
+diiodomethane,mobley_664966,-2.49,0.02,-2.49,0.60
+"1,2,3,4-tetrachloro-5-(2,3,4-trichlorophenyl)benzene",mobley_667278,-4.40,0.08,-4.40,0.10
+"3,5-dichloro-2,6-dimethoxyphenol",mobley_6688723,-6.44,0.02,-6.44,0.38
+methanamine,mobley_6714389,-4.55,0.01,-4.55,0.60
+2-(nitrooxy)ethan-1-ol,mobley_6727159,-8.18,0.03,-8.18,0.10
+chlordane,mobley_6733657,-3.44,0.03,-3.44,0.10
+"1,4-dioxane",mobley_6739648,-5.06,0.02,-5.06,0.60
+"3,4-dimethylphenol",mobley_6743808,-6.50,0.03,-6.50,0.60
+tetrafluoromethane,mobley_676247,3.12,0.01,3.12,0.60
+1-(4-pyridyl)ethanone,mobley_6794076,-7.62,0.03,-7.62,0.60
+"1,2,4,5-tetrachlorobenzene",mobley_6804509,-1.34,0.02,-1.34,0.60
+hexane,mobley_6812653,2.48,0.02,2.48,0.60
+"1,2,2-trifluoroethoxybenzene",mobley_6843802,-1.29,0.02,-1.29,0.60
+isopropyl formate,mobley_6854178,-2.02,0.02,-2.02,0.60
+fenuron,mobley_6861308,-9.13,0.04,-9.13,1.93
+3-methylheptane,mobley_6896128,2.97,0.03,2.97,0.60
+methoxyethane,mobley_6911232,-2.10,0.02,-2.10,0.60
+2-methoxyethanamine,mobley_6917738,-6.55,0.03,-6.55,0.60
+methyl 2-chloroacetate,mobley_6929123,-4.00,0.02,-4.00,0.60
+"(3R)-3,7-Dimethylocta-1,6-dien-3-yl acetate",mobley_6935906,-2.49,0.02,-2.49,0.85
+ethyl acetate,mobley_6973347,-2.94,0.02,-2.94,0.60
+methyl cyclohexanecarboxylate,mobley_6978427,-3.30,0.02,-3.30,0.60
+isopropyl acetate,mobley_6981465,-2.64,0.03,-2.64,0.60
+2-ethylpyridine,mobley_6988468,-4.33,0.02,-4.33,0.60
+"3,5-dimethylphenol",mobley_7009711,-6.27,0.03,-6.27,0.60
+cyclohexanol,mobley_7010316,-5.46,0.02,-5.46,0.60
+methoxymethane,mobley_7015518,-1.91,0.02,-1.91,0.60
+phenanthrene,mobley_7017274,-3.88,0.03,-3.88,0.60
+naphthalen-1-ol,mobley_7039935,-7.67,0.03,-7.67,0.60
+2-chloro-2-methyl-propane,mobley_7047032,1.09,0.02,1.09,0.60
+4-chlorophenol,mobley_7066554,-7.03,0.02,-7.03,0.60
+3-chloroprop-1-ene,mobley_7099614,-0.57,0.02,-0.57,0.60
+isohexane,mobley_7106722,2.51,0.02,2.51,0.60
+pentan-1-amine,mobley_7142697,-4.09,0.02,-4.09,0.60
+"1,4-dibromobenzene",mobley_7150646,-2.30,0.02,-2.30,0.60
+1-chloroheptane,mobley_7157427,0.29,0.03,0.29,0.60
+trifluralin,mobley_7176248,-3.25,0.04,-3.25,0.10
+3-nitrophenol,mobley_7176290,-9.62,0.03,-9.62,0.60
+heptan-1-amine,mobley_718988,-3.79,0.03,-3.79,0.60
+2-fluorophenol,mobley_7200804,-5.29,0.03,-5.29,0.60
+hexanamide,mobley_7203421,-9.31,0.03,-9.31,0.60
+pentan-3-ol,mobley_7227357,-4.35,0.02,-4.35,0.60
+1-chlorodibenzo-p-dioxin,mobley_7239499,-3.52,0.02,-3.52,0.10
+hydrazine,mobley_7261305,-9.30,0.02,-9.30,0.60
+anisole,mobley_7295828,-2.45,0.02,-2.45,0.60
+1-methyl-3-nitro-benzene,mobley_7298388,-3.45,0.02,-3.45,0.60
+chlorpyrifos,mobley_7326706,-5.04,0.04,-5.04,0.21
+propan-2-ol,mobley_7326982,-4.74,0.02,-4.74,0.60
+"1,1,1-trifluoro-2,2,2-trimethoxyethane",mobley_7360181,-0.80,0.05,-0.80,0.20
+"3,5,5-trimethylcyclohex-2-en-1-one",mobley_7364468,-5.18,0.03,-5.18,1.37
+undecan-2-one,mobley_7375018,-2.15,0.03,-2.15,0.60
+caffeine,mobley_7378987,-12.64,0.07,-12.64,0.74
+methyl 4-methoxybenzoate,mobley_7393673,-5.33,0.03,-5.33,0.60
+"N,N-dimethyl-4-nitro-benzamide",mobley_7415647,-11.95,0.04,-11.95,0.60
+2-ethoxyethyl acetate,mobley_7417968,-5.31,0.02,-5.31,0.10
+isobutyl formate,mobley_7455579,-2.22,0.02,-2.22,0.60
+"N-(3,4-dichlorophenyl)propanimidic acid",mobley_7463408,-7.78,0.04,-7.78,1.93
+3-phenylpropan-1-ol,mobley_7463799,-6.92,0.03,-6.92,0.60
+1-phenylethanone,mobley_7497999,-4.58,0.03,-4.58,0.60
+acetonitrile,mobley_7532833,-3.88,0.01,-3.88,0.60
+1-propoxypropane,mobley_7542832,-1.16,0.02,-1.16,0.60
+3-methoxyaniline,mobley_755351,-7.29,0.03,-7.29,0.60
+propyl acetate,mobley_7573149,-2.79,0.02,-2.79,0.60
+bromoform,mobley_7578802,-2.13,0.02,-2.13,0.60
+bromobenzene,mobley_7599023,-1.46,0.02,-1.46,0.60
+methyl octanoate,mobley_7608435,-2.04,0.03,-2.04,0.60
+chlorobenzene,mobley_7608462,-1.12,0.02,-1.12,0.60
+2-methylpentan-3-ol,mobley_7610437,-3.88,0.03,-3.88,0.60
+"1,1,2-trichloroethylene",mobley_766666,-0.44,0.02,-0.44,0.60
+6-isopropyl-3-methyl-1-cyclohex-2-enone,mobley_7676709,-4.51,0.02,-4.51,0.10
+3-hydroxybenzaldehyde,mobley_7688753,-9.52,0.03,-9.52,1.90
+methyldisulfanylmethane,mobley_7690440,-1.83,0.02,-1.83,0.60
+1-bromopropane,mobley_7708038,-0.56,0.02,-0.56,0.60
+bromo-trifluoro-methane,mobley_7732703,1.79,0.02,1.79,0.60
+imidazole,mobley_7735340,-9.63,0.03,-9.63,0.60
+ethion,mobley_7754849,-6.10,0.05,-6.10,1.37
+propionic acid,mobley_7758918,-6.46,0.03,-6.46,0.60
+1-bromo-2-chloro-ethane,mobley_7768165,-1.95,0.02,-1.95,0.60
+2-bromo-2-methyl-propane,mobley_7769613,0.84,0.02,0.84,0.60
+N-methylaniline,mobley_7774695,-4.69,0.03,-4.69,0.60
+2-methylbut-2-ene,mobley_778352,1.31,0.02,1.31,0.60
+5-trifluoromethyluracil,mobley_7794077,-15.46,0.07,-15.46,0.16
+"1,2,4-trichlorobenzene",mobley_7814642,-1.12,0.02,-1.12,0.60
+"N-butyl-N-ethyl-2,6-dinitro-4-(trifluoromethyl)aniline",mobley_7829570,-3.51,0.04,-3.51,1.93
+heptanal,mobley_7859387,-2.67,0.03,-2.67,0.60
+N-butylbutan-1-amine,mobley_7860938,-3.24,0.03,-3.24,0.60
+[(2S)-butan-2-yl] nitrate,mobley_7869158,-1.82,0.02,-1.82,0.10
+tert-butylbenzene,mobley_7893124,-0.44,0.03,-0.44,0.60
+butyl paraben,mobley_7912193,-8.72,0.06,-8.72,0.27
+1-butoxy-2-propanol,mobley_7913234,-5.73,0.02,-5.73,0.15
+ethyl propanoate,mobley_7943327,-2.68,0.02,-2.68,0.60
+hexan-3-ol,mobley_7977115,-4.06,0.02,-4.06,0.60
+2-methylbutan-1-ol,mobley_7983227,-4.42,0.02,-4.42,0.60
+4-hydroxybenzaldehyde,mobley_7988076,-8.83,0.03,-8.83,0.60
+cyclopentane,mobley_8006582,1.20,0.02,1.20,0.60
+"N,N-dimethylformamide",mobley_8011706,-7.81,0.03,-7.81,0.60
+acetamide,mobley_8048190,-9.71,0.03,-9.71,0.60
+"1-amino-9,10-anthracenedione",mobley_8052240,-9.44,0.02,-9.44,0.74
+3-chlorophenol,mobley_8057732,-6.62,0.03,-6.62,0.60
+endrin,mobley_8117218,-4.82,0.07,-4.82,0.10
+prop-2-en-1-ol,mobley_8118832,-5.03,0.03,-5.03,0.60
+alachlor,mobley_8124669,-8.21,0.05,-8.21,0.29
+ethylbenzene,mobley_8127829,-0.79,0.02,-0.79,0.60
+"(2E)-3,7-dimethylocta-2,6-dien-1-ol",mobley_819018,-4.45,0.02,-4.45,0.24
+"2-chloro-1,1,1-trifluoro-ethane",mobley_8191186,0.06,0.02,0.06,0.60
+simazine,mobley_8207196,-10.22,0.04,-10.22,0.10
+butyric acid,mobley_820789,-6.35,0.03,-6.35,0.60
+"1,2,3,4-tetrachloro-5-(2,3,4,6-tetrachlorophenyl)benzene",mobley_8208692,-4.61,0.05,-4.61,0.25
+butanenitrile,mobley_8221999,-3.64,0.02,-3.64,0.60
+prop-1-yne,mobley_8260524,-0.48,0.01,-0.48,0.60
+"1,2,4,5-tetrachloro-3-(3,4-dichlorophenyl)benzene",mobley_8311303,-4.38,0.04,-4.38,0.22
+chloro-difluoro-methane,mobley_8311321,-0.50,0.02,-0.50,0.60
+1-nitroethane,mobley_8320545,-3.71,0.02,-3.71,0.60
+"(1R,2S,5R)-2-isopropyl-5-methylcyclohexanol",mobley_8337722,-3.20,0.02,-3.20,0.28
+4-methylpentan-2-one,mobley_8337977,-3.05,0.02,-3.05,0.60
+N-ethylethanamine,mobley_8426916,-4.07,0.02,-4.07,0.60
+propionamide,mobley_8427539,-9.40,0.10,-9.40,0.20
+"2,4-dimethylpentane",mobley_8436428,2.83,0.03,2.83,0.60
+"N,N-diethylethanamine",mobley_8449031,-3.22,0.03,-3.22,0.60
+hept-2-ene,mobley_8467917,1.68,0.02,1.68,0.60
+pentanal,mobley_8492526,-3.03,0.02,-3.03,0.60
+pentyl acetate,mobley_8514745,-2.51,0.03,-2.51,0.60
+oct-1-yne,mobley_8522124,0.71,0.03,0.71,0.60
+1-iodopentane,mobley_8525830,-0.14,0.02,-0.14,0.60
+4-fluorophenol,mobley_852937,-6.19,0.03,-6.19,0.60
+4-methylmorpholine,mobley_8558116,-6.32,0.03,-6.32,0.60
+butanal,mobley_8573194,-3.18,0.02,-3.18,0.60
+methylsulfinylmethane,mobley_8578590,-9.28,0.03,-9.28,0.57
+isobutyl acetate,mobley_859464,-2.36,0.02,-2.36,0.60
+heptane,mobley_8614858,2.67,0.02,2.67,0.60
+"2,3-dimethylpentane",mobley_8668219,2.52,0.03,2.52,0.60
+"2-bromo-1,1,1,2-tetrafluoro-ethane",mobley_8685905,0.50,0.02,0.50,0.60
+m-cresol,mobley_8691603,-5.49,0.03,-5.49,0.60
+N-isopropylpropan-2-amine,mobley_8705848,-3.22,0.02,-3.22,0.60
+"N,N-dipropyl(propylsulfanyl)formamide",mobley_8713762,-4.13,0.04,-4.13,1.36
+4-chloroaniline,mobley_8723116,-5.90,0.02,-5.90,0.60
+3-methylbutan-2-one,mobley_8739734,-3.24,0.02,-3.24,0.60
+"2,3-dimethylpyridine",mobley_8746821,-4.82,0.02,-4.82,0.60
+propyl formate,mobley_8754702,-2.48,0.02,-2.48,0.60
+pyridine-3-carbonitrile,mobley_8764620,-6.75,0.02,-6.75,0.60
+isoprene,mobley_8765203,0.68,0.02,0.68,0.60
+1-iodobutane,mobley_8772587,-0.25,0.02,-0.25,0.60
+"2,5-dimethyltetrahydrofuran",mobley_8785107,-2.92,0.02,-2.92,0.60
+2-iodophenol,mobley_8789465,-6.20,0.03,-6.20,0.60
+"3,3,3-trimethoxypropanenitrile",mobley_8789864,-6.40,0.04,-6.40,0.60
+pyridine-4-carbaldehyde,mobley_8798016,-7.00,0.03,-7.00,0.60
+butylbenzene,mobley_8809190,-0.40,0.02,-0.40,0.60
+trifluoromethylbenzene,mobley_8809274,-0.25,0.02,-0.25,0.60
+"1,2,3-trichloro-5-(2,5-dichlorophenyl)benzene",mobley_8823527,-3.61,0.03,-3.61,0.13
+"1,2,4-trichlorodibenzo-p-dioxin",mobley_8827942,-4.05,0.03,-4.05,0.10
+"2,4-dimethylpyridine",mobley_8861672,-4.86,0.02,-4.86,0.60
+tetrahydrofuran,mobley_8882696,-3.47,0.02,-3.47,0.60
+2-methylbenzaldehyde,mobley_8883511,-3.93,0.02,-3.93,0.10
+cyclopentene,mobley_8885088,0.56,0.02,0.56,0.60
+cyclopentanol,mobley_8899867,-5.49,0.02,-5.49,0.60
+diethyl (2R)-2-dimethoxyphosphinothioylsulfanylbutanedioate,mobley_8916409,-8.15,0.05,-8.15,0.21
+2-methylpyrazine,mobley_8966374,-5.51,0.03,-5.51,0.60
+bromomethane,mobley_8983100,-0.82,0.01,-0.82,0.60
+"2,3-dimethylbuta-1,3-diene",mobley_900088,0.40,0.02,0.40,0.60
+naphthalen-1-yl N-methylcarbamate,mobley_9007496,-9.45,0.04,-9.45,0.10
+1-bromooctane,mobley_9015240,0.52,0.03,0.52,0.60
+"methyl 2,2,2-trifluoroacetate",mobley_9028462,-1.10,0.02,-1.10,0.60
+butyl nitrate,mobley_902954,-2.09,0.02,-2.09,0.10
+fluoromethane,mobley_9029594,-0.22,0.01,-0.22,0.60
+methane,mobley_9055303,2.00,0.10,2.00,0.20
+methylsulfanylmethane,mobley_9073553,-1.61,0.02,-1.61,0.60
+methylcyclohexane,mobley_9100956,1.70,0.02,1.70,0.60
+pent-2-ene,mobley_9112978,1.31,0.02,1.31,0.60
+methyl 2-cyanoacetate,mobley_9114381,-6.72,0.02,-6.72,0.60
+but-1-yne,mobley_9121449,-0.16,0.02,-0.16,0.60
+"1,4-dimethylcyclohexane",mobley_9139060,2.11,0.02,2.11,0.60
+propan-1-amine,mobley_9185328,-4.39,0.02,-4.39,0.60
+oct-1-ene,mobley_9197172,1.92,0.03,1.92,0.60
+methyl methanesulfonate,mobley_9201263,-4.87,0.03,-4.87,0.60
+"N,N-dimethylmethanamine",mobley_9209581,-3.20,0.02,-3.20,0.60
+"penta-1,4-diene",mobley_9246215,0.93,0.02,0.93,0.60
+dibromomethane,mobley_9246351,-1.96,0.02,-1.96,0.60
+"3,4-dichlorophenol",mobley_9257453,-7.29,0.02,-7.29,0.10
+diethoxy-(4-nitrophenoxy)-thioxo-$l^{5}-phosphane,mobley_9281946,-6.74,0.04,-6.74,0.10
+1-bromohexane,mobley_929676,0.18,0.02,0.18,0.60
+octan-2-one,mobley_9407874,-2.88,0.03,-2.88,0.60
+1-methylnaphthalene,mobley_9414831,-2.44,0.02,-2.44,0.60
+2-bromopropane,mobley_9434451,-0.48,0.02,-0.48,0.60
+diethoxy-(ethylsulfanylmethylsulfanyl)-thioxo-$l^{5}-phosphane,mobley_9460824,-4.37,0.04,-4.37,0.10
+o-xylene,mobley_9478823,-0.90,0.02,-0.90,0.60
+"2,5-dimethylpyridine",mobley_9507933,-4.72,0.02,-4.72,0.60
+"1,2,3,4-tetrachloro-5-phenyl-benzene",mobley_9510785,-3.48,0.03,-3.48,1.00
+piperazine,mobley_951560,-7.40,0.03,-7.40,0.60
+"(2R,3R,4S,5S,6R)-6-(hydroxymethyl)tetrahydropyran-2,3,4,5-tetrol",mobley_9534740,-25.47,0.09,-25.47,0.22
+5-chlorouracil,mobley_9557440,-17.74,0.06,-17.74,0.78
+9H-fluorene,mobley_9565165,-3.35,0.02,-3.35,0.60
+endosulfan alpha,mobley_9571888,-4.23,0.04,-4.23,0.26
+decan-2-one,mobley_9617923,-2.34,0.03,-2.34,0.60
+"1,3-dichloropropane",mobley_9624458,-1.89,0.02,-1.89,0.60
+2-ethoxyethanol,mobley_9626434,-6.69,0.03,-6.69,0.60
+"(1S,5R)-2-methyl-5-(1-methylethenyl)-2-cyclohexen-1-ol",mobley_9653690,-4.44,0.02,-4.44,0.43
+2-nitropropane,mobley_967099,-3.13,0.02,-3.13,0.60
+1-nitropropane,mobley_9671033,-3.34,0.02,-3.34,0.60
+2-methylthiophene,mobley_9705941,-1.38,0.02,-1.38,0.60
+1-chloro-2-phenyl-benzene,mobley_9717937,-2.69,0.03,-2.69,0.10
+"cyclohepta-1,3,5-triene",mobley_9729792,-0.99,0.02,-0.99,0.60
+butan-1-amine,mobley_9733743,-4.24,0.02,-4.24,0.60
+dichlobenil,mobley_9740891,-4.71,0.02,-4.71,1.93
+"1,3-bis-(nitrooxy)butane",mobley_9741965,-4.29,0.02,-4.29,0.39
+2-methoxy-2-methyl-propane,mobley_9794857,-2.21,0.02,-2.21,0.60
+"1,2,3,4,6,7,8,9-octachlorodibenzo-p-dioxin",mobley_9821936,-4.53,0.04,-4.53,1.00
+2-methylbutan-2-ol,mobley_9838013,-4.43,0.03,-4.43,0.60
+3-methylhexane,mobley_9883303,2.71,0.02,2.71,0.60
+"(2Z)-3,7-dimethylocta-2,6-dien-1-ol",mobley_9897248,-4.78,0.02,-4.78,0.25
+"(E)-1,2-dichloroethylene",mobley_9913368,-0.78,0.02,-0.78,0.60
+1-ethyl-4-methyl-benzene,mobley_9942801,-0.95,0.02,-0.95,0.60
+bromoethane,mobley_994483,-0.74,0.02,-0.74,0.60
+2-isopropylsulfanylpropane,mobley_9974966,-1.21,0.02,-1.21,0.60
+111-trifluoropropan-2-ol,mobley_9979854,-4.20,0.10,-4.20,0.20
