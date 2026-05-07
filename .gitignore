@@ -1,6 +1,5 @@
-DADES/
-outputs/
 .codex
+intents/
 resultats/simulacio_mobley_7375018/simple/
 # Byte-compiled / optimized / DLL files
 __pycache__/

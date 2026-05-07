@@ -1,0 +1,141 @@
+Remarks mobley_5857_CNS.top created by acpype (v: 2023.10.27) on Tue Apr 28 17:51:21 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS ca_     12.010
+MASS nb_     14.010
+MASS ha_      1.008
+MASS h4_      1.008
+
+RESIdue MOL
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM C1    TYPE= ca_   CHARGE=  -0.1270 END
+ATOM C2    TYPE= ca_   CHARGE=  -0.1240 END
+ATOM C3    TYPE= ca_   CHARGE=  -0.2503 END
+ATOM C4    TYPE= ca_   CHARGE=  -0.1120 END
+ATOM C5    TYPE= ca_   CHARGE=  -0.0800 END
+ATOM C6    TYPE= ca_   CHARGE=  -0.1643 END
+ATOM C7    TYPE= ca_   CHARGE=   0.4112 END
+ATOM C8    TYPE= ca_   CHARGE=  -0.1483 END
+ATOM C9    TYPE= ca_   CHARGE=   0.3936 END
+ATOM N1    TYPE= nb_   CHARGE=  -0.6570 END
+ATOM H1    TYPE= ha_   CHARGE=   0.1350 END
+ATOM H2    TYPE= ha_   CHARGE=   0.1350 END
+ATOM H3    TYPE= ha_   CHARGE=   0.1440 END
+ATOM H4    TYPE= ha_   CHARGE=   0.1340 END
+ATOM H5    TYPE= ha_   CHARGE=   0.1380 END
+ATOM H6    TYPE= ha_   CHARGE=   0.1500 END
+ATOM H7    TYPE= h4_   CHARGE=   0.0221 END
+
+{ Bonds: atomName1  atomName2 }
+BOND C1    H1   
+BOND C2    H2   
+BOND C3    H3   
+BOND C4    H4   
+BOND C5    H5   
+BOND C6    H6   
+BOND C7    H7   
+BOND C1    C2   
+BOND C1    C4   
+BOND C2    C6   
+BOND C3    C5   
+BOND C3    C7   
+BOND C4    C8   
+BOND C5    C8   
+BOND C6    C9   
+BOND C7    N1   
+BOND C8    C9   
+BOND C9    N1   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe C1    C2    H2   
+ANGLe C1    C4    H4   
+ANGLe C2    C1    H1   
+ANGLe C2    C6    H6   
+ANGLe C3    C5    H5   
+ANGLe C3    C7    H7   
+ANGLe C4    C1    H1   
+ANGLe C5    C3    H3   
+ANGLe C6    C2    H2   
+ANGLe C7    C3    H3   
+ANGLe C8    C4    H4   
+ANGLe C8    C5    H5   
+ANGLe C9    C6    H6   
+ANGLe N1    C7    H7   
+ANGLe C1    C2    C6   
+ANGLe C1    C4    C8   
+ANGLe C2    C1    C4   
+ANGLe C2    C6    C9   
+ANGLe C3    C5    C8   
+ANGLe C3    C7    N1   
+ANGLe C4    C8    C5   
+ANGLe C4    C8    C9   
+ANGLe C5    C3    C7   
+ANGLe C5    C8    C9   
+ANGLe C6    C9    C8   
+ANGLe C6    C9    N1   
+ANGLe C7    N1    C9   
+ANGLe C8    C9    N1   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral C1    C2    C6    H6   
+DIHEdral C2    C1    C4    H4   
+DIHEdral C4    C1    C2    H2   
+DIHEdral C4    C8    C5    H5   
+DIHEdral C5    C3    C7    H7   
+DIHEdral C5    C8    C4    H4   
+DIHEdral H1    C1    C2    C6   
+DIHEdral C7    C3    C5    H5   
+DIHEdral H1    C1    C4    C8   
+DIHEdral C8    C5    C3    H3   
+DIHEdral C8    C9    C6    H6   
+DIHEdral C9    C6    C2    H2   
+DIHEdral C9    C8    C4    H4   
+DIHEdral C9    C8    C5    H5   
+DIHEdral C9    N1    C7    H7   
+DIHEdral N1    C7    C3    H3   
+DIHEdral N1    C9    C6    H6   
+DIHEdral H1    C1    C2    H2   
+DIHEdral H1    C1    C4    H4   
+DIHEdral H2    C2    C6    H6   
+DIHEdral H3    C3    C5    H5   
+DIHEdral H3    C3    C7    H7   
+DIHEdral C1    C2    C6    C9   
+DIHEdral C1    C4    C8    C5   
+DIHEdral C1    C4    C8    C9   
+DIHEdral C2    C1    C4    C8   
+DIHEdral C2    C6    C9    C8   
+DIHEdral C2    C6    C9    N1   
+DIHEdral C3    C5    C8    C4   
+DIHEdral C3    C5    C8    C9   
+DIHEdral C3    C7    N1    C9   
+DIHEdral C4    C1    C2    C6   
+DIHEdral C4    C8    C9    C6   
+DIHEdral C4    C8    C9    N1   
+DIHEdral C5    C3    C7    N1   
+DIHEdral C5    C8    C9    C6   
+DIHEdral C5    C8    C9    N1   
+DIHEdral C6    C9    N1    C7   
+DIHEdral C7    C3    C5    C8   
+DIHEdral C7    N1    C9    C8   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper H1    C1    C4    C2   
+IMPRoper C1    C6    C2    H2   
+IMPRoper C5    C7    C3    H3   
+IMPRoper C1    C8    C4    H4   
+IMPRoper C3    C8    C5    H5   
+IMPRoper C2    C9    C6    H6   
+IMPRoper C3    H7    C7    N1   
+IMPRoper C4    C5    C8    C9   
+IMPRoper C6    C8    C9    N1   
+
+END {RESIdue MOL}
+
+set echo=true end
