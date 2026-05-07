@@ -5,31 +5,24 @@ import openmm as mm  # Importa OpenMM (núcleo).
 from openmm import app, unit  # Importa utilidades de aplicación y unidades.
 from openmm.app import (  # Importa clases para leer GROMACS y reportar.
     DCDReporter,
-    ForceField,
     GromacsGroFile,
     GromacsTopFile,
-    Modeller,
     PDBFile,
     Simulation,
     StateDataReporter,
 )
 
 REPO_DIR = Path(__file__).resolve().parents[1]  # Calcula la raíz del repo.
-DATA_DIR = REPO_DIR / "DADES" / "v0.31" / "topgro"  # Ruta a los datos por defecto.
+DATA_DIR = REPO_DIR / "DADES" / "topgro_actu"  # Ruta a los datos por defecto.
 TOP_IN = DATA_DIR / "mobley_7375018.top"  # Ruta del archivo .top específico.
 GRO_IN = DATA_DIR / "mobley_7375018.gro"  # Ruta del archivo .gro específico.
-OUT_DIR = REPO_DIR / "resultats" / "simulacio_mobley_7375018_prova_solv"   # Carpeta de salida. # CARLA: NO ENTENC PQ EM FA UNA SUBCARPETA DE RESULTATS QUE ES DIU SIMPLE
+OUT_DIR = REPO_DIR / "outputs" / "simulacio_mobley_7375018"   # Carpeta de salida. # CARLA: NO ENTENC PQ EM FA UNA SUBCARPETA DE RESULTATS QUE ES DIU SIMPLE
+RESULTS_DIR = REPO_DIR / "resultats"  # Carpeta només per als CSV.
 OUT_DIR.mkdir(parents=True, exist_ok=True)  # Crea la carpeta de salida si no existe.
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)  # Crea la carpeta de resultats si no existe.
+MOBLEY_CODE = "7375018"  # Codi associat per a noms de fitxers de sortida.
 
 IGNORE_SOLVENT = True  # Cambia a False si quieres usar solvente explícito.
-USE_SOLVATION = True  # Activa la solvatación en OpenMM con PBC.
-# CAMP DE FORCES + MODEL D'AIGUA+ PADDING DE CAIXA: charmm36.xml + charmm36/water.xml, padding 1.0 nm
-# primer ho he provat amb amber14-all.xml + amber14/tip3p.xml pero em diu que el residu TMP no esta parametritzat
-#amb chamber diu el mateix
-SOLVENT_FORCEFIELD = ("charmm36.xml", "charmm36/water.xml")
-SOLVENT_MODEL = "tip3p"
-SOLVENT_PADDING_NM = 1.0
-SOLUTE_FFXML = None  # Si tens un ffxml del solut (TMP), posa el path aquí.
 
 if not TOP_IN.exists():  # Verifica que el .top exista.
     raise FileNotFoundError(f"Missing .top file: {TOP_IN}")  # Lanza error si falta.
@@ -79,88 +72,35 @@ def _filtered_positions(gro_file: GromacsGroFile, gro_path: Path):  # Filtra pos
         if resname == "SOL":  # Detecta solvente.
             continue  # Omite posiciones de SOL.
         filtered.append(pos)  # Guarda posiciones no solvente.
-    return unit.Quantity(filtered, positions.unit)  # Devuelve posiciones filtradas con unidades.
-
-
-def _as_quantity(value, unit_obj):  # Asegura que el valor tenga unidades.
-    return value if hasattr(value, "unit") else value * unit_obj
-
-
-def _box_size_from_positions(positions, padding_nm):  # Calcula boxSize con padding en nm.
-    if hasattr(positions, "unit"):
-        pos_nm = positions.value_in_unit(unit.nanometer)
-    else:
-        pos_nm = positions
-    min_x = min(p.x for p in pos_nm)
-    min_y = min(p.y for p in pos_nm)
-    min_z = min(p.z for p in pos_nm)
-    max_x = max(p.x for p in pos_nm)
-    max_y = max(p.y for p in pos_nm)
-    max_z = max(p.z for p in pos_nm)
-    size_x = (max_x - min_x) + 2 * padding_nm
-    size_y = (max_y - min_y) + 2 * padding_nm
-    size_z = (max_z - min_z) + 2 * padding_nm
-    return mm.Vec3(size_x, size_y, size_z) * unit.nanometer
+    return filtered  # Devuelve posiciones filtradas.
 
 
 gro = GromacsGroFile(str(GRO_IN))  # Lee coordenadas desde el .gro.
 TOP_TO_LOAD = _filtered_topology(TOP_IN, OUT_DIR) if IGNORE_SOLVENT else TOP_IN  # Decide qué .top cargar.
 top = GromacsTopFile(str(TOP_TO_LOAD), periodicBoxVectors=gro.getPeriodicBoxVectors())  # Lee topología y caja.
 
+system = top.createSystem(  # Crea el sistema físico.
+    nonbondedMethod=app.NoCutoff,  # Usa interacciones sin cutoff.
+    constraints=app.HBonds,  # Restringe enlaces con hidrógeno.
+)  # Fin de creación del sistema.
+
 integrator = mm.LangevinIntegrator(300 * unit.kelvin, 1 / unit.picosecond, 2 * unit.femtoseconds)  # Define el integrador.
 
+simulation = Simulation(top.topology, system, integrator)  # Crea la simulación.
 positions = _filtered_positions(gro, GRO_IN) if IGNORE_SOLVENT else gro.getPositions()  # Ajusta posiciones si se filtra solvente.
-if USE_SOLVATION:
-    ff_files = list(SOLVENT_FORCEFIELD)  # Fuerza de campo per a solut+agua.
-    if SOLUTE_FFXML:
-        ff_files.insert(0, str(SOLUTE_FFXML))
-    forcefield = ForceField(*ff_files)
-    modeller = Modeller(top.topology, positions)  # Construye el modelo editable.
-    box_size = _box_size_from_positions(positions, SOLVENT_PADDING_NM)
-    try:
-        modeller.addSolvent(
-            forcefield,
-            model=SOLVENT_MODEL,
-            boxSize=box_size,
-        )  # Añade solvente con PBC.
-        system = forcefield.createSystem(  # Sistema con PBC y PME.
-            modeller.topology,
-            nonbondedMethod=app.PME,
-            constraints=app.HBonds,
-        )
-    except ValueError as exc:
-        raise RuntimeError(
-            "ERROR: la solvatació ha fallat. Detall original: "
-            f"{exc}. Si és un problema de plantilla del solut (TMP), "
-            "cal un ffxml del solut (p. ex. OpenFF/GAFF) per continuar."
-        ) from exc
-
-    solvated_pdb = OUT_DIR / "solvated.pdb"
-    with open(solvated_pdb, "w", encoding="utf-8") as pdb_file:
-        PDBFile.writeFile(modeller.topology, modeller.positions, pdb_file)
-    topology_for_sim = modeller.topology
-    positions_for_sim = modeller.positions
-else:
-    system = top.createSystem(  # Sistema del .top (sense solvent si IGNORE_SOLVENT=True).
-        nonbondedMethod=app.PME,
-        constraints=app.HBonds,
-    )
-    topology_for_sim = top.topology
-    positions_for_sim = positions
-
-simulation = Simulation(topology_for_sim, system, integrator)  # Crea la simulación.
-simulation.context.setPositions(positions_for_sim)  # Asigna posiciones iniciales.
+simulation.context.setPositions(positions)  # Asigna posiciones iniciales.
 
 simulation.minimizeEnergy(maxIterations=200)  # Minimiza la energía.
 simulation.context.setVelocitiesToTemperature(300 * unit.kelvin)  # Inicializa velocidades.
 
-simulation.reporters.append(StateDataReporter(str(OUT_DIR / "log.csv"), 1000, step=True, temperature=True, potentialEnergy=True))  # Añade log.
-simulation.reporters.append(DCDReporter(str(OUT_DIR / "traj.dcd"), 1000))  # Añade trayectoria.
+log_path = RESULTS_DIR / f"simulacio_mobley_{MOBLEY_CODE}_log.csv"  # CSV de sortida.
+simulation.reporters.append(StateDataReporter(str(log_path), 1000, step=True, temperature=True, potentialEnergy=True))  # Añade log.
+simulation.reporters.append(DCDReporter(str(OUT_DIR / f"traj_{MOBLEY_CODE}.dcd"), 1000))  # Añade trayectoria.
 
 simulation.step(5000)  # Ejecuta la producción.
 state = simulation.context.getState(getPositions=True)  # Obtiene posiciones finales.
-pdb_path = OUT_DIR / "final.pdb"  # Archivo PDB de salida.
+pdb_path = OUT_DIR / f"final_{MOBLEY_CODE}.pdb"  # Archivo PDB de salida.
 with open(pdb_path, "w", encoding="utf-8") as pdb_file:  # Escribe el PDB.
     PDBFile.writeFile(simulation.topology, state.getPositions(), pdb_file)
 
-print("Written", OUT_DIR / "log.csv", "and", OUT_DIR / "traj.dcd", "and", pdb_path)  # Informa salidas.
+print("Written", log_path, "and", OUT_DIR / f"traj_{MOBLEY_CODE}.dcd", "and", pdb_path)  # Informa salidas.

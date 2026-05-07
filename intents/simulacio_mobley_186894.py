@@ -13,11 +13,13 @@ from openmm.app import (  # Importa clases para leer GROMACS y reportar.
 )
 
 REPO_DIR = Path(__file__).resolve().parents[1]  # Calcula la raíz del repo.
-DATA_DIR = REPO_DIR / "DADES" / "v0.31" / "topgro"  # Ruta a los datos por defecto.
+DATA_DIR = REPO_DIR / "DADES" / "topgro_actu"  # Ruta a los datos por defecto.
 TOP_IN = DATA_DIR / "mobley_186894.top"  # Ruta del archivo .top específico.
 GRO_IN = DATA_DIR / "mobley_186894.gro"  # Ruta del archivo .gro específico.
-OUT_DIR = REPO_DIR / "resultats" / "simulacio_mobley_186894"  # Carpeta de salida.
+OUT_DIR = REPO_DIR / "outputs" / "simulacio_mobley_186894"  # Carpeta de salida.
+RESULTS_DIR = REPO_DIR / "resultats"  # Carpeta només per als CSV.
 OUT_DIR.mkdir(parents=True, exist_ok=True)  # Crea la carpeta de salida si no existe.
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)  # Crea la carpeta de resultats si no existe.
 MOBLEY_CODE = "186894"  # Codi associat per a noms de fitxers de sortida.
 
 IGNORE_SOLVENT = True  # Cambia a False si quieres usar solvente explícito.
@@ -91,7 +93,8 @@ simulation.context.setPositions(positions)  # Asigna posiciones iniciales.
 simulation.minimizeEnergy(maxIterations=200)  # Minimiza la energía.
 simulation.context.setVelocitiesToTemperature(300 * unit.kelvin)  # Inicializa velocidades.
 
-simulation.reporters.append(StateDataReporter(str(OUT_DIR / "log.csv"), 1000, step=True, temperature=True, potentialEnergy=True))  # Añade log.
+log_path = RESULTS_DIR / f"simulacio_mobley_{MOBLEY_CODE}_log.csv"  # CSV de sortida.
+simulation.reporters.append(StateDataReporter(str(log_path), 1000, step=True, temperature=True, potentialEnergy=True))  # Añade log.
 simulation.reporters.append(DCDReporter(str(OUT_DIR / f"traj_{MOBLEY_CODE}.dcd"), 1000))  # Añade trayectoria.
 
 simulation.step(5000)  # Ejecuta la producción.
@@ -100,4 +103,4 @@ pdb_path = OUT_DIR / f"final_{MOBLEY_CODE}.pdb"  # Archivo PDB de salida.
 with open(pdb_path, "w", encoding="utf-8") as pdb_file:  # Escribe el PDB.
     PDBFile.writeFile(simulation.topology, state.getPositions(), pdb_file)
 
-print("Written", OUT_DIR / "log.csv", "and", OUT_DIR / f"traj_{MOBLEY_CODE}.dcd", "and", pdb_path)  # Informa salidas.
+print("Written", log_path, "and", OUT_DIR / f"traj_{MOBLEY_CODE}.dcd", "and", pdb_path)  # Informa salidas.

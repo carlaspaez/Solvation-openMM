@@ -1,0 +1,197 @@
+from openmm import *
+from openmm.app import *
+from openmm.unit import *
+import numpy as np
+from pathlib import Path
+import mdtraj as md
+
+ROOT = Path(__file__).resolve().parents[1]
+data_dir = ROOT / "DADES" / "mobley_5857.acpype"
+results_dir = ROOT / "outputs" / "i1"
+
+gro_file = data_dir / "mobley_5857_GMX.gro"
+top_file = data_dir / "mobley_5857_GMX.top"
+
+lambdas = [0.0, 0.25, 0.5, 0.75, 1.0]
+solute_atoms = list(range(17))
+
+temperature = 300.0
+kB = 0.008314462618  # kJ/mol/K
+beta = 1.0 / (kB * temperature)
+
+n_bootstrap = 40
+block_size = 2  # test: amb només 10 frames. Amb trajectòries llargues cal estimar g.
+
+
+def lambda_tag(lam):
+    return str(lam).replace(".", "p")
+
+
+def build_system(lambda_elec):
+    gro = GromacsGroFile(str(gro_file))
+    top = GromacsTopFile(
+        str(top_file),
+        periodicBoxVectors=gro.getPeriodicBoxVectors(),
+        includeDir=str(data_dir),
+    )
+
+    system = top.createSystem(
+        nonbondedMethod=PME,
+        nonbondedCutoff=0.9 * nanometer,
+        constraints=HBonds,
+        rigidWater=True,
+    )
+
+    nb = None
+    for force in system.getForces():
+        if isinstance(force, NonbondedForce):
+            nb = force
+            break
+
+    if nb is None:
+        raise RuntimeError("No he trobat NonbondedForce")
+
+    for i in solute_atoms:
+        q, sigma, epsilon = nb.getParticleParameters(i)
+        nb.setParticleParameters(i, (1.0 - lambda_elec) * q, sigma, epsilon)
+
+    return system, top.topology
+
+
+def energies_for_traj(lambda_traj, lambda_a, lambda_b):
+    print(f"Trajectòria λ={lambda_traj}: energies a λ={lambda_a} i λ={lambda_b}")
+
+    system_a, topology = build_system(lambda_a)
+    system_b, _ = build_system(lambda_b)
+
+    sim_a = Simulation(topology, system_a, VerletIntegrator(0.001 * picoseconds))
+    sim_b = Simulation(topology, system_b, VerletIntegrator(0.001 * picoseconds))
+
+    traj_file = results_dir / f"elec_lambda_{lambda_tag(lambda_traj)}" / "traj.dcd"
+
+    if not traj_file.exists():
+        raise FileNotFoundError(f"No trobo la trajectòria: {traj_file}")
+
+    traj = md.load(str(traj_file), top=str(gro_file))
+
+    e_a, e_b = [], []
+
+    for i in range(traj.n_frames):
+        positions = traj.xyz[i] * nanometer
+
+        sim_a.context.setPositions(positions)
+        sim_b.context.setPositions(positions)
+
+        e_a.append(
+            sim_a.context.getState(getEnergy=True)
+            .getPotentialEnergy()
+            .value_in_unit(kilojoule_per_mole)
+        )
+        e_b.append(
+            sim_b.context.getState(getEnergy=True)
+            .getPotentialEnergy()
+            .value_in_unit(kilojoule_per_mole)
+        )
+
+    return np.array(e_a), np.array(e_b)
+
+
+def bar_delta_f(w_forward, w_reverse, tol=1e-10, max_iter=200):
+    def f(df):
+        left = np.sum(1.0 / (1.0 + np.exp(w_forward - df)))
+        right = np.sum(1.0 / (1.0 + np.exp(w_reverse + df)))
+        return left - right
+
+    lo = min(np.min(w_forward), -np.max(w_reverse)) - 100.0
+    hi = max(np.max(w_forward), -np.min(w_reverse)) + 100.0
+
+    for _ in range(max_iter):
+        mid = 0.5 * (lo + hi)
+        if f(mid) > 0:
+            hi = mid
+        else:
+            lo = mid
+
+        if abs(hi - lo) < tol:
+            break
+
+    return 0.5 * (lo + hi)
+
+
+def make_blocks(x, block_size):
+    n_blocks = len(x) // block_size
+    if n_blocks < 1:
+        raise ValueError("Massa pocs frames per fer block bootstrap")
+
+    trimmed = x[: n_blocks * block_size]
+    return trimmed.reshape(n_blocks, block_size)
+
+
+def resample_blocks(x, block_size):
+    blocks = make_blocks(x, block_size)
+    n_blocks = len(blocks)
+    choices = np.random.randint(0, n_blocks, size=n_blocks)
+    return blocks[choices].reshape(-1)
+
+
+def block_bootstrap_bar(w_forward, w_reverse, block_size=2, n_bootstrap=40):
+    dfs = []
+
+    for _ in range(n_bootstrap):
+        wf_bs = resample_blocks(w_forward, block_size)
+        wr_bs = resample_blocks(w_reverse, block_size)
+        dfs.append(bar_delta_f(wf_bs, wr_bs))
+
+    return np.mean(dfs), np.std(dfs, ddof=1)
+
+
+total_df = 0.0
+pair_errors_df = []
+
+print("\n===== BAR ELECTROSTÀTICA EN AIGUA =====\n")
+print(f"Bootstrap: {n_bootstrap} repeticions")
+print(f"Block size: {block_size} frames\n")
+
+for lam_a, lam_b in zip(lambdas[:-1], lambdas[1:]):
+    print(f"\n--- Parell λ={lam_a} -> λ={lam_b} ---")
+
+    e_a_on_a, e_b_on_a = energies_for_traj(lam_a, lam_a, lam_b)
+    w_forward = beta * (e_b_on_a - e_a_on_a)
+
+    e_a_on_b, e_b_on_b = energies_for_traj(lam_b, lam_a, lam_b)
+    w_reverse = beta * (e_a_on_b - e_b_on_b)
+
+    df = bar_delta_f(w_forward, w_reverse)
+    df_bs_mean, df_bs_err = block_bootstrap_bar(
+        w_forward,
+        w_reverse,
+        block_size=block_size,
+        n_bootstrap=n_bootstrap,
+    )
+
+    total_df += df
+    pair_errors_df.append(df_bs_err)
+
+    dg_kj = df / beta
+    dg_err_kj = df_bs_err / beta
+
+    dg_kcal = dg_kj / 4.184
+    dg_err_kcal = dg_err_kj / 4.184
+
+    print(f"Frames forward: {len(w_forward)}")
+    print(f"Frames reverse: {len(w_reverse)}")
+    print(f"Δf reduït: {df:.6f}")
+    print(f"ΔG parell: {dg_kj:.3f} ± {dg_err_kj:.3f} kJ/mol")
+    print(f"ΔG parell: {dg_kcal:.3f} ± {dg_err_kcal:.3f} kcal/mol")
+
+total_err_df = np.sqrt(np.sum(np.array(pair_errors_df) ** 2))
+
+total_dg_kj = total_df / beta
+total_err_kj = total_err_df / beta
+
+total_dg_kcal = total_dg_kj / 4.184
+total_err_kcal = total_err_kj / 4.184
+
+print("\n===== RESULTAT TOTAL =====")
+print(f"ΔG_elec,aq = {total_dg_kj:.3f} ± {total_err_kj:.3f} kJ/mol")
+print(f"ΔG_elec,aq = {total_dg_kcal:.3f} ± {total_err_kcal:.3f} kcal/mol")

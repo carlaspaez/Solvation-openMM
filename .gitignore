@@ -1,7 +1,7 @@
 DADES/
-v0.*
+outputs/
+.codex
 resultats/simulacio_mobley_7375018/simple/
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

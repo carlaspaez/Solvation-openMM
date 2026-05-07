@@ -13,9 +13,11 @@ from openmm.app import (  # Importa clases para leer GROMACS y reportar.
 )
 
 REPO_DIR = Path(__file__).resolve().parents[1]  # Raíz del repositorio.
-DATA_DIR = REPO_DIR / "DADES" / "v0.31" / "topgro"  # Carpeta con los .gro/.top de entrada.
-OUT_BASE = REPO_DIR / "resultats" / "simulacio_mobley_10p"  # Carpeta de salida del lote.
+DATA_DIR = REPO_DIR / "DADES" / "topgro_actu"  # Carpeta con los .gro/.top de entrada.
+OUT_BASE = REPO_DIR / "outputs" / "simulacio_mobley_10p"  # Carpeta de salida del lote.
+RESULTS_DIR = REPO_DIR / "resultats"  # Carpeta només per als CSV.
 OUT_BASE.mkdir(parents=True, exist_ok=True)  # Crea la carpeta base si no existe.
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)  # Crea la carpeta de resultats si no existe.
 
 IGNORE_SOLVENT = True  # True = filtra el solvente SOL del .top/.gro.
 N_MOLECULES = 10  # Número de moléculas a procesar.
@@ -109,7 +111,7 @@ for gro_path in gro_files:
     simulation.context.setVelocitiesToTemperature(300 * unit.kelvin)  # Inicializa velocidades.
 
     # Rutas de salida para esta molécula.
-    log_path = out_dir / f"log_{code}.csv"
+    log_path = RESULTS_DIR / f"simulacio_mobley_10p_mobley_{code}_log.csv"
     traj_path = out_dir / f"traj_{code}.dcd"
     pdb_path = out_dir / f"final_{code}.pdb"
 

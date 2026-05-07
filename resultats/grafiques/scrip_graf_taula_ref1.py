@@ -8,12 +8,12 @@ from pathlib import Path
 import numpy as np
 
 
-# Carpeta arrel del projecte (pare de la carpeta `grafiques`).
-ROOT = Path(__file__).resolve().parents[1]
+# Carpeta de resultats del projecte.
+RESULTATS_DIR = Path(__file__).resolve().parents[1]
 # Fitxer CSV d'entrada amb valors i incerteses.
-CSV_PATH = ROOT / 'TAULA REF.csv'
+CSV_PATH = RESULTATS_DIR / 'TAULA REF1.csv'
 # Fitxer PNG de sortida on guardem la figura.
-OUT_PATH = Path(__file__).resolve().parent / 'graf_taula_ref.png'
+OUT_PATH = Path(__file__).resolve().parent / 'graf_taula_ref1.png'
 
 
 # Punt d'entrada principal de l'script.
@@ -133,7 +133,7 @@ def main():
     # Etiquetes i títol.
     plt.xlabel(x_col)
     plt.ylabel(y_col)
-    plt.title('Correlacio: bibliografics (X) vs experimentals (Y)')
+    plt.title('Correlacio: bibliografics (X) vs experimentals (Y) - TAULA REF1')
     # Graella suau per facilitar lectura.
     plt.grid(alpha=0.25)
     # Llegenda amb la línia y=x.
