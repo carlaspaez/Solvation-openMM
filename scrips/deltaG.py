@@ -244,9 +244,9 @@ friction = 10 / picosecond
 timestep = 0.002 * picoseconds
 
 # Valors per reproduir l'article.
-nvt_steps = 5000
-npt_steps = 50000
-prod_steps = 2500000
+nvt_steps = 500
+npt_steps = 500
+prod_steps = 2500
 
 report_interval = 100
 
