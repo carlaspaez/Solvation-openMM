@@ -1,0 +1,5 @@
+DG_elec_aq  = 14.765 ± 0.316 kcal/mol
+DG_lj_aq    = 0.384 ± 0.393 kcal/mol
+DG_elec_gas = 0.002 ± 0.272 kcal/mol
+DG_lj_gas   = -5.643 ± 0.049 kcal/mol
+DG_hyd      = -20.791 ± 0.575 kcal/mol

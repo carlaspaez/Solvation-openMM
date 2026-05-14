@@ -1,0 +1,19 @@
+{
+  "molecule": "mobley_5857",
+  "solvent": [
+    "HOH",
+    "SOL",
+    "WAT"
+  ],
+  "solvent_file": "/home/carla/github/Solvation-openMM/DADES/common/SOL.TIP3P.itp",
+  "DG_elec_aq_kcal_mol": 14.765228691095924,
+  "err_elec_aq_kcal_mol": 0.3162452147771784,
+  "DG_lj_aq_kcal_mol": 0.38401600534110275,
+  "err_lj_aq_kcal_mol": 0.39294812785139693,
+  "DG_elec_gas_kcal_mol": 0.0018598813187463597,
+  "err_elec_gas_kcal_mol": 0.2718180205306882,
+  "DG_lj_gas_kcal_mol": -5.643415944289228,
+  "err_lj_gas_kcal_mol": 0.049403627769930694,
+  "DG_hyd_kcal_mol": -20.79080075940751,
+  "err_hyd_kcal_mol": 0.5751043572895557
+}

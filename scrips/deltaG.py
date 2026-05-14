@@ -1,0 +1,705 @@
+from pathlib import Path
+import argparse
+import json
+import math
+import shutil
+
+
+# ============================================================
+# ARGUMENTS
+# ============================================================
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    "-m",
+    "--molecule",
+    required=True,
+    help="Nom de la molècula, per exemple mobley_5857"
+)
+
+parser.add_argument(
+    "-s",
+    "--solvent-file",
+    "--solvent-itp",
+    dest="solvent_file",
+    required=True,
+    help="Nom del fitxer .itp del solvent dins DADES/common, per exemple SOL.TIP3P.itp"
+)
+
+args = parser.parse_args()
+
+from openmm import *
+from openmm.app import *
+from openmm.unit import *
+
+import mdtraj as md
+import numpy as np
+
+
+# ============================================================
+# RUTES GENERALS
+# ============================================================
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+ROOT = SCRIPT_DIR.parent
+
+data_dir = ROOT / "DADES"
+topgro_dir = data_dir / "topgro_actu"
+common_dir = data_dir / "common"
+output_root = ROOT / "outputs" / args.molecule
+
+output_root.mkdir(parents=True, exist_ok=True)
+
+
+# ============================================================
+# LOCALITZAR FITXERS .TOP I .GRO
+# ============================================================
+
+def file_candidates(directory, molecule, extension):
+    patterns = [
+        f"{molecule}_GMX.{extension}",
+        f"{molecule}.{extension}",
+        f"{molecule}_GMX*.{extension}",
+        f"{molecule}*.{extension}",
+    ]
+
+    candidates = []
+    for pattern in patterns:
+        for path in sorted(directory.glob(pattern)):
+            if path not in candidates:
+                candidates.append(path)
+
+    return candidates
+
+
+def choose_top_file(candidates):
+    non_opls = [path for path in candidates if "OPLS" not in path.stem.upper()]
+    return (non_opls or candidates)[0]
+
+
+top_candidates = file_candidates(topgro_dir, args.molecule, "top")
+gro_candidates = file_candidates(topgro_dir, args.molecule, "gro")
+
+if not top_candidates:
+    raise FileNotFoundError(f"No trobo cap .top per {args.molecule} dins {topgro_dir}")
+
+if not gro_candidates:
+    raise FileNotFoundError(f"No trobo cap .gro per {args.molecule} dins {topgro_dir}")
+
+top_file = choose_top_file(top_candidates)
+gro_file = gro_candidates[0]
+
+
+# ============================================================
+# SOLVENT DEFINIT EN UN .ITP
+# ============================================================
+
+def strip_gromacs_comment(line):
+    return line.split(";", 1)[0].strip()
+
+
+def gromacs_section(line):
+    clean = strip_gromacs_comment(line)
+    if clean.startswith("[") and "]" in clean:
+        return clean[1:clean.index("]")].strip().lower()
+    return None
+
+
+def resolve_input_file(path_text):
+    path = Path(path_text).expanduser()
+    path_variants = [path]
+    if path.suffix != ".itp":
+        path_variants.append(Path(f"{path}.itp"))
+
+    candidates = []
+    if path.is_absolute():
+        candidates.extend(path_variants)
+    else:
+        for variant in path_variants:
+            candidates.extend([
+                common_dir / variant,
+                Path.cwd() / variant,
+                ROOT / variant,
+                topgro_dir / variant,
+            ])
+
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate.resolve()
+
+    raise FileNotFoundError(f"No trobo el fitxer: {path_text}")
+
+
+def read_moleculetypes(path):
+    moleculetypes = set()
+    section = None
+
+    with open(path) as f:
+        for line in f:
+            new_section = gromacs_section(line)
+            if new_section is not None:
+                section = new_section
+                continue
+
+            clean = strip_gromacs_comment(line)
+            if not clean:
+                continue
+
+            if section == "moleculetype":
+                moleculetypes.add(clean.split()[0])
+
+    return moleculetypes
+
+
+def read_solvent_names_from_itp(path):
+    names = set()
+    section = None
+
+    with open(path) as f:
+        for line in f:
+            new_section = gromacs_section(line)
+            if new_section is not None:
+                section = new_section
+                continue
+
+            clean = strip_gromacs_comment(line)
+            if not clean:
+                continue
+
+            parts = clean.split()
+            if section == "moleculetype":
+                names.add(parts[0])
+            elif section == "atoms" and len(parts) >= 4:
+                names.add(parts[3])
+
+    if not names:
+        raise RuntimeError(f"No he pogut llegir el nom del solvent dins {path}")
+
+    return names
+
+
+def expand_water_aliases(names):
+    expanded = set(names)
+    known_water_names = {"SOL", "WAT", "HOH", "TIP3P", "TP3", "T3P"}
+    if expanded & known_water_names:
+        expanded.update({"SOL", "WAT", "HOH"})
+    return expanded
+
+
+solvent_itp_file = resolve_input_file(args.solvent_file)
+solvent_names = read_solvent_names_from_itp(solvent_itp_file)
+solvent_names = expand_water_aliases(solvent_names)
+
+if not solvent_names:
+    raise RuntimeError(
+        f"No he pogut llegir el solvent dins {solvent_itp_file}"
+    )
+
+
+def prepare_topology_file():
+    top_moleculetypes = read_moleculetypes(top_file)
+    itp_moleculetypes = read_moleculetypes(solvent_itp_file)
+
+    if itp_moleculetypes and itp_moleculetypes.issubset(top_moleculetypes):
+        return top_file
+
+    prepared_top = output_root / f"{top_file.stem}_with_solvent.top"
+    include_line = f'#include "{solvent_itp_file.as_posix()}"\n'
+
+    with open(top_file) as f:
+        lines = f.readlines()
+
+    if any(solvent_itp_file.name in line for line in lines):
+        return top_file
+
+    insert_at = next(
+        (i for i, line in enumerate(lines) if gromacs_section(line) in {"system", "molecules"}),
+        len(lines),
+    )
+
+    new_lines = lines[:insert_at]
+    if new_lines and new_lines[-1].strip():
+        new_lines.append("\n")
+    new_lines.append(include_line)
+    new_lines.append("\n")
+    new_lines.extend(lines[insert_at:])
+
+    with open(prepared_top, "w") as f:
+        f.writelines(new_lines)
+
+    return prepared_top
+
+
+openmm_top_file = prepare_topology_file()
+
+
+# ============================================================
+# PARÀMETRES DE SIMULACIÓ
+# ============================================================
+
+temperature = 300 * kelvin
+pressure = 1 * atmosphere
+friction = 10 / picosecond
+timestep = 0.002 * picoseconds
+
+# Valors per reproduir l'article.
+nvt_steps = 5000
+npt_steps = 50000
+prod_steps = 2500000
+
+report_interval = 100
+
+lambdas_elec = [0.0, 0.25, 0.5, 0.75, 1.0]
+
+lambdas_lj = [0.0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0]
+
+kB = 0.008314462618
+beta = 1.0 / (kB * 300.0)
+
+n_bootstrap = 40
+block_size = 2
+
+# ============================================================
+# FUNCIONS PETITES
+# ============================================================
+
+def lambda_tag(lam):
+    return str(lam).replace(".", "p")
+
+
+def load_gromacs():
+    gro = GromacsGroFile(str(gro_file))
+    top = GromacsTopFile(str(openmm_top_file), periodicBoxVectors=gro.getPeriodicBoxVectors(), includeDir=str(topgro_dir))
+    return gro, top
+
+
+def get_solute_atoms():
+    gro, top = load_gromacs()
+    solute = [atom.index for atom in top.topology.atoms() if atom.residue.name not in solvent_names]
+    if not solute:
+        raise RuntimeError("No he trobat àtoms del solut. Revisa el fitxer de solvent.")
+    return solute
+
+
+solute_atoms = get_solute_atoms()
+
+
+# ============================================================
+# BAR I BOOTSTRAP
+# ============================================================
+
+def bar_delta_f(w_forward, w_reverse):
+    def f(df):
+        left = np.sum(1.0 / (1.0 + np.exp(w_forward - df)))
+        right = np.sum(1.0 / (1.0 + np.exp(w_reverse + df)))
+        return left - right
+
+    lo = -100.0
+    hi = 100.0
+
+    for _ in range(200):
+        mid = 0.5 * (lo + hi)
+        if f(mid) > 0:
+            hi = mid
+        else:
+            lo = mid
+
+    return 0.5 * (lo + hi)
+
+
+def make_blocks(x, block_size):
+    n_blocks = len(x) // block_size
+    if n_blocks < 1:
+        raise ValueError("Massa pocs frames per fer block bootstrap")
+    trimmed = x[: n_blocks * block_size]
+    return trimmed.reshape(n_blocks, block_size)
+
+
+def resample_blocks(x, block_size):
+    blocks = make_blocks(x, block_size)
+    choices = np.random.randint(0, len(blocks), size=len(blocks))
+    return blocks[choices].reshape(-1)
+
+
+def block_bootstrap_bar(wf, wr):
+    values = []
+    for _ in range(n_bootstrap):
+        wf_bs = resample_blocks(wf, block_size)
+        wr_bs = resample_blocks(wr, block_size)
+        values.append(bar_delta_f(wf_bs, wr_bs))
+    return np.std(values, ddof=1)
+
+
+# ============================================================
+# SISTEMA ELECTROSTÀTIC EN AIGUA
+# ============================================================
+
+def build_aq_elec_system(lambda_elec):
+    gro, top = load_gromacs()
+
+    system = top.createSystem(
+        nonbondedMethod=PME,
+        nonbondedCutoff=0.9 * nanometer,
+        constraints=HBonds,
+        rigidWater=True,
+    )
+
+    nb = None
+    for force in system.getForces():
+        if isinstance(force, NonbondedForce):
+            nb = force
+            break
+
+    if nb is None:
+        raise RuntimeError("No he trobat NonbondedForce")
+
+    for i in solute_atoms:
+        q, sigma, epsilon = nb.getParticleParameters(i)
+        nb.setParticleParameters(i, (1.0 - lambda_elec) * q, sigma, epsilon)
+
+    return system, top.topology, gro.positions
+
+
+# ============================================================
+# SISTEMA LJ EN AIGUA
+# ============================================================
+
+def build_aq_lj_system(lambda_lj):
+    gro, top = load_gromacs()
+
+    system = top.createSystem(
+        nonbondedMethod=PME,
+        nonbondedCutoff=0.9 * nanometer,
+        constraints=HBonds,
+        rigidWater=True,
+    )
+
+    nb = None
+    for force in system.getForces():
+        if isinstance(force, NonbondedForce):
+            nb = force
+            break
+
+    if nb is None:
+        raise RuntimeError("No he trobat NonbondedForce")
+
+    n_particles = system.getNumParticles()
+    solvent_atoms = [i for i in range(n_particles) if i not in solute_atoms]
+    params = [nb.getParticleParameters(i) for i in range(n_particles)]
+
+    # Per la pota LJ, el solut ja està sense càrregues.
+    # També apaguem la LJ normal del solut, perquè la substituïm pel soft-core.
+    for i in solute_atoms:
+        q, sigma, epsilon = nb.getParticleParameters(i)
+        nb.setParticleParameters(i, 0.0 * elementary_charge, sigma, 0.0 * kilojoule_per_mole)
+
+    softcore = CustomNonbondedForce(
+        """
+        4*epsilon*(1-lambda_lj)*(x*x - x);
+        x = 1/(alpha*lambda_lj + (r/sigma)^6);
+        sigma = 0.5*(sigma1 + sigma2);
+        epsilon = sqrt(epsilon1*epsilon2);
+        """
+    )
+
+    softcore.addGlobalParameter("lambda_lj", lambda_lj)
+    softcore.addGlobalParameter("alpha", 0.5)
+    softcore.addPerParticleParameter("sigma")
+    softcore.addPerParticleParameter("epsilon")
+
+    for q, sigma, epsilon in params:
+        softcore.addParticle([sigma, epsilon])
+
+    for k in range(nb.getNumExceptions()):
+        i, j, chargeprod, sigma, epsilon = nb.getExceptionParameters(k)
+        softcore.addExclusion(i, j)
+
+    softcore.setNonbondedMethod(CustomNonbondedForce.CutoffPeriodic)
+    softcore.setCutoffDistance(0.9 * nanometer)
+    softcore.setUseSwitchingFunction(True)
+    softcore.setSwitchingDistance(0.8 * nanometer)
+    softcore.addInteractionGroup(solute_atoms, solvent_atoms)
+
+    system.addForce(softcore)
+
+    return system, top.topology, gro.positions
+
+
+# ============================================================
+# CREAR SISTEMA GAS A PARTIR DEL .TOP/.GRO
+# ============================================================
+
+def build_gas_base_system(lambda_elec=0.0, scale_lj=False, lambda_lj=0.0):
+    gro, top = load_gromacs()
+    full_system = top.createSystem(nonbondedMethod=NoCutoff, constraints=HBonds)
+
+    old_to_new = {old: new for new, old in enumerate(solute_atoms)}
+
+    gas_top = Topology()
+    chain = gas_top.addChain()
+    residue = gas_top.addResidue("MOL", chain)
+
+    old_atom_to_new_atom = {}
+
+    for atom in top.topology.atoms():
+        if atom.index in old_to_new:
+            new_atom = gas_top.addAtom(atom.name, atom.element, residue)
+            old_atom_to_new_atom[atom.index] = new_atom
+
+    for bond in top.topology.bonds():
+        i = bond[0].index
+        j = bond[1].index
+        if i in old_atom_to_new_atom and j in old_atom_to_new_atom:
+            gas_top.addBond(old_atom_to_new_atom[i], old_atom_to_new_atom[j])
+
+    gas_positions = Quantity(
+        [gro.positions[i].value_in_unit(nanometer) for i in solute_atoms],
+        nanometer,
+    )
+
+    gas_system = System()
+
+    for old_i in solute_atoms:
+        gas_system.addParticle(full_system.getParticleMass(old_i))
+
+    for force in full_system.getForces():
+
+        if isinstance(force, HarmonicBondForce):
+            new_force = HarmonicBondForce()
+            for k in range(force.getNumBonds()):
+                i, j, length, kspring = force.getBondParameters(k)
+                if i in old_to_new and j in old_to_new:
+                    new_force.addBond(old_to_new[i], old_to_new[j], length, kspring)
+            gas_system.addForce(new_force)
+
+        elif isinstance(force, HarmonicAngleForce):
+            new_force = HarmonicAngleForce()
+            for k in range(force.getNumAngles()):
+                i, j, l, angle, kspring = force.getAngleParameters(k)
+                if i in old_to_new and j in old_to_new and l in old_to_new:
+                    new_force.addAngle(old_to_new[i], old_to_new[j], old_to_new[l], angle, kspring)
+            gas_system.addForce(new_force)
+
+        elif isinstance(force, PeriodicTorsionForce):
+            new_force = PeriodicTorsionForce()
+            for k in range(force.getNumTorsions()):
+                i, j, l, m, periodicity, phase, kspring = force.getTorsionParameters(k)
+                if i in old_to_new and j in old_to_new and l in old_to_new and m in old_to_new:
+                    new_force.addTorsion(old_to_new[i], old_to_new[j], old_to_new[l], old_to_new[m], periodicity, phase, kspring)
+            gas_system.addForce(new_force)
+
+        elif isinstance(force, RBTorsionForce):
+            new_force = RBTorsionForce()
+            for k in range(force.getNumTorsions()):
+                params = force.getTorsionParameters(k)
+                i, j, l, m = params[0], params[1], params[2], params[3]
+                coeffs = params[4:]
+                if i in old_to_new and j in old_to_new and l in old_to_new and m in old_to_new:
+                    new_force.addTorsion(old_to_new[i], old_to_new[j], old_to_new[l], old_to_new[m], *coeffs)
+            gas_system.addForce(new_force)
+
+        elif isinstance(force, NonbondedForce):
+            new_force = NonbondedForce()
+            new_force.setNonbondedMethod(NonbondedForce.NoCutoff)
+
+            for old_i in solute_atoms:
+                q, sigma, epsilon = force.getParticleParameters(old_i)
+                q_new = (1.0 - lambda_elec) * q
+                epsilon_new = (1.0 - lambda_lj) * epsilon if scale_lj else epsilon
+                new_force.addParticle(q_new, sigma, epsilon_new)
+
+            for k in range(force.getNumExceptions()):
+                i, j, chargeprod, sigma, epsilon = force.getExceptionParameters(k)
+                if i in old_to_new and j in old_to_new:
+                    eps_new = (1.0 - lambda_lj) * epsilon if scale_lj else epsilon
+                    new_force.addException(old_to_new[i], old_to_new[j], chargeprod, sigma, eps_new)
+
+            gas_system.addForce(new_force)
+
+    return gas_system, gas_top, gas_positions
+
+
+def build_gas_elec_system(lambda_elec):
+    return build_gas_base_system(lambda_elec=lambda_elec, scale_lj=False, lambda_lj=0.0)
+
+
+def build_gas_lj_system(lambda_lj):
+    # En el cicle de solvatació habitual, aquesta contribució és zero perquè en gas no hi ha solvent.
+    # Tot i així, aquí es construeix una pota LJ gas explícita si es vol analitzar separadament.
+    return build_gas_base_system(lambda_elec=1.0, scale_lj=True, lambda_lj=lambda_lj)
+
+
+# ============================================================
+# SIMULACIÓ D'UNA FINESTRA
+# ============================================================
+
+def run_window(name, lam, builder, is_aq):
+    outdir = output_root / name / f"lambda_{lambda_tag(lam)}"
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    system, topology, positions = builder(lam)
+
+    if is_aq:
+        system.addForce(MonteCarloBarostat(pressure, temperature))
+
+    integrator = LangevinMiddleIntegrator(temperature, friction, timestep)
+    simulation = Simulation(topology, system, integrator)
+    simulation.context.setPositions(positions)
+
+    simulation.reporters.append(StateDataReporter(str(outdir / "state.csv"), report_interval, step=True, potentialEnergy=True, temperature=True, speed=True))
+
+    if not is_aq:
+        PDBFile.writeFile(topology, positions, open(outdir / "gas_topology.pdb", "w"))
+
+    print(f"Simulant {name}, lambda={lam}")
+
+    simulation.minimizeEnergy(maxIterations=100)
+    simulation.context.setVelocitiesToTemperature(temperature)
+
+    if is_aq:
+        simulation.step(nvt_steps)
+        simulation.step(npt_steps)
+    else:
+        simulation.step(nvt_steps)
+
+    simulation.reporters.append(DCDReporter(str(outdir / "traj.dcd"), report_interval))
+    simulation.step(prod_steps)
+
+
+# ============================================================
+# EXECUTAR TOTES LES SIMULACIONS
+# ============================================================
+
+def run_all_simulations():
+    for lam in lambdas_elec:
+        run_window("elec_aq", lam, build_aq_elec_system, True)
+
+    for lam in lambdas_lj:
+        run_window("lj_aq", lam, build_aq_lj_system, True)
+
+    for lam in lambdas_elec:
+        run_window("elec_gas", lam, build_gas_elec_system, False)
+
+    for lam in lambdas_lj:
+        run_window("lj_gas", lam, build_gas_lj_system, False)
+
+
+# ============================================================
+# RECALCULAR ENERGIES PER BAR
+# ============================================================
+
+def energies_for_traj(name, lambda_traj, lambda_a, lambda_b, builder, topology_file):
+    system_a, topology, _ = builder(lambda_a)
+    system_b, _, _ = builder(lambda_b)
+
+    sim_a = Simulation(topology, system_a, VerletIntegrator(0.001 * picoseconds))
+    sim_b = Simulation(topology, system_b, VerletIntegrator(0.001 * picoseconds))
+
+    traj_file = output_root / name / f"lambda_{lambda_tag(lambda_traj)}" / "traj.dcd"
+
+    if name in {"elec_gas", "lj_gas"}:
+        top_md = output_root / name / f"lambda_{lambda_tag(lambda_traj)}" / "gas_topology.pdb"
+    else:
+        top_md = topology_file
+
+    traj = md.load(str(traj_file), top=str(top_md))
+
+    e_a = []
+    e_b = []
+
+    for i in range(traj.n_frames):
+        positions = traj.xyz[i] * nanometer
+
+        sim_a.context.setPositions(positions)
+        sim_b.context.setPositions(positions)
+
+        e_a.append(sim_a.context.getState(getEnergy=True).getPotentialEnergy().value_in_unit(kilojoule_per_mole))
+        e_b.append(sim_b.context.getState(getEnergy=True).getPotentialEnergy().value_in_unit(kilojoule_per_mole))
+
+    return np.array(e_a), np.array(e_b)
+
+
+def analyze(name, lambdas, builder, topology_file):
+    total_df = 0.0
+    errors_df = []
+
+    for lam_a, lam_b in zip(lambdas[:-1], lambdas[1:]):
+        print(f"Analitzant {name}: {lam_a} -> {lam_b}")
+
+        e_a_on_a, e_b_on_a = energies_for_traj(name, lam_a, lam_a, lam_b, builder, topology_file)
+        wf = beta * (e_b_on_a - e_a_on_a)
+
+        e_a_on_b, e_b_on_b = energies_for_traj(name, lam_b, lam_a, lam_b, builder, topology_file)
+        wr = beta * (e_a_on_b - e_b_on_b)
+
+        df = bar_delta_f(wf, wr)
+        err = block_bootstrap_bar(wf, wr)
+
+        total_df += df
+        errors_df.append(err)
+
+    dg_kcal = (total_df / beta) / 4.184
+    err_kcal = (math.sqrt(np.sum(np.array(errors_df) ** 2)) / beta) / 4.184
+
+    return dg_kcal, err_kcal
+
+
+# ============================================================
+# MAIN
+# ============================================================
+
+print("Molècula:", args.molecule)
+print("TOP:", top_file)
+print("TOP OpenMM:", openmm_top_file)
+print("GRO:", gro_file)
+print("Fitxer solvent:", solvent_itp_file)
+print("Solvent:", ", ".join(sorted(solvent_names)))
+print("Àtoms solut:", len(solute_atoms))
+print("Output:", output_root)
+
+shutil.copy(top_file, output_root / top_file.name)
+shutil.copy(gro_file, output_root / gro_file.name)
+
+run_all_simulations()
+
+DG_elec_aq, err_elec_aq = analyze("elec_aq", lambdas_elec, build_aq_elec_system, gro_file)
+DG_lj_aq, err_lj_aq = analyze("lj_aq", lambdas_lj, build_aq_lj_system, gro_file)
+DG_elec_gas, err_elec_gas = analyze("elec_gas", lambdas_elec, build_gas_elec_system, gro_file)
+DG_lj_gas, err_lj_gas = analyze("lj_gas", lambdas_lj, build_gas_lj_system, gro_file)
+
+DG_hyd = -((DG_elec_aq + DG_lj_aq) - (DG_elec_gas + DG_lj_gas))
+err_hyd = math.sqrt(err_elec_aq**2 + err_lj_aq**2 + err_elec_gas**2 + err_lj_gas**2)
+
+results = {
+    "molecule": args.molecule,
+    "solvent": sorted(solvent_names),
+    "solvent_file": str(solvent_itp_file),
+    "DG_elec_aq_kcal_mol": DG_elec_aq,
+    "err_elec_aq_kcal_mol": err_elec_aq,
+    "DG_lj_aq_kcal_mol": DG_lj_aq,
+    "err_lj_aq_kcal_mol": err_lj_aq,
+    "DG_elec_gas_kcal_mol": DG_elec_gas,
+    "err_elec_gas_kcal_mol": err_elec_gas,
+    "DG_lj_gas_kcal_mol": DG_lj_gas,
+    "err_lj_gas_kcal_mol": err_lj_gas,
+    "DG_hyd_kcal_mol": DG_hyd,
+    "err_hyd_kcal_mol": err_hyd,
+}
+
+with open(output_root / "results.json", "w") as f:
+    json.dump(results, f, indent=2)
+
+with open(output_root / "results.txt", "w") as f:
+    f.write(f"DG_elec_aq  = {DG_elec_aq:.3f} ± {err_elec_aq:.3f} kcal/mol\n")
+    f.write(f"DG_lj_aq    = {DG_lj_aq:.3f} ± {err_lj_aq:.3f} kcal/mol\n")
+    f.write(f"DG_elec_gas = {DG_elec_gas:.3f} ± {err_elec_gas:.3f} kcal/mol\n")
+    f.write(f"DG_lj_gas   = {DG_lj_gas:.3f} ± {err_lj_gas:.3f} kcal/mol\n")
+    f.write(f"DG_hyd      = {DG_hyd:.3f} ± {err_hyd:.3f} kcal/mol\n")
+
+print("\nRESULTAT FINAL")
+print(f"DG_elec_aq  = {DG_elec_aq:.3f} ± {err_elec_aq:.3f} kcal/mol")
+print(f"DG_lj_aq    = {DG_lj_aq:.3f} ± {err_lj_aq:.3f} kcal/mol")
+print(f"DG_elec_gas = {DG_elec_gas:.3f} ± {err_elec_gas:.3f} kcal/mol")
+print(f"DG_lj_gas   = {DG_lj_gas:.3f} ± {err_lj_gas:.3f} kcal/mol")
+print(f"DG_hyd      = {DG_hyd:.3f} ± {err_hyd:.3f} kcal/mol")
