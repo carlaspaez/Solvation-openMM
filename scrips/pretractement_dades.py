@@ -12,6 +12,12 @@ OUTPUT = ROOT / "DADES" / "topgro_actu"
 WORK.mkdir(exist_ok=True)
 OUTPUT.mkdir(exist_ok=True)
 
+for programa in ["acpype", "gmx"]:
+    if shutil.which(programa) is None:
+        raise RuntimeError(
+            f"No trobo la comanda '{programa}'. Instal.la-la o activa l'entorn/module que la contingui."
+        )
+
 
 for mol2 in INPUT.glob("*.mol2"):
 

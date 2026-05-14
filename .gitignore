@@ -9,6 +9,8 @@ __pycache__/
 error*
 sortid*
 outputs/ 
+pretractament_work/
+
 # C extensions
 *.so
 results/
