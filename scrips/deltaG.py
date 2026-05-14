@@ -47,9 +47,6 @@ ROOT = SCRIPT_DIR.parent
 data_dir = ROOT / "DADES"
 topgro_dir = data_dir / "topgro_actu"
 common_dir = data_dir / "common"
-output_root = ROOT / "outputs" / args.molecule
-
-output_root.mkdir(parents=True, exist_ok=True)
 
 
 # ============================================================
@@ -187,7 +184,18 @@ def expand_water_aliases(names):
     return expanded
 
 
+def solvent_output_label(path):
+    stem = path.stem
+    if stem.upper().startswith("SOL."):
+        stem = stem.split(".", 1)[1]
+    return stem.replace("/", "_").replace("\\", "_")
+
+
 solvent_itp_file = resolve_input_file(args.solvent_file)
+solvent_label = solvent_output_label(solvent_itp_file)
+output_root = ROOT / "outputs" / args.molecule / solvent_label
+output_root.mkdir(parents=True, exist_ok=True)
+
 solvent_names = read_solvent_names_from_itp(solvent_itp_file)
 solvent_names = expand_water_aliases(solvent_names)
 
@@ -654,6 +662,7 @@ print("TOP:", top_file)
 print("TOP OpenMM:", openmm_top_file)
 print("GRO:", gro_file)
 print("Fitxer solvent:", solvent_itp_file)
+print("Etiqueta solvent:", solvent_label)
 print("Solvent:", ", ".join(sorted(solvent_names)))
 print("Àtoms solut:", len(solute_atoms))
 print("Output:", output_root)
@@ -673,6 +682,7 @@ err_hyd = math.sqrt(err_elec_aq**2 + err_lj_aq**2 + err_elec_gas**2 + err_lj_gas
 
 results = {
     "molecule": args.molecule,
+    "solvent_label": solvent_label,
     "solvent": sorted(solvent_names),
     "solvent_file": str(solvent_itp_file),
     "DG_elec_aq_kcal_mol": DG_elec_aq,
