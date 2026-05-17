@@ -1,0 +1,32 @@
+#!/bin/bash
+#SBATCH --job-name=deltaG_all
+#SBATCH --output=sortid_deltaG_%A_%a.txt
+#SBATCH --error=error_deltaG_%A_%a.txt
+#SBATCH --time=10:00:00
+#SBATCH --array=0-642
+##SBATCH --cpus-per-task=4
+##SBATCH --mem=4GB
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+TOPGRO_DIR="${ROOT}/DADES/topgro_actu"
+
+mapfile -t MOLECULES < <(
+    for top in "${TOPGRO_DIR}"/mobley_*_GMX.top; do
+        molecule="$(basename "${top}" _GMX.top)"
+        if [[ -f "${TOPGRO_DIR}/${molecule}_GMX.gro" ]]; then
+            echo "${molecule}"
+        fi
+    done | sort
+)
+
+MOLECULE="${MOLECULES[SLURM_ARRAY_TASK_ID]}"
+
+cd "${SCRIPT_DIR}"
+
+echo "Inici del job: $(date)"
+echo "Molècula: ${MOLECULE}"
+
+python deltaG_PBC_TIP3P.py -m "${MOLECULE}" -s SOL.TIP3P.itp
+
+echo "Final del job: $(date)"

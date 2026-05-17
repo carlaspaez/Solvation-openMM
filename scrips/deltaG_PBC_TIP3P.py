@@ -397,15 +397,17 @@ def build_aq_lj_system(lambda_lj):
     params = [nb.getParticleParameters(i) for i in range(n_particles)]
 
     # Per la pota LJ, el solut ja està sense càrregues.
-    # També apaguem la LJ normal del solut, perquè la substituïm pel soft-core.
+    # La LJ intramolecular del solut es manté; només substituïm les interaccions
+    # solut-solvent normals pel potencial soft-core.
     for i in solute_atoms:
         q, sigma, epsilon = nb.getParticleParameters(i)
-        nb.setParticleParameters(i, 0.0 * elementary_charge, sigma, 0.0 * kilojoule_per_mole)
+        nb.setParticleParameters(i, 0.0 * elementary_charge, sigma, epsilon)
 
     softcore = CustomNonbondedForce(
         """
-        4*epsilon*(1-lambda_lj)*(x*x - x);
+        4*epsilon*((1-lambda_lj)*(x*x - x) - (y*y - y));
         x = 1/(alpha*lambda_lj + (r/sigma)^6);
+        y = (sigma/r)^6;
         sigma = 0.5*(sigma1 + sigma2);
         epsilon = sqrt(epsilon1*epsilon2);
         """
@@ -419,7 +421,8 @@ def build_aq_lj_system(lambda_lj):
     for q, sigma, epsilon in params:
         softcore.addParticle([sigma, epsilon])
 
-    for k in range(nb.getNumExceptions()):
+    original_exceptions = nb.getNumExceptions()
+    for k in range(original_exceptions):
         i, j, chargeprod, sigma, epsilon = nb.getExceptionParameters(k)
         softcore.addExclusion(i, j)
 
@@ -615,9 +618,20 @@ def energies_for_traj(name, lambda_traj, lambda_a, lambda_b, builder, topology_f
 
     e_a = []
     e_b = []
+    has_box = (
+        traj.unitcell_vectors is not None
+        and len(traj.unitcell_vectors) == traj.n_frames
+        and not np.isnan(traj.unitcell_vectors).any()
+    )
 
     for i in range(traj.n_frames):
         positions = traj.xyz[i] * nanometer
+
+        if has_box:
+            box = traj.unitcell_vectors[i]
+            box_vectors = [Vec3(*box[j]) * nanometer for j in range(3)]
+            sim_a.context.setPeriodicBoxVectors(*box_vectors)
+            sim_b.context.setPeriodicBoxVectors(*box_vectors)
 
         sim_a.context.setPositions(positions)
         sim_b.context.setPositions(positions)

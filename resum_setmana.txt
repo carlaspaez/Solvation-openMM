@@ -171,9 +171,21 @@ Lennard-Jones amb el solvent.
 
 Per evitar problemes numerics quan les interaccions desapareixen, s'ha afegit
 una CustomNonbondedForce amb una expressio soft-core. En la NonbondedForce
-normal es posen a zero les carregues del solut i l'epsilon dels atoms del solut.
-Despres, la força soft-core calcula nomes les interaccions solut-solvent
-mitjancant addInteractionGroup.
+normal es posen a zero les carregues del solut, pero es mantenen els parametres
+Lennard-Jones intramoleculars del solut. Aixo es important perque, en el cicle
+de solvatacio, el que es vol desacoblar son les interaccions solut-solvent, no
+canviar l'Hamiltonia intern del solut.
+
+La implementacio actual utilitza la força soft-core com una correccio sobre la
+LJ normal solut-solvent:
+
+- a lambda = 0, la correccio es nul.la i el sistema conserva la LJ normal;
+- a lambda = 1, la correccio cancela la LJ normal solut-solvent;
+- la LJ intramolecular del solut queda preservada durant tota la branca.
+
+Aquest canvi es va introduir despres de detectar que posar epsilon = 0 als
+atoms del solut tambe eliminava interaccions intramoleculars no excloses, cosa
+que podia desviar el resultat de DeltaG_LJ,aq.
 
 Les sortides d'aquesta pota es guarden a:
 
@@ -226,6 +238,13 @@ la força soft-core de Lennard-Jones i llegint les trajectòries de resultats/lj
 analisis3.py calcula DeltaG_elec,gas a partir de les trajectòries de
 resultats/gas1 i dels fitxers AMBER prmtop/inpcrd.
 
+En la versio unificada deltaG_PBC_TIP3P.py s'ha afegit una correccio important
+per als calculs amb PBC: quan es reavaluen energies d'una trajectoria generada
+en NPT, abans de calcular l'energia de cada frame es tornen a posar al Context
+d'OpenMM els vectors de caixa periodica d'aquell frame. Sense aquest pas, les
+energies de tots els frames es podien recalcular amb la caixa inicial, cosa que
+es especialment problematica quan el volum fluctua durant NPT.
+
 Per estimar la diferencia d'energia lliure entre estats veïns s'utilitza BAR
 (Bennett Acceptance Ratio). El valor total de cada branca es calcula sumant les
 contribucions de tots els parells de lambdas. La incertesa s'estima amb block
@@ -263,12 +282,47 @@ Actualment el protocol ja te les peces essencials:
 6. analisi BAR de cada branca;
 7. combinacio final de DeltaG_hyd.
 
-Les simulacions actuals son encara proves curtes: 500 passos NVT, 500 passos NPT
-quan hi ha solvent i 1000 passos de produccio. Per obtenir resultats
-quantitatius finals caldra augmentar el temps de simulacio, guardar mes frames,
-avaluar la convergencia, revisar l'autocorrelacio i ajustar el block size del
-bootstrap. Tot i aixo, metodologicament el flux ja esta definit i permet passar
-dels fitxers moleculars inicials al calcul complet d'una energia lliure
+La versio actual consolidada es scrips/deltaG_PBC_TIP3P.py. Aquest script
+executa les branques electrostatica en aigua, Lennard-Jones en aigua,
+electrostatica en gas i Lennard-Jones en gas, i finalment escriu results.json i
+results.txt dins outputs/<molecula>/. Tambe s'ha creat
+scrips/enviartot_deltaG_PBC_TIP3P, un script de SLURM array job que detecta les
+molecules de DADES/topgro_actu amb parella .top/.gro i les deixa a la cua del
+cluster com a tasques independents.
+
+Les simulacions actuals son encara proves curtes: 500 passos NVT, 500 passos
+NPT quan hi ha solvent i 2500 passos de produccio. Per obtenir resultats
+quantitatius finals caldria augmentar el temps de simulacio, guardar mes
+frames, avaluar la convergencia, revisar l'autocorrelacio i ajustar el block
+size del bootstrap. En aquest projecte, pero, el temps de calcul disponible es
+una limitacio practica, de manera que el protocol s'ha mantingut curt per poder
+executar proves sobre moltes molecules.
+
+Limitacions i problemes detectats fins ara:
+
+- Els resultats poden diferir dels valors bibliografics de FreeSolv/Mobley
+  perque els fitxers topgro_actu han estat generats amb ACPYPE i no sempre son
+  identics als fitxers originals de la base de dades.
+- Les simulacions curtes generen pocs frames per finestra lambda; aixo redueix
+  l'overlap estadistic i fa que BAR sigui menys robust.
+- La branca LJ es sensible a la forma exacta del soft-core. Es va detectar que
+  apagar epsilon del solut eliminava tambe LJ intramolecular; per aixo ara es
+  preserva la LJ interna i es corregeixen nomes les interaccions solut-solvent.
+- En OpenMM, intentar afegir excepcions solut-solvent directament al
+  NonbondedForce va produir l'error "All Forces must have identical exclusions"
+  perque el CustomNonbondedForce i el NonbondedForce no tenien la mateixa llista
+  d'exclusions. La solucio actual evita afegir aquestes excepcions.
+- Es va provar activar la long-range correction del CustomNonbondedForce
+  soft-core, pero OpenMM va fallar amb "Long range correction did not converge".
+  Per aquest motiu aquesta correccio no s'aplica al soft-core actual.
+- Quan es reavaluen energies de trajectòries NPT cal conservar la caixa
+  periodica de cada frame; aquesta correccio ja s'ha incorporat.
+- El protocol mante una branca LJ en gas tot i que en un cicle ideal aquesta
+  contribucio pot ser zero si nomes es desacobla solut-solvent. Es conserva per
+  obtenir un desglossament explicit i facilitar comparacions internes.
+
+Tot i aquestes limitacions, metodologicament el flux ja esta definit i permet
+passar dels fitxers moleculars inicials al calcul complet d'una energia lliure
 d'hidratacio.
 
 
