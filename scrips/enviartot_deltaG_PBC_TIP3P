@@ -7,7 +7,7 @@
 ##SBATCH --cpus-per-task=4
 ##SBATCH --mem=4GB
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT_DIR="${SLURM_SUBMIT_DIR:-$(pwd)}"
 ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 TOPGRO_DIR="${ROOT}/DADES/topgro_actu"
 
