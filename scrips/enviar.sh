@@ -7,5 +7,5 @@
 ##SBATCH --mem=4GB                   # Memòria assignada
 
 echo "Inici del job: $(date)"
-python deltaG.py -m mobley_5857 -s SOL.TIP3P.itp          # Execució del vostre codi
+python deltaG_PBC_TIP3P.py -m mobley_5857 -s SOL.TIP3P.itp          # Execució del vostre codi
 echo "Final del job: $(date)"
