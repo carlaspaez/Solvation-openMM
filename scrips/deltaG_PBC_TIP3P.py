@@ -393,19 +393,34 @@ def build_aq_lj_system(lambda_lj):
         raise RuntimeError("No he trobat NonbondedForce")
 
     n_particles = system.getNumParticles()
-    solvent_atoms = [i for i in range(n_particles) if i not in solute_atoms]
+    solute_atom_set = set(solute_atoms)
     params = [nb.getParticleParameters(i) for i in range(n_particles)]
+    lj_atoms = [
+        i for i, (_, sigma, epsilon) in enumerate(params)
+        if epsilon.value_in_unit(kilojoule_per_mole) > 0.0
+    ]
 
     # Per la pota LJ, el solut ja està sense càrregues.
-    # La LJ intramolecular del solut es manté; només substituïm les interaccions
-    # solut-solvent normals pel potencial soft-core.
-    for i in solute_atoms:
+    # Traiem la LJ no-excepcional del NonbondedForce i la reconstruïm en una
+    # CustomNonbondedForce: normal per solut-solut/solvent-solvent, soft-core
+    # només per solut-solvent. Les excepcions originals preserven els 1-4.
+    for i in range(n_particles):
         q, sigma, epsilon = nb.getParticleParameters(i)
-        nb.setParticleParameters(i, 0.0 * elementary_charge, sigma, epsilon)
+        q_new = 0.0 * elementary_charge if i in solute_atom_set else q
+        nb.setParticleParameters(i, q_new, sigma, 0.0 * kilojoule_per_mole)
+
+    original_exceptions = nb.getNumExceptions()
+    for k in range(original_exceptions):
+        i, j, chargeprod, sigma, epsilon = nb.getExceptionParameters(k)
+        chargeprod_new = chargeprod
+        if i in solute_atom_set or j in solute_atom_set:
+            chargeprod_new = 0.0 * elementary_charge**2
+        nb.setExceptionParameters(k, i, j, chargeprod_new, sigma, epsilon)
 
     softcore = CustomNonbondedForce(
         """
-        4*epsilon*((1-lambda_lj)*(x*x - x) - (y*y - y));
+        4*epsilon*((1-solute_solvent)*(y*y - y) + solute_solvent*(1-lambda_lj)*(x*x - x));
+        solute_solvent = solute1 + solute2 - 2*solute1*solute2;
         x = 1/(alpha*lambda_lj + (r/sigma)^6);
         y = (sigma/r)^6;
         sigma = 0.5*(sigma1 + sigma2);
@@ -417,11 +432,12 @@ def build_aq_lj_system(lambda_lj):
     softcore.addGlobalParameter("alpha", 0.5)
     softcore.addPerParticleParameter("sigma")
     softcore.addPerParticleParameter("epsilon")
+    softcore.addPerParticleParameter("solute")
 
-    for q, sigma, epsilon in params:
-        softcore.addParticle([sigma, epsilon])
+    for i, (q, sigma, epsilon) in enumerate(params):
+        is_solute = 1.0 if i in solute_atom_set else 0.0
+        softcore.addParticle([sigma, epsilon, is_solute])
 
-    original_exceptions = nb.getNumExceptions()
     for k in range(original_exceptions):
         i, j, chargeprod, sigma, epsilon = nb.getExceptionParameters(k)
         softcore.addExclusion(i, j)
@@ -430,7 +446,7 @@ def build_aq_lj_system(lambda_lj):
     softcore.setCutoffDistance(0.9 * nanometer)
     softcore.setUseSwitchingFunction(True)
     softcore.setSwitchingDistance(0.8 * nanometer)
-    softcore.addInteractionGroup(solute_atoms, solvent_atoms)
+    softcore.addInteractionGroup(lj_atoms, lj_atoms)
 
     system.addForce(softcore)
 
