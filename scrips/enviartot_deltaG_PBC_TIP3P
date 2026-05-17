@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=deltaG_all
-#SBATCH --output=sortid_deltaG_%A_%a.txt
-#SBATCH --error=error_deltaG_%A_%a.txt
+#SBATCH --output=cluster/bootstrap_deltaG_%A_%a.txt
+#SBATCH --error=cluster/bootstrap_error_deltaG_%A_%a.txt
 #SBATCH --time=10:00:00
 #SBATCH --array=0-642
 ##SBATCH --cpus-per-task=4
@@ -23,6 +23,9 @@ mapfile -t MOLECULES < <(
 MOLECULE="${MOLECULES[SLURM_ARRAY_TASK_ID]}"
 
 cd "${SCRIPT_DIR}"
+mkdir -p cluster
+
+exec > "cluster/sortida_deltaG_${MOLECULE}.txt" 2> "cluster/error_deltaG_${MOLECULE}.txt"
 
 echo "Inici del job: $(date)"
 echo "Molècula: ${MOLECULE}"
