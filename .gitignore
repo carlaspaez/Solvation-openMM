@@ -11,6 +11,7 @@ cluster/
 error*
 sortid*
 outputs/ 
+outputs-OK/
 pretractament_work/
 
 # C extensions
