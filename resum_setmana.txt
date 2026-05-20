@@ -508,3 +508,49 @@ consolidat a tenir una primera versio funcional del flux SBC: preparacio de
 gotes d'aigua, lectura dels nous fitxers *_GMX, paret esfèrica centrada al
 solut, sortides organitzades directament per molecula i primers tests
 d'estabilitat sobre mobley_5857.
+
+
+17. Actualitzacio dels scripts de submissio SBC al cluster
+
+S'ha afegit un flux especific per enviar calculs SBC al cluster sense barrejar
+les sortides amb les proves PBC. El nou script principal es:
+
+scrips/submit_all_SBC.sh
+
+Aquest script recorre els fitxers *_GMX.gro de:
+
+DADES/topgro_SBC
+
+i envia un job per cada molecula utilitzant:
+
+scrips/enviarSBC.sh
+
+La logica de repartiment entre particions es mante igual que en submit_all.sh:
+es consulten les CPU lliures de les particions highmem i normal1-normal5, es
+crea una llista de slots disponibles i es reparteixen les molecules de forma
+ciclica entre les particions amb recursos lliures. Si sinfo no detecta CPU
+lliures, l'script cau a una opcio de reserva amb una ranura per particio.
+
+També s'ha corregit l'organitzacio dels fitxers de sortida del cluster. En lloc
+de dependre del directori des d'on s'executa l'script, submit_all_SBC.sh defineix
+la carpeta de logs a partir de la ubicacio del mateix script:
+
+CLUSTER_OUT_DIR="$SCRIPT_DIR/../outputs_sbc/cluster"
+
+Abans d'enviar els jobs, aquesta carpeta es crea amb:
+
+mkdir -p "$CLUSTER_OUT_DIR"
+
+Els fitxers stdout i stderr de cada job SBC queden, per tant, separats dins:
+
+outputs_sbc/cluster/
+
+amb noms del tipus:
+
+- sortid_<jobid>_<molecula>.txt
+- error_<jobid>_<molecula>.txt
+
+Aixo evita que els fitxers sortid_* i error_* quedin escampats dins scrips quan
+els jobs s'envien en bloc amb submit_all_SBC.sh. A mes, outputs_sbc/ s'ha afegit
+a .gitignore per evitar pujar a GitHub les sortides massives de simulacio i els
+logs del cluster.

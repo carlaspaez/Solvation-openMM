@@ -14,4 +14,4 @@ if [ -z "${1:-}" ]; then
         exit 1
 fi
 
-python deltaG_PBC_TIP3P-ok.py -m "$1" -s SOL.TIP3P.itp
+python deltaG_SBC_TIP3P.py -m "$1" -s SOL.TIP3P.itp
