@@ -1,0 +1,63 @@
+!!index array str
+ "MOL"
+!entry.MOL.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "C1" "c3" 0 1 131072 1 6 0.324600
+ "Cl1" "cl" 0 1 131072 2 6 -0.081400
+ "Cl2" "cl" 0 1 131072 3 6 -0.081400
+ "Cl3" "cl" 0 1 131072 4 6 -0.081400
+ "Cl4" "cl" 0 1 131072 5 6 -0.081400
+!entry.MOL.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "C1" "c3" 0 -1 0.0
+ "Cl1" "cl" 0 -1 0.0
+ "Cl2" "cl" 0 -1 0.0
+ "Cl3" "cl" 0 -1 0.0
+ "Cl4" "cl" 0 -1 0.0
+!entry.MOL.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.MOL.unit.childsequence single int
+ 2
+!entry.MOL.unit.connect array int
+ 0
+ 0
+!entry.MOL.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 2 1
+ 1 3 1
+ 1 4 1
+ 1 5 1
+!entry.MOL.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+ "R" 1 "A" 4
+ "R" 1 "A" 5
+!entry.MOL.unit.name single str
+ "tetrachloromethane"
+!entry.MOL.unit.positions table  dbl x  dbl y  dbl z
+ -1.617000 -0.701000 -0.265000
+ 0.0 0.0 0.0
+ -1.494000 -2.478000 -0.302000
+ -2.270000 -0.118000 -1.817000
+ -2.702000 -0.206000 1.058000
+!entry.MOL.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.MOL.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "MOL" 1 6 1 "?" 0
+!entry.MOL.unit.residuesPdbSequenceNumber array int
+ 0
+!entry.MOL.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.MOL.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0

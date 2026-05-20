@@ -1,0 +1,11 @@
+Run semi-empirical minimization
+ &qmmm
+    qm_theory='AM1', grms_tol=0.0005,
+ scfconv=1.d-10, ndiis_attempts=700,   qmcharge=0,
+ /
+   6    C1       -1.6170       -0.7010       -0.2650 
+  17   Cl1        0.0000        0.0000        0.0000 
+  17   Cl2       -1.4940       -2.4780       -0.3020 
+  17   Cl3       -2.2700       -0.1180       -1.8170 
+  17   Cl4       -2.7020       -0.2060        1.0580 
+
