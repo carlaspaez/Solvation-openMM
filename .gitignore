@@ -14,7 +14,7 @@ outputs/
 outputs-OK/
 pretractament_work/
 DADES/pretractament_work_SBC/
-
+outputs_sbc/
 # C extensions
 *.so
 results/

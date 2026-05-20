@@ -336,3 +336,175 @@ generades es reavaluen entre estats veïns i s'analitzen amb BAR per obtenir les
 contribucions electrostatica en aigua, Lennard-Jones en aigua i electrostatica
 en gas. Finalment, aquestes contribucions es combinen per calcular
 DeltaG_hyd i comparar-la amb el valor experimental de referencia.
+
+
+14. Actualitzacio setmanal: preparacio i proves SBC
+
+Durant aquesta setmana s'ha començat a construir el flux equivalent per SBC
+(spherical boundary conditions), amb l'objectiu de poder comparar-lo amb el
+protocol PBC mantenint els scripts el mes semblants possible. La idea del
+protocol SBC es substituir la caixa periodica d'aigua per una gota esfèrica
+d'aigua al voltant del solut.
+
+S'ha creat el script:
+
+scrips/preparadades_SBC.py
+
+Aquest script es basa en scrips/pretractement_dades.py i conserva la mateixa
+logica general: llegeix els .mol2 de DADES/v0.31/mol2files_gaff, executa ACPYPE,
+genera fitxers GROMACS i copia els resultats finals. La diferencia principal es
+que, en comptes de quedar-se amb una caixa d'aigua periodica, primer solvata el
+sistema i despres retalla una esfera d'aigua al voltant del solut, seguint la
+logica que ja hi havia a scrips/pretractament_SBC.py.
+
+Els resultats finals SBC es guarden a:
+
+DADES/topgro_SBC
+
+Per cada molecula es volen obtenir els tres fitxers principals:
+
+- *_GMX.gro: coordenades del sistema amb gota d'aigua;
+- *_GMX.top: topologia GROMACS corresponent;
+- *_GMX.itp: definicio molecular del solut.
+
+També es copien els fitxers posre_*.itp quan ACPYPE els genera. En el moment de
+fer aquest resum, DADES/topgro_SBC conte 2572 fitxers. Aquesta xifra pot variar
+si el proces de preparacio continua executant-se i genera mes molecules.
+
+Per evitar pujar fitxers temporals, s'ha afegit a .gitignore la carpeta:
+
+DADES/pretractament_work_SBC/
+
+Aquesta carpeta conte sortides intermedies d'ACPYPE i GROMACS i no forma part
+dels resultats finals necessaris per executar les simulacions.
+
+
+15. Adaptacio de deltaG_SBC_TIP3P.py
+
+També s'ha treballat sobre:
+
+scrips/deltaG_SBC_TIP3P.py
+
+La primera correccio important ha estat la localitzacio dels fitxers d'entrada.
+Inicialment l'script buscava noms del tipus:
+
+mobley_5857_sbc.top
+mobley_5857_sbc.gro
+
+pero preparadades_SBC.py genera noms del tipus:
+
+mobley_5857_GMX.top
+mobley_5857_GMX.gro
+mobley_5857_GMX.itp
+
+Per aixo s'ha modificat la funcio de cerca de fitxers per acceptar tant el
+patro antic *_sbc com el patro nou *_GMX, i finalment qualsevol fitxer que
+comenci pel nom de la molecula. Amb aquesta correccio, per mobley_5857 l'script
+ja troba correctament:
+
+DADES/topgro_SBC/mobley_5857_GMX.top
+DADES/topgro_SBC/mobley_5857_GMX.gro
+
+La segona correccio important ha estat la paret esfèrica SBC. En una simulacio
+amb SBC no hi ha condicions periodiques, per tant cal afegir una paret que
+contingui la gota d'aigua. Inicialment la paret estava centrada a l'origen:
+
+(0, 0, 0)
+
+pero les coordenades del .gro no estan centrades a l'origen. Per exemple, en
+mobley_5857 la gota queda al voltant de:
+
+(2.36, 2.36, 2.36) nm
+
+Aixo provocava que la paret interpretés que gairebe tots els atoms estaven fora
+de l'esfera i apliqués forces molt grans. El resultat era una inestabilitat
+numerica i OpenMM acabava fallant amb:
+
+Particle coordinate is NaN
+
+La solucio ha estat calcular el centre del solut a partir de les coordenades
+dels seus atoms i centrar la paret SBC en aquest punt. La distancia radial de la
+paret ja no es calcula respecte de l'origen, sino respecte del centre real del
+solut:
+
+r = sqrt((x-x0)^2 + (y-y0)^2 + (z-z0)^2)
+
+Aixo no mou ni la molecula ni l'aigua; nomes informa la paret d'on es troba
+realment el centre de la gota.
+
+Durant aquesta correccio va apareixer un altre inconvenient tecnic. Com que
+l'script importa:
+
+from openmm.unit import *
+
+el nom sum queda substituit pel sum d'OpenMM, que no accepta generadors normals
+de Python. Aixo va produir l'error:
+
+TypeError: object of type 'generator' has no len()
+
+La solucio ha estat importar builtins i utilitzar explicitament:
+
+builtins.sum(...)
+
+per calcular les mitjanes de les coordenades del solut.
+
+Despres d'aquestes correccions, es va fer una prova curta amb mobley_5857. El
+sistema es va poder construir, l'energia inicial i l'energia minimitzada van ser
+finites, i es van executar 10 passos sense que apareguessin coordenades NaN:
+
+initial_energy  -29249.88 kJ/mol
+minimized_energy -26654.24 kJ/mol
+10_steps_ok
+
+Finalment, s'ha ajustat l'organitzacio de les sortides de
+deltaG_SBC_TIP3P.py. Inicialment els resultats s'escrivien a:
+
+outputs_sbc/<molecula>/<solvent>/
+
+per exemple:
+
+outputs_sbc/mobley_5857/TIP3P/
+
+S'ha simplificat aquest esquema perquè tots els resultats d'una molecula quedin
+directament dins la seva carpeta:
+
+outputs_sbc/<molecula>/
+
+per exemple:
+
+outputs_sbc/mobley_5857/
+
+L'etiqueta del solvent es continua guardant dins results.json i es continua
+mostrant per pantalla, pero ja no s'utilitza per crear una subcarpeta. Aquesta
+decisio facilita comparar resultats entre molecules i evita una jerarquia de
+carpetes innecessaria quan totes les proves SBC utilitzen el mateix solvent
+TIP3P/SOL.
+
+
+16. Inconvenients oberts i punts pendents
+
+Encara queden alguns punts a controlar abans de considerar el protocol SBC
+definitiu:
+
+- La preparacio de DADES/topgro_SBC pot continuar generant fitxers nous mentre
+  s'executa preparadades_SBC.py. Aixo fa que el nombre de fitxers canviï amb el
+  temps i que calgui decidir en quin moment es considera tancat el conjunt de
+  dades.
+- Alguns fitxers finals SBC s'han pujat a GitHub, pero si la generacio continua
+  poden quedar resultats locals nous pendents d'afegir en commits posteriors.
+- La carpeta DADES/pretractament_work_SBC conte fitxers temporals i modificats
+  produïts per ACPYPE/GROMACS; no s'han de confondre amb els resultats finals.
+- El protocol SBC encara utilitza simulacions curtes, igual que el PBC de
+  prova. Per obtenir resultats quantitatius caldra augmentar passos, revisar
+  estabilitat, convergencia i overlap entre lambdas.
+- La paret esfèrica ara es centra al solut, pero encara cal validar si la
+  constant harmonica i el radi de 1.8 nm son adequats per totes les molecules.
+- El recalcul d'energies i BAR en SBC s'ha de revisar amb trajectories completes
+  per assegurar que el tractament no periodic i la paret externa son coherents
+  en totes les branques del cicle.
+
+Com a resum, aquesta setmana s'ha passat de tenir nomes el protocol PBC
+consolidat a tenir una primera versio funcional del flux SBC: preparacio de
+gotes d'aigua, lectura dels nous fitxers *_GMX, paret esfèrica centrada al
+solut, sortides organitzades directament per molecula i primers tests
+d'estabilitat sobre mobley_5857.

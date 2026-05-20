@@ -1,5 +1,6 @@
 from pathlib import Path
 import argparse
+import builtins
 import json
 import math
 import shutil
@@ -47,8 +48,8 @@ data_dir = ROOT / "DADES"
 
 # CANVI PBC -> SBC:
 # abans: DADES/topgro_actu
-# ara:   DADES/topgro_sbc
-topgro_dir = data_dir / "topgro_sbc"
+# ara:   DADES/topgro_SBC
+topgro_dir = data_dir / "topgro_SBC"
 
 common_dir = data_dir / "common"
 
@@ -59,7 +60,9 @@ common_dir = data_dir / "common"
 
 def file_candidates(directory, molecule, extension):
     patterns = [
-        f"{molecule}_sbc.{extension}"
+        f"{molecule}_sbc.{extension}",
+        f"{molecule}_GMX.{extension}",
+        f"{molecule}*.{extension}",
     ]
 
     candidates = []
@@ -205,8 +208,9 @@ solvent_itp_file = resolve_input_file(args.solvent_file)
 solvent_label = solvent_output_label(solvent_itp_file)
 
 # CANVI PBC -> SBC:
-# guardem els resultats en outputs_sbc per no barrejar-los amb PBC
-output_root = ROOT / "outputs_sbc" / args.molecule / solvent_label
+# guardem els resultats en outputs_sbc per no barrejar-los amb PBC.
+# A SBC, cada molecula te una carpeta propia sense subcarpeta de solvent.
+output_root = ROOT / "outputs_sbc" / args.molecule
 output_root.mkdir(parents=True, exist_ok=True)
 
 solvent_names = read_solvent_names_from_itp(solvent_itp_file)
@@ -332,22 +336,40 @@ sbc_radius = 1.8 * nanometer
 sbc_k = 1000.0 * kilojoule_per_mole / nanometer**2
 
 
-def add_sbc_wall(system):
+def sbc_center_from_solute(positions):
+    coords = [
+        positions[i].value_in_unit(nanometer)
+        for i in solute_atoms
+    ]
+
+    return (
+        builtins.sum(p[0] for p in coords) / len(coords),
+        builtins.sum(p[1] for p in coords) / len(coords),
+        builtins.sum(p[2] for p in coords) / len(coords),
+    )
+
+
+def add_sbc_wall(system, positions):
     """
     SBC necessita una paret perquè no hi ha condicions periòdiques.
     PBC:        l'aigua es manté en una caixa periòdica.
     SBC:        l'aigua és una gota/esfera finita i cal contenir-la.
     """
 
+    x0, y0, z0 = sbc_center_from_solute(positions)
+
     wall = CustomExternalForce(
         """
         step(r-r0)*0.5*k*(r-r0)^2;
-        r=sqrt(x*x+y*y+z*z)
+        r=sqrt((x-x0)^2+(y-y0)^2+(z-z0)^2)
         """
     )
 
     wall.addGlobalParameter("r0", sbc_radius)
     wall.addGlobalParameter("k", sbc_k)
+    wall.addGlobalParameter("x0", x0)
+    wall.addGlobalParameter("y0", y0)
+    wall.addGlobalParameter("z0", z0)
 
     for i in range(system.getNumParticles()):
         wall.addParticle(i, [])
@@ -446,7 +468,7 @@ def build_aq_elec_system(lambda_elec):
 
     # CANVI PBC -> SBC:
     # afegim paret esfèrica a la part aquosa
-    add_sbc_wall(system)
+    add_sbc_wall(system, gro.positions)
 
     return system, top.topology, gro.positions
 
@@ -562,7 +584,7 @@ def build_aq_lj_system(lambda_lj):
 
     # CANVI PBC -> SBC:
     # afegim paret esfèrica a la part aquosa
-    add_sbc_wall(system)
+    add_sbc_wall(system, gro.positions)
 
     return system, top.topology, gro.positions
 
