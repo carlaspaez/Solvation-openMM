@@ -1,0 +1,154 @@
+!!index array str
+ "MOL"
+!entry.MOL.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "C1" "ca" 0 1 131072 1 6 -0.084000
+ "C2" "ca" 0 1 131072 2 6 -0.084000
+ "C3" "ca" 0 1 131072 3 6 -0.086000
+ "C4" "ca" 0 1 131072 4 6 -0.086000
+ "C5" "ca" 0 1 131072 5 6 -0.092600
+ "C6" "ca" 0 1 131072 6 6 -0.147200
+ "C7" "c" 0 1 131072 7 6 0.638700
+ "C8" "c3" 0 1 131072 8 6 0.126700
+ "N1" "no" 0 1 131072 9 7 0.309200
+ "O1" "o" 0 1 131072 10 8 -0.527000
+ "O2" "o" 0 1 131072 11 8 -0.200500
+ "O3" "o" 0 1 131072 12 8 -0.200500
+ "O4" "os" 0 1 131072 13 8 -0.435900
+ "H1" "ha" 0 1 131072 14 1 0.172000
+ "H2" "ha" 0 1 131072 15 1 0.172000
+ "H3" "ha" 0 1 131072 16 1 0.177500
+ "H4" "ha" 0 1 131072 17 1 0.177500
+ "H5" "h1" 0 1 131072 18 1 0.056033
+ "H6" "h1" 0 1 131072 19 1 0.056033
+ "H7" "h1" 0 1 131072 20 1 0.056033
+!entry.MOL.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "C1" "ca" 0 -1 0.0
+ "C2" "ca" 0 -1 0.0
+ "C3" "ca" 0 -1 0.0
+ "C4" "ca" 0 -1 0.0
+ "C5" "ca" 0 -1 0.0
+ "C6" "ca" 0 -1 0.0
+ "C7" "c" 0 -1 0.0
+ "C8" "c3" 0 -1 0.0
+ "N1" "no" 0 -1 0.0
+ "O1" "o" 0 -1 0.0
+ "O2" "o" 0 -1 0.0
+ "O3" "o" 0 -1 0.0
+ "O4" "os" 0 -1 0.0
+ "H1" "ha" 0 -1 0.0
+ "H2" "ha" 0 -1 0.0
+ "H3" "ha" 0 -1 0.0
+ "H4" "ha" 0 -1 0.0
+ "H5" "h1" 0 -1 0.0
+ "H6" "h1" 0 -1 0.0
+ "H7" "h1" 0 -1 0.0
+!entry.MOL.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.MOL.unit.childsequence single int
+ 2
+!entry.MOL.unit.connect array int
+ 0
+ 0
+!entry.MOL.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 3 4
+ 1 5 4
+ 1 14 1
+ 2 4 4
+ 2 5 4
+ 2 15 1
+ 3 6 4
+ 3 16 1
+ 4 6 4
+ 4 17 1
+ 5 7 1
+ 6 9 1
+ 7 10 2
+ 7 13 1
+ 8 13 1
+ 8 18 1
+ 8 19 1
+ 8 20 1
+ 9 11 1
+ 9 12 1
+!entry.MOL.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+ "R" 1 "A" 4
+ "R" 1 "A" 5
+ "R" 1 "A" 6
+ "R" 1 "A" 7
+ "R" 1 "A" 8
+ "R" 1 "A" 9
+ "R" 1 "A" 10
+ "R" 1 "A" 11
+ "R" 1 "A" 12
+ "R" 1 "A" 13
+ "R" 1 "A" 14
+ "R" 1 "A" 15
+ "R" 1 "A" 16
+ "R" 1 "A" 17
+ "R" 1 "A" 18
+ "R" 1 "A" 19
+ "R" 1 "A" 20
+!entry.MOL.unit.name single str
+ "methyl_p_nitrobenzoate"
+!entry.MOL.unit.positions table  dbl x  dbl y  dbl z
+ 0.818000 -0.439000 0.564000
+ 2.937000 -1.597000 0.620000
+ 0.799000 -0.406000 1.959000
+ 2.918000 -1.565000 2.014000
+ 1.887000 -1.034000 -0.105000
+ 1.850000 -0.969000 2.684000
+ 1.906000 -1.067000 -1.559000
+ 3.165000 -1.781000 -3.455000
+ 1.831000 -0.934000 4.103000
+ 1.020000 -0.592000 -2.282000
+ 0.861000 -0.392000 4.686000
+ 2.786000 -1.447000 4.736000
+ 3.029000 -1.688000 -2.033000
+ -0.005000 0.004000 0.009000
+ 3.774000 -2.065000 0.107000
+ -0.040000 0.061000 2.468000
+ 3.744000 -2.006000 2.567000
+ 4.061000 -2.357000 -3.700000
+ 3.236000 -0.778000 -3.883000
+ 2.287000 -2.288000 -3.864000
+!entry.MOL.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.MOL.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "MOL" 1 21 1 "?" 0
+!entry.MOL.unit.residuesPdbSequenceNumber array int
+ 0
+!entry.MOL.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.MOL.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0

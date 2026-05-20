@@ -1,0 +1,19 @@
+; mobley_7417968_GMX_OPLS.top created by acpype (v: 2023.10.27) on Wed May 20 23:43:06 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include mobley_7417968_GMX.itp topology
+#include "mobley_7417968_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_mobley_7417968.itp"
+#endif
+
+[ system ]
+ mobley_7417968
+
+[ molecules ]
+; Compound        nmols
+ mobley_7417968   1     

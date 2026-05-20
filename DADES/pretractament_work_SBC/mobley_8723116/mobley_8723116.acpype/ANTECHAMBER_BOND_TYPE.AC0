@@ -1,0 +1,30 @@
+CHARGE      0.00 ( 0 )
+Formula: H6 C6 N1 Cl1 
+ATOM      1  C1  MOL     1       0.818  -0.439   0.564 -0.188500        ca
+ATOM      2  C2  MOL     1       2.937  -1.597   0.620 -0.188500        ca
+ATOM      3  C3  MOL     1       0.799  -0.406   1.959 -0.084000        ca
+ATOM      4  C4  MOL     1       2.918  -1.565   2.014 -0.084000        ca
+ATOM      5  C5  MOL     1       1.887  -1.034  -0.105  0.149800        ca
+ATOM      6  C6  MOL     1       1.850  -0.969   2.684 -0.029200        ca
+ATOM      7  N1  MOL     1       1.905  -1.067  -1.515 -0.827700        nh
+ATOM      8  Cl1 MOL     1       1.827  -0.928   4.404 -0.101800        cl
+ATOM      9  H1  MOL     1      -0.006   0.003   0.009  0.136400        ha
+ATOM     10  H2  MOL     1       3.775  -2.064   0.108  0.136400        ha
+ATOM     11  H3  MOL     1      -0.040   0.062   2.467  0.144900        ha
+ATOM     12  H4  MOL     1       3.744  -2.007   2.566  0.144900        ha
+ATOM     13  H5  MOL     1       1.174  -0.613  -2.023  0.395600        hn
+ATOM     14  H6  MOL     1       2.595  -1.622  -1.981  0.395600        hn
+BOND    1    1    3   10     C1   C3
+BOND    2    1    5   10     C1   C5
+BOND    3    2    4   10     C2   C4
+BOND    4    2    5   10     C2   C5
+BOND    5    3    6   10     C3   C6
+BOND    6    4    6   10     C4   C6
+BOND    7    5    7    1     C5   N1
+BOND    8    6    8    1     C6  Cl1
+BOND    9    1    9    1     C1   H1
+BOND   10    2   10    1     C2   H2
+BOND   11    3   11    1     C3   H3
+BOND   12    4   12    1     C4   H4
+BOND   13    7   13    1     N1   H5
+BOND   14    7   14    1     N1   H6
