@@ -1,0 +1,135 @@
+!!index array str
+ "MOL"
+!entry.MOL.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "C1" "c" 0 1 131072 1 6 0.637100
+ "C2" "c3" 0 1 131072 2 6 -0.098100
+ "C3" "c3" 0 1 131072 3 6 -0.098100
+ "C4" "c3" 0 1 131072 4 6 -0.126400
+ "C5" "c3" 0 1 131072 5 6 -0.058700
+ "O1" "o" 0 1 131072 6 8 -0.553000
+ "O2" "oh" 0 1 131072 7 8 -0.611100
+ "H1" "hc" 0 1 131072 8 1 0.041867
+ "H2" "hc" 0 1 131072 9 1 0.041867
+ "H3" "hc" 0 1 131072 10 1 0.041867
+ "H4" "hc" 0 1 131072 11 1 0.041867
+ "H5" "hc" 0 1 131072 12 1 0.041867
+ "H6" "hc" 0 1 131072 13 1 0.041867
+ "H7" "hc" 0 1 131072 14 1 0.079700
+ "H8" "hc" 0 1 131072 15 1 0.079700
+ "H9" "hc" 0 1 131072 16 1 0.056700
+ "H10" "ho" 0 1 131072 17 1 0.443000
+!entry.MOL.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "C1" "c" 0 -1 0.0
+ "C2" "c3" 0 -1 0.0
+ "C3" "c3" 0 -1 0.0
+ "C4" "c3" 0 -1 0.0
+ "C5" "c3" 0 -1 0.0
+ "O1" "o" 0 -1 0.0
+ "O2" "oh" 0 -1 0.0
+ "H1" "hc" 0 -1 0.0
+ "H2" "hc" 0 -1 0.0
+ "H3" "hc" 0 -1 0.0
+ "H4" "hc" 0 -1 0.0
+ "H5" "hc" 0 -1 0.0
+ "H6" "hc" 0 -1 0.0
+ "H7" "hc" 0 -1 0.0
+ "H8" "hc" 0 -1 0.0
+ "H9" "hc" 0 -1 0.0
+ "H10" "ho" 0 -1 0.0
+!entry.MOL.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.MOL.unit.childsequence single int
+ 2
+!entry.MOL.unit.connect array int
+ 0
+ 0
+!entry.MOL.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 4 1
+ 1 6 2
+ 1 7 1
+ 2 5 1
+ 2 8 1
+ 2 9 1
+ 2 10 1
+ 3 5 1
+ 3 11 1
+ 3 12 1
+ 3 13 1
+ 4 5 1
+ 4 14 1
+ 4 15 1
+ 5 16 1
+ 7 17 1
+!entry.MOL.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+ "R" 1 "A" 4
+ "R" 1 "A" 5
+ "R" 1 "A" 6
+ "R" 1 "A" 7
+ "R" 1 "A" 8
+ "R" 1 "A" 9
+ "R" 1 "A" 10
+ "R" 1 "A" 11
+ "R" 1 "A" 12
+ "R" 1 "A" 13
+ "R" 1 "A" 14
+ "R" 1 "A" 15
+ "R" 1 "A" 16
+ "R" 1 "A" 17
+!entry.MOL.unit.name single str
+ "3_methylbutanoic_acid"
+!entry.MOL.unit.positions table  dbl x  dbl y  dbl z
+ -2.882000 -1.580000 -0.667000
+ 0.023000 -1.082000 -0.167000
+ 0.392000 -0.816000 -2.629000
+ -1.963000 -0.978000 -1.703000
+ -0.505000 -1.442000 -1.557000
+ -3.515000 -0.966000 0.179000
+ -2.944000 -2.927000 -0.823000
+ -0.580000 -1.559000 0.613000
+ 0.0 0.0 0.0
+ 1.056000 -1.423000 -0.043000
+ 0.387000 0.278000 -2.562000
+ 1.426000 -1.155000 -2.513000
+ 0.064000 -1.094000 -3.635000
+ -2.336000 -1.238000 -2.701000
+ -2.024000 0.111000 -1.585000
+ -0.457000 -2.533000 -1.665000
+ -3.555000 -3.342000 -0.177000
+!entry.MOL.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.MOL.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "MOL" 1 18 1 "?" 0
+!entry.MOL.unit.residuesPdbSequenceNumber array int
+ 0
+!entry.MOL.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.MOL.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0

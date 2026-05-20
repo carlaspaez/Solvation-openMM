@@ -1,0 +1,21 @@
+; mobley_4039055_GMX.top created by acpype (v: 2023.10.27) on Wed May 20 23:53:30 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include mobley_4039055_GMX.itp topology
+#include "mobley_4039055_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_mobley_4039055.itp"
+#endif
+
+[ system ]
+mobley_4039055 in water
+
+[ molecules ]
+; Compound        nmols
+ mobley_4039055   1     
+SOL              3160

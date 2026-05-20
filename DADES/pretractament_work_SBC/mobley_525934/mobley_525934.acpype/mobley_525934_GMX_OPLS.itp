@@ -1,0 +1,52 @@
+; mobley_525934_GMX_OPLS.itp created by acpype (v: 2023.10.27) on Thu May 21 00:04:43 2026
+
+; For OPLS atomtypes manual fine tuning
+; AC_at:OPLS_at:OPLScode: Possible_Alternatives (see ffoplsaa.atp and ffoplsaanb.itp)
+; h1:HC:opls_140: []
+; c3:CT:opls_135: ['136', '137', '149', '157', '158', '206', '209', '210', '223B', '224B', '245', '246', '274', '283', '284', '285', '292', '292B', '293B', '296', '307', '308', '505']
+; sh:SH:opls_200: []
+; hs:HS:opls_204: []
+
+[ moleculetype ]
+;name            nrexcl
+ mobley_525934    3
+
+[ atoms ]
+;   nr  type  resi  res  atom  cgnr     charge      mass       ; qtot   bond_type
+     1 opls_140     1   MOL   H11    1     0.063700      1.00800 ; qtot  0.064  HC  
+     2 opls_135     1   MOL    C1    2    -0.024000     12.01100 ; qtot  0.040  CT  
+     3 opls_140     1   MOL   H12    3     0.063700      1.00800 ; qtot  0.103  HC  
+     4 opls_140     1   MOL   H13    4     0.063700      1.00800 ; qtot  0.167  HC  
+     5 opls_200     1   MOL    S1    5    -0.362900     32.06000 ; qtot -0.196  SH  
+     6 opls_204     1   MOL    H1    6     0.195800      1.00800 ; qtot -0.000  HS  
+
+[ bonds ]
+;   ai     aj funct   r             k
+     1      2   1 ;    1.0969e-01    2.8804e+05 ;    H11 - C1         HC - CT    
+     2      3   1 ;    1.0969e-01    2.8804e+05 ;     C1 - H12        CT - HC    
+     2      4   1 ;    1.0969e-01    2.8804e+05 ;     C1 - H13        CT - HC    
+     2      5   1 ;    1.8446e-01    1.5307e+05 ;     C1 - S1         CT - SH    
+     5      6   1 ;    1.3503e-01    2.3222e+05 ;     S1 - H1         SH - HS    
+
+[ pairs ]
+;   ai     aj    funct
+     1      6      1 ;    H11 - H1    
+     3      6      1 ;    H12 - H1    
+     4      6      1 ;    H13 - H1    
+
+[ angles ]
+;   ai     aj     ak    funct   theta         cth
+     1      2      3      1 ;    1.0855e+02    2.9824e+02 ;    H11 - C1   - H12      HC -   CT - HC  
+     1      2      4      1 ;    1.0855e+02    2.9824e+02 ;    H11 - C1   - H13      HC -   CT - HC  
+     1      2      5      1 ;    1.0837e+02    3.5171e+02 ;    H11 - C1   - S1       HC -   CT - SH  
+     2      5      6      1 ;    9.6410e+01    5.5957e+02 ;     C1 - S1   - H1       CT -   SH - HS  
+     3      2      4      1 ;    1.0855e+02    2.9824e+02 ;    H12 - C1   - H13      HC -   CT - HC  
+     3      2      5      1 ;    1.0837e+02    3.5171e+02 ;    H12 - C1   - S1       HC -   CT - SH  
+     4      2      5      1 ;    1.0837e+02    3.5171e+02 ;    H13 - C1   - S1       HC -   CT - SH  
+
+[ dihedrals ] ; propers
+; for gromacs 4.5 or higher, using funct 9
+;    i      j      k      l   func   phase     kd      pn
+     1      2      5      6      9 ;     0.00   0.59831   3 ;    H11-    C1-    S1-    H1
+     3      2      5      6      9 ;     0.00   0.59831   3 ;    H12-    C1-    S1-    H1
+     4      2      5      6      9 ;     0.00   0.59831   3 ;    H13-    C1-    S1-    H1

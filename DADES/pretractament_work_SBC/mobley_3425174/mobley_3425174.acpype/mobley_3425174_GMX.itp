@@ -1,0 +1,36 @@
+; mobley_3425174_GMX.itp created by acpype (v: 2023.10.27) on Wed May 20 23:53:41 2026
+
+[ atomtypes ]
+;name   bond_type     mass     charge   ptype   sigma         epsilon       Amb
+ c3       c3          0.00000  0.00000   A     3.39771e-01   4.51035e-01 ; 1.91  0.1078
+ f        f           0.00000  0.00000   A     3.03422e-01   3.48109e-01 ; 1.70  0.0832
+ cl       cl          0.00000  0.00000   A     3.46595e-01   1.10374e+00 ; 1.95  0.2638
+ h2       h2          0.00000  0.00000   A     2.24382e-01   8.70272e-02 ; 1.26  0.0208
+
+[ moleculetype ]
+;name            nrexcl
+ mobley_3425174   3
+
+[ atoms ]
+;   nr  type  resi  res  atom  cgnr     charge      mass       ; qtot   bond_type
+     1   c3     1   MOL    C1    1     0.270300     12.01000 ; qtot 0.270
+     2    f     1   MOL    F1    2    -0.214300     19.00000 ; qtot 0.056
+     3   cl     1   MOL   CL1    3    -0.203400     35.45000 ; qtot -0.147
+     4   h2     1   MOL    H1    4     0.073700      1.00800 ; qtot -0.074
+     5   h2     1   MOL    H2    5     0.073700      1.00800 ; qtot 0.000
+
+[ bonds ]
+;   ai     aj funct   r             k
+     1      2   1    1.3512e-01    2.7973e+05 ;     C1 - F1    
+     1      3   1    1.8092e-01    1.3724e+05 ;     C1 - CL1   
+     1      4   1    1.0950e-01    2.9039e+05 ;     C1 - H1    
+     1      5   1    1.0950e-01    2.9039e+05 ;     C1 - H2    
+
+[ angles ]
+;   ai     aj     ak    funct   theta         cth
+     2      1      3      1    1.0914e+02    6.8216e+02 ;     F1 - C1     - CL1   
+     2      1      4      1    1.0907e+02    5.0032e+02 ;     F1 - C1     - H1    
+     2      1      5      1    1.0907e+02    5.0032e+02 ;     F1 - C1     - H2    
+     3      1      4      1    1.0706e+02    3.6133e+02 ;    CL1 - C1     - H1    
+     3      1      5      1    1.0706e+02    3.6133e+02 ;    CL1 - C1     - H2    
+     4      1      5      1    1.0951e+02    2.9748e+02 ;     H1 - C1     - H2    

@@ -1,0 +1,129 @@
+            --------------------------------------------------------
+                             AMBER SQM VERSION 19
+ 
+                                     By
+              Ross C. Walker, Michael F. Crowley, Scott Brozell,
+                         Tim Giese, Andreas W. Goetz,
+                        Tai-Sung Lee and David A. Case
+ 
+            --------------------------------------------------------
+ 
+
+--------------------------------------------------------------------------------
+  QM CALCULATION INFO
+--------------------------------------------------------------------------------
+
+| QMMM: Citation for AMBER QMMM Run:
+| QMMM: R.C. Walker, M.F. Crowley and D.A. Case, J. COMP. CHEM. 29:1019, 2008
+
+QMMM: SINGLET STATE CALCULATION
+QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 48
+
+| QMMM: *** Selected Hamiltonian *** 
+| QMMM: AM1         
+
+| QMMM: *** Parameter sets in use ***
+| QMMM: C : M.J.S.DEWAR et al. JACS, 107, 3902, (1985)
+| QMMM: O : M.J.S.DEWAR et al. JACS, 107, 3902, (1985)
+| QMMM: H : M.J.S.DEWAR et al. JACS, 107, 3902, (1985)
+
+| QMMM: *** SCF convergence criteria ***
+| QMMM: Energy change                :  0.1D-09 kcal/mol
+| QMMM: Error matrix |FP-PF|         :  0.1D+00 au
+| QMMM: Density matrix change        :  0.5D-06
+| QMMM: Maximum number of SCF cycles :     1000
+
+| QMMM: *** Diagonalization Routine Information ***
+| QMMM: Pseudo diagonalizations are allowed.
+| QMMM: Auto diagonalization routine selection is in use.
+| QMMM:
+| QMMM: Timing diagonalization routines:
+| QMMM:                              norbs =       90
+| QMMM:    diag iterations used for timing =       15
+| QMMM:
+| QMMM:              Internal diag routine = 0.051701 seconds
+| QMMM:                 Dspev diag routine = 0.062107 seconds
+| QMMM:                Dspevd diag routine = 0.014817 seconds
+| QMMM:                Dspevx diag routine = 0.077771 seconds
+| QMMM:                 Dsyev diag routine = 0.019140 seconds
+| QMMM:                Dsyevd diag routine = 1.042091 seconds
+| QMMM:                Dsyevr diag routine = 0.080781 seconds
+| QMMM:
+| QMMM:                Pseudo diag routine = 0.015933 seconds
+| QMMM: Pseudo diagonalization appears to be slower than regular
+| QMMM: diagonalization. Setting pseudo_diag=0 for optimum performance.
+| QMMM:
+| QMMM: Using dspevd routine (diag_routine=3).
+
+  QMMM: QM Region Cartesian Coordinates (*=link atom) 
+  QMMM: QM_NO.   MM_NO.  ATOM         X         Y         Z
+  QMMM:     1        1      C        3.4830   -4.9770    4.1200
+  QMMM:     2        2      C        4.0750   -3.9480    3.3880
+  QMMM:     3        3      C        2.3230   -4.7320    4.8550
+  QMMM:     4        4      C       -1.8930   -0.6240    5.0130
+  QMMM:     5        5      C        3.5070   -2.6740    3.3910
+  QMMM:     6        6      C        1.7550   -3.4580    4.8580
+  QMMM:     7        7      C       -0.7350   -0.9250    4.2960
+  QMMM:     8        8      C       -1.8020   -0.1760    6.3300
+  QMMM:     9        9      C        0.6070   -0.3300    6.2150
+  QMMM:    10       10      C        2.3470   -2.4290    4.1260
+  QMMM:    11       11      C        0.5150   -0.7780    4.8970
+  QMMM:    12       12      C       -0.5520   -0.0290    6.9320
+  QMMM:    13       13      C        1.7550   -1.1000    4.1290
+  QMMM:    14       14      C        0.1690   -0.5940    9.2750
+  QMMM:    15       15      C        0.3120    1.7800    8.4920
+  QMMM:    16       16      C       -0.4530    0.4500    8.3410
+  QMMM:    17       17      O        2.2770   -0.1820    3.4800
+  QMMM:    18       18      O        0.5700   -1.6930    8.9150
+  QMMM:    19       19      O        0.2300   -0.1820   10.5690
+  QMMM:    20       20      H        3.9250   -5.9680    4.1180
+  QMMM:    21       21      H        4.9770   -4.1380    2.8140
+  QMMM:    22       22      H        1.8630   -5.5330    5.4260
+  QMMM:    23       23      H       -2.8670   -0.7390    4.5440
+  QMMM:    24       24      H        3.9770   -1.8790    2.8160
+  QMMM:    25       25      H        0.8520   -3.2790    5.4350
+  QMMM:    26       26      H       -0.8190   -1.2720    3.2690
+  QMMM:    27       27      H       -2.7090    0.0570    6.8810
+  QMMM:    28       28      H        1.5800   -0.2150    6.6860
+  QMMM:    29       29      H        1.3440    1.6950    8.1320
+  QMMM:    30       30      H       -0.1830    2.5760    7.9260
+  QMMM:    31       31      H        0.3690    2.1010    9.5380
+  QMMM:    32       32      H       -1.4750    0.6310    8.7270
+  QMMM:    33       33      H        0.6170   -0.8280   11.1980
+
+--------------------------------------------------------------------------------
+  RESULTS
+--------------------------------------------------------------------------------
+
+      iter         sqm energy              rms gradient
+      ----    -------------------    -----------------------
+xmin    10      -78.3220 kcal/mol        0.4057 kcal/(mol*A)
+xmin    20      -78.4549 kcal/mol        0.1910 kcal/(mol*A)
+xmin    30      -78.5941 kcal/mol        0.2413 kcal/(mol*A)
+xmin    40      -78.9010 kcal/mol        1.1768 kcal/(mol*A)
+xmin    50      -79.1834 kcal/mol        0.7291 kcal/(mol*A)
+xmin    60      -79.3537 kcal/mol        0.2943 kcal/(mol*A)
+xmin    70      -79.5043 kcal/mol        0.4122 kcal/(mol*A)
+xmin    80      -79.5427 kcal/mol        0.1603 kcal/(mol*A)
+xmin    90      -79.5483 kcal/mol        0.0429 kcal/(mol*A)
+xmin   100      -79.5639 kcal/mol        0.1494 kcal/(mol*A)
+xmin   110      -79.5729 kcal/mol        0.1033 kcal/(mol*A)
+xmin   120      -79.5968 kcal/mol        0.2448 kcal/(mol*A)
+xmin   130      -79.6178 kcal/mol        0.0535 kcal/(mol*A)
+xmin   140      -79.6536 kcal/mol        0.2906 kcal/(mol*A)
+xmin   150      -79.6935 kcal/mol        0.2874 kcal/(mol*A)
+xmin   160      -79.6982 kcal/mol        0.0465 kcal/(mol*A)
+xmin   170      -79.7128 kcal/mol        0.0646 kcal/(mol*A)
+xmin   180      -79.7434 kcal/mol        0.2484 kcal/(mol*A)
+xmin   190      -79.8524 kcal/mol        0.3481 kcal/(mol*A)
+xmin   200      -79.9103 kcal/mol        0.6937 kcal/(mol*A)
+xmin   210      -79.9978 kcal/mol        0.4381 kcal/(mol*A)
+xmin   220      -80.1042 kcal/mol        0.2519 kcal/(mol*A)
+xmin   230      -80.1361 kcal/mol        0.2853 kcal/(mol*A)
+xmin   240      -80.1677 kcal/mol        0.1394 kcal/(mol*A)
+xmin   250      -80.1852 kcal/mol        0.0911 kcal/(mol*A)
+xmin   260      -80.2062 kcal/mol        0.1473 kcal/(mol*A)
+xmin   270      -80.2205 kcal/mol        0.0394 kcal/(mol*A)
+xmin   280      -80.2271 kcal/mol        0.1348 kcal/(mol*A)
+xmin   290      -80.2351 kcal/mol        0.1001 kcal/(mol*A)
+xmin   300      -80.2378 kcal/mol        0.0699 kcal/(mol*A)
