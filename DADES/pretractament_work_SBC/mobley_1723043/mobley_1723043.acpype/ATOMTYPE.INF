@@ -1,0 +1,82 @@
+====================================================================================
+-------------------------------ring property (I)------------------------------------
+
+               Ring 1               
+
+    1     1     1    C1
+    1     2     2    C2
+    1     3     3    C3
+    1     4     4    C4
+
+====================================================================================
+-------------------------------ring property (II)------------------------------------
+atom[ 1] (C1  ) belongs to one member of 4-membered  ring (No  1)
+atom[ 2] (C2  ) belongs to one member of 4-membered  ring (No  1)
+atom[ 3] (C3  ) belongs to one member of 4-membered  ring (No  1)
+atom[ 4] (C4  ) belongs to one member of 4-membered  ring (No  1)
+
+====================================================================================
+-------------------------------ring property (III)-----------------------------------
+atom[ 1] (C1  ) involves in 1 4-member of ring(s)
+atom[ 2] (C2  ) involves in 1 4-member of ring(s)
+atom[ 3] (C3  ) involves in 1 4-member of ring(s)
+atom[ 4] (C4  ) involves in 1 4-member of ring(s)
+atom[ 5] (F1  ) is not in any ring (nr[5]=1)
+atom[ 6] (F2  ) is not in any ring (nr[6]=1)
+atom[ 7] (F3  ) is not in any ring (nr[7]=1)
+atom[ 8] (F4  ) is not in any ring (nr[8]=1)
+atom[ 9] (F5  ) is not in any ring (nr[9]=1)
+atom[10] (F6  ) is not in any ring (nr[10]=1)
+atom[11] (F7  ) is not in any ring (nr[11]=1)
+atom[12] (F8  ) is not in any ring (nr[12]=1)
+
+====================================================================================
+-------------------------------aromatic property------------------------------------
+atom[ 1] (C1  ) is in 1 pure aliphatic ring, which is/are made of sp3 carbons (AR5)
+atom[ 2] (C2  ) is in 1 pure aliphatic ring, which is/are made of sp3 carbons (AR5)
+atom[ 3] (C3  ) is in 1 pure aliphatic ring, which is/are made of sp3 carbons (AR5)
+atom[ 4] (C4  ) is in 1 pure aliphatic ring, which is/are made of sp3 carbons (AR5)
+
+====================================================================================
+-------------------------------electronic property----------------------------------
+atom [ 1] (C1  ) is not an electron-withdrew atom
+atom [ 2] (C2  ) is not an electron-withdrew atom
+atom [ 3] (C3  ) is not an electron-withdrew atom
+atom [ 4] (C4  ) is not an electron-withdrew atom
+atom [ 5] (F1  ) is an electron-withdrew atom
+atom [ 6] (F2  ) is an electron-withdrew atom
+atom [ 7] (F3  ) is an electron-withdrew atom
+atom [ 8] (F4  ) is an electron-withdrew atom
+atom [ 9] (F5  ) is an electron-withdrew atom
+atom [10] (F6  ) is an electron-withdrew atom
+atom [11] (F7  ) is an electron-withdrew atom
+atom [12] (F8  ) is an electron-withdrew atom
+
+====================================================================================
+--------------------------------connectivity property-------------------------------
+atom[ 1] (C1  )     2    C2
+atom[ 1] (C1  )     3    C3
+atom[ 1] (C1  )     5    F1
+atom[ 1] (C1  )     6    F2
+atom[ 2] (C2  )     1    C1
+atom[ 2] (C2  )     4    C4
+atom[ 2] (C2  )     7    F3
+atom[ 2] (C2  )     8    F4
+atom[ 3] (C3  )     1    C1
+atom[ 3] (C3  )     4    C4
+atom[ 3] (C3  )     9    F5
+atom[ 3] (C3  )    10    F6
+atom[ 4] (C4  )     2    C2
+atom[ 4] (C4  )     3    C3
+atom[ 4] (C4  )    11    F7
+atom[ 4] (C4  )    12    F8
+atom[ 5] (F1  )     1    C1
+atom[ 6] (F2  )     1    C1
+atom[ 7] (F3  )     2    C2
+atom[ 8] (F4  )     2    C2
+atom[ 9] (F5  )     3    C3
+atom[10] (F6  )     3    C3
+atom[11] (F7  )     4    C4
+atom[12] (F8  )     4    C4
+----------------------------------------END-----------------------------------------
+
