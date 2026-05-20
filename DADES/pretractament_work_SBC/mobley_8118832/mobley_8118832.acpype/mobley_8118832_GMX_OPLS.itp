@@ -1,0 +1,94 @@
+; mobley_8118832_GMX_OPLS.itp created by acpype (v: 2023.10.27) on Wed May 20 23:46:34 2026
+
+; For OPLS atomtypes manual fine tuning
+; AC_at:OPLS_at:OPLScode: Possible_Alternatives (see ffoplsaa.atp and ffoplsaanb.itp)
+; c2:CR:opls_509: ['510']
+; c3:CT:opls_135: ['136', '137', '149', '157', '158', '206', '209', '210', '223B', '224B', '245', '246', '274', '283', '284', '285', '292', '292B', '293B', '296', '307', '308', '505']
+; oh:OH:opls_154: ['167']
+; ha:HA:opls_146: []
+; h1:HC:opls_140: []
+; ho:HO:opls_155: ['168']
+
+[ moleculetype ]
+;name            nrexcl
+ mobley_8118832   3
+
+[ atoms ]
+;   nr  type  resi  res  atom  cgnr     charge      mass       ; qtot   bond_type
+     1 opls_509     1   MOL    C1    1    -0.210000     12.01100 ; qtot -0.210  CR  
+     2 opls_509     1   MOL    C2    2    -0.212200     12.01100 ; qtot -0.422  CR  
+     3 opls_135     1   MOL    C3    3     0.155600     12.01100 ; qtot -0.267  CT  
+     4 opls_154     1   MOL    O1    4    -0.598800     15.99940 ; qtot -0.865  OH  
+     5 opls_146     1   MOL    H1    5     0.114000      1.00800 ; qtot -0.751  HA  
+     6 opls_146     1   MOL    H2    6     0.114000      1.00800 ; qtot -0.637  HA  
+     7 opls_146     1   MOL    H3    7     0.133000      1.00800 ; qtot -0.504  HA  
+     8 opls_140     1   MOL    H4    8     0.052700      1.00800 ; qtot -0.452  HC  
+     9 opls_140     1   MOL    H5    9     0.052700      1.00800 ; qtot -0.399  HC  
+    10 opls_155     1   MOL    H6   10     0.399000      1.00800 ; qtot -0.000  HO  
+
+[ bonds ]
+;   ai     aj funct   r             k
+     1      2   1 ;    1.3379e-01    3.6484e+05 ;     C1 - C2         CR - CR    
+     1      5   1 ;    1.0882e-01    2.9898e+05 ;     C1 - H1         CR - HA    
+     1      6   1 ;    1.0882e-01    2.9898e+05 ;     C1 - H2         CR - HA    
+     2      3   1 ;    1.5088e-01    2.0786e+05 ;     C2 - C3         CR - CT    
+     2      7   1 ;    1.0882e-01    2.9898e+05 ;     C2 - H3         CR - HA    
+     3      4   1 ;    1.4242e-01    2.3861e+05 ;     C3 - O1         CT - OH    
+     3      8   1 ;    1.0969e-01    2.8804e+05 ;     C3 - H4         CT - HC    
+     3      9   1 ;    1.0969e-01    2.8804e+05 ;     C3 - H5         CT - HC    
+     4     10   1 ;    9.7250e-02    4.4811e+05 ;     O1 - H6         OH - HO    
+
+[ pairs ]
+;   ai     aj    funct
+     1      4      1 ;     C1 - O1    
+     1      8      1 ;     C1 - H4    
+     1      9      1 ;     C1 - H5    
+     2     10      1 ;     C2 - H6    
+     4      7      1 ;     O1 - H3    
+     5      3      1 ;     H1 - C3    
+     5      7      1 ;     H1 - H3    
+     6      3      1 ;     H2 - C3    
+     6      7      1 ;     H2 - H3    
+     7      8      1 ;     H3 - H4    
+     7      9      1 ;     H3 - H5    
+     8     10      1 ;     H4 - H6    
+     9     10      1 ;     H5 - H6    
+
+[ angles ]
+;   ai     aj     ak    funct   theta         cth
+     1      2      3      1 ;    1.2495e+02    5.0944e+02 ;     C1 - C2   - C3       CR -   CR - CT  
+     1      2      7      1 ;    1.2039e+02    3.8802e+02 ;     C1 - C2   - H3       CR -   CR - HA  
+     2      1      5      1 ;    1.2039e+02    3.8802e+02 ;     C2 - C1   - H1       CR -   CR - HA  
+     2      1      6      1 ;    1.2039e+02    3.8802e+02 ;     C2 - C1   - H2       CR -   CR - HA  
+     2      3      4      1 ;    1.1033e+02    6.4718e+02 ;     C2 - C3   - O1       CR -   CT - OH  
+     2      3      8      1 ;    1.0996e+02    3.6727e+02 ;     C2 - C3   - H4       CR -   CT - HC  
+     2      3      9      1 ;    1.0996e+02    3.6727e+02 ;     C2 - C3   - H5       CR -   CT - HC  
+     3      2      7      1 ;    1.1505e+02    3.5941e+02 ;     C3 - C2   - H3       CT -   CR - HA  
+     3      4     10      1 ;    1.0739e+02    5.4501e+02 ;     C3 - O1   - H6       CT -   OH - HO  
+     4      3      8      1 ;    1.1038e+02    4.7103e+02 ;     O1 - C3   - H4       OH -   CT - HC  
+     4      3      9      1 ;    1.1038e+02    4.7103e+02 ;     O1 - C3   - H5       OH -   CT - HC  
+     5      1      6      1 ;    1.1666e+02    2.9003e+02 ;     H1 - C1   - H2       HA -   CR - HA  
+     8      3      9      1 ;    1.0855e+02    2.9824e+02 ;     H4 - C3   - H5       HC -   CT - HC  
+
+[ dihedrals ] ; propers
+; for gromacs 4.5 or higher, using funct 9
+;    i      j      k      l   func   phase     kd      pn
+     1      2      3      4      9 ;     0.00   0.00000   0 ;     C1-    C2-    C3-    O1
+     1      2      3      8      9 ;     0.00   0.00000   0 ;     C1-    C2-    C3-    H4
+     1      2      3      9      9 ;     0.00   0.00000   0 ;     C1-    C2-    C3-    H5
+     2      3      4     10      9 ;     0.00   0.69733   3 ;     C2-    C3-    O1-    H6
+     4      3      2      7      9 ;     0.00   0.00000   0 ;     O1-    C3-    C2-    H3
+     5      1      2      3      9 ;   180.00  27.82360   2 ;     H1-    C1-    C2-    C3
+     5      1      2      7      9 ;   180.00  27.82360   2 ;     H1-    C1-    C2-    H3
+     6      1      2      3      9 ;   180.00  27.82360   2 ;     H2-    C1-    C2-    C3
+     6      1      2      7      9 ;   180.00  27.82360   2 ;     H2-    C1-    C2-    H3
+     7      2      3      8      9 ;     0.00   0.00000   0 ;     H3-    C2-    C3-    H4
+     7      2      3      9      9 ;     0.00   0.00000   0 ;     H3-    C2-    C3-    H5
+     8      3      4     10      9 ;     0.00   0.51463   3 ;     H4-    C3-    O1-    H6
+     9      3      4     10      9 ;     0.00   0.51463   3 ;     H5-    C3-    O1-    H6
+
+[ dihedrals ] ; impropers
+; treated as propers in GROMACS to use correct AMBER analytical function
+;    i      j      k      l   func   phase     kd      pn
+     1      3      2      7      4 ;   180.00   4.60240   2 ;     C1-    C3-    C2-    H3
+     6      1      5      2      4 ;   180.00   4.60240   2 ;     H2-    C1-    H1-    C2

@@ -1,0 +1,25 @@
+; mobley_1929982_GMX_OPLS.itp created by acpype (v: 2023.10.27) on Wed May 20 23:51:35 2026
+
+; For OPLS atomtypes manual fine tuning
+; AC_at:OPLS_at:OPLScode: Possible_Alternatives (see ffoplsaa.atp and ffoplsaanb.itp)
+; sh:SH:opls_200: []
+; hs:HS:opls_204: []
+
+[ moleculetype ]
+;name            nrexcl
+ mobley_1929982   3
+
+[ atoms ]
+;   nr  type  resi  res  atom  cgnr     charge      mass       ; qtot   bond_type
+     1 opls_200     1   MOL    S1    1    -0.439600     32.06000 ; qtot -0.440  SH  
+     2 opls_204     1   MOL    H1    2     0.219800      1.00800 ; qtot -0.220  HS  
+     3 opls_204     1   MOL    H2    3     0.219800      1.00800 ; qtot  0.000  HS  
+
+[ bonds ]
+;   ai     aj funct   r             k
+     1      2   1 ;    1.3503e-01    2.3222e+05 ;     S1 - H1         SH - HS    
+     1      3   1 ;    1.3503e-01    2.3222e+05 ;     S1 - H2         SH - HS    
+
+[ angles ]
+;   ai     aj     ak    funct   theta         cth
+     2      1      3      1 ;    9.2760e+01    4.5748e+02 ;     H1 - S1   - H2       HS -   SH - HS  

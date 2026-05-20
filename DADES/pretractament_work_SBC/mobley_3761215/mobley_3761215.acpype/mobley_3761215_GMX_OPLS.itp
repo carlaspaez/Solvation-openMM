@@ -1,0 +1,72 @@
+; mobley_3761215_GMX_OPLS.itp created by acpype (v: 2023.10.27) on Wed May 20 23:46:05 2026
+
+; For OPLS atomtypes manual fine tuning
+; AC_at:OPLS_at:OPLScode: Possible_Alternatives (see ffoplsaa.atp and ffoplsaanb.itp)
+; c3:CT:opls_135: ['136', '137', '149', '157', '158', '206', '209', '210', '223B', '224B', '245', '246', '274', '283', '284', '285', '292', '292B', '293B', '296', '307', '308', '505']
+; cl:x:opls_x: []
+; hc:HC:opls_140: []
+
+[ moleculetype ]
+;name            nrexcl
+ mobley_3761215   3
+
+[ atoms ]
+;   nr  type  resi  res  atom  cgnr     charge      mass       ; qtot   bond_type
+     1 opls_135     1   MOL    C1    1    -0.112100     12.01100 ; qtot -0.112  CT  
+     2 opls_135     1   MOL    C2    2     0.264200     12.01100 ; qtot  0.152  CT  
+     3 opls_x     1   MOL   CL1    3    -0.123400      0.00000 ; qtot  0.029  x   
+     4 opls_x     1   MOL   CL2    4    -0.123400      0.00000 ; qtot -0.095  x   
+     5 opls_x     1   MOL   CL3    5    -0.123400      0.00000 ; qtot -0.218  x   
+     6 opls_140     1   MOL    H1    6     0.072700      1.00800 ; qtot -0.145  HC  
+     7 opls_140     1   MOL    H2    7     0.072700      1.00800 ; qtot -0.073  HC  
+     8 opls_140     1   MOL    H3    8     0.072700      1.00800 ; qtot  0.000  HC  
+
+[ bonds ]
+;   ai     aj funct   r             k
+     1      2   1 ;    1.5354e-01    1.9154e+05 ;     C1 - C2         CT - CT    
+     1      6   1 ;    1.0962e-01    2.8891e+05 ;     C1 - H1         CT - HC    
+     1      7   1 ;    1.0962e-01    2.8891e+05 ;     C1 - H2         CT - HC    
+     1      8   1 ;    1.0962e-01    2.8891e+05 ;     C1 - H3         CT - HC    
+     2      3   1 ;    1.8092e-01    1.3724e+05 ;     C2 - CL1        CT - x     
+     2      4   1 ;    1.8092e-01    1.3724e+05 ;     C2 - CL2        CT - x     
+     2      5   1 ;    1.8092e-01    1.3724e+05 ;     C2 - CL3        CT - x     
+
+[ pairs ]
+;   ai     aj    funct
+     6      3      1 ;     H1 - CL1   
+     6      4      1 ;     H1 - CL2   
+     6      5      1 ;     H1 - CL3   
+     7      3      1 ;     H2 - CL1   
+     7      4      1 ;     H2 - CL2   
+     7      5      1 ;     H2 - CL3   
+     8      3      1 ;     H3 - CL1   
+     8      4      1 ;     H3 - CL2   
+     8      5      1 ;     H3 - CL3   
+
+[ angles ]
+;   ai     aj     ak    funct   theta         cth
+     1      2      3      1 ;    1.1039e+02    5.3254e+02 ;     C1 - C2   - CL1      CT -   CT - x   
+     1      2      4      1 ;    1.1039e+02    5.3254e+02 ;     C1 - C2   - CL2      CT -   CT - x   
+     1      2      5      1 ;    1.1039e+02    5.3254e+02 ;     C1 - C2   - CL3      CT -   CT - x   
+     2      1      6      1 ;    1.0968e+02    3.6208e+02 ;     C2 - C1   - H1       CT -   CT - HC  
+     2      1      7      1 ;    1.0968e+02    3.6208e+02 ;     C2 - C1   - H2       CT -   CT - HC  
+     2      1      8      1 ;    1.0968e+02    3.6208e+02 ;     C2 - C1   - H3       CT -   CT - HC  
+     3      2      4      1 ;    1.0934e+02    5.8225e+02 ;    CL1 - C2   - CL2       x -   CT - x   
+     3      2      5      1 ;    1.0934e+02    5.8225e+02 ;    CL1 - C2   - CL3       x -   CT - x   
+     4      2      5      1 ;    1.0934e+02    5.8225e+02 ;    CL2 - C2   - CL3       x -   CT - x   
+     6      1      7      1 ;    1.0773e+02    2.9957e+02 ;     H1 - C1   - H2       HC -   CT - HC  
+     6      1      8      1 ;    1.0773e+02    2.9957e+02 ;     H1 - C1   - H3       HC -   CT - HC  
+     7      1      8      1 ;    1.0773e+02    2.9957e+02 ;     H2 - C1   - H3       HC -   CT - HC  
+
+[ dihedrals ] ; propers
+; for gromacs 4.5 or higher, using funct 9
+;    i      j      k      l   func   phase     kd      pn
+     6      1      2      3      9 ;     0.00   0.75312   3 ;     H1-    C1-    C2-   CL1
+     6      1      2      4      9 ;     0.00   0.75312   3 ;     H1-    C1-    C2-   CL2
+     6      1      2      5      9 ;     0.00   0.75312   3 ;     H1-    C1-    C2-   CL3
+     7      1      2      3      9 ;     0.00   0.75312   3 ;     H2-    C1-    C2-   CL1
+     7      1      2      4      9 ;     0.00   0.75312   3 ;     H2-    C1-    C2-   CL2
+     7      1      2      5      9 ;     0.00   0.75312   3 ;     H2-    C1-    C2-   CL3
+     8      1      2      3      9 ;     0.00   0.75312   3 ;     H3-    C1-    C2-   CL1
+     8      1      2      4      9 ;     0.00   0.75312   3 ;     H3-    C1-    C2-   CL2
+     8      1      2      5      9 ;     0.00   0.75312   3 ;     H3-    C1-    C2-   CL3

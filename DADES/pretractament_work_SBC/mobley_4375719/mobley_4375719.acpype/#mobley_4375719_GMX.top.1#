@@ -1,0 +1,20 @@
+; mobley_4375719_GMX.top created by acpype (v: 2023.10.27) on Wed May 20 23:48:28 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include mobley_4375719_GMX.itp topology
+#include "mobley_4375719_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_mobley_4375719.itp"
+#endif
+
+[ system ]
+ mobley_4375719
+
+[ molecules ]
+; Compound        nmols
+ mobley_4375719   1     
