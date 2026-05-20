@@ -13,6 +13,7 @@ sortid*
 outputs/ 
 outputs-OK/
 pretractament_work/
+DADES/pretractament_work_SBC/
 
 # C extensions
 *.so
