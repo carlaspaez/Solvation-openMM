@@ -6,6 +6,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+outputs_PBC/
 outputs_sbc/
 cluster/
 error*

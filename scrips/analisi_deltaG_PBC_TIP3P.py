@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 csv_file = Path("resultats/database_carla.csv")
-output_dir = Path("outputs")
+output_dir = Path("outputs_PBC")
 
 col1 = "metode 1 (kcal/mol)"
 col2 = "incertesa metode 1 (kcal/mol)"
@@ -23,10 +23,19 @@ for row in rows:
 
     mol = row["identificador"]
 
- ######   json_file = output_dir / mol / "cvbn.json"
+    mol_dir = output_dir / mol
+    json_file = mol_dir / "TIP3P" / "results.json"
+
+    if not mol_dir.exists():
+        row[col1] = ""
+        row[col2] = ""
+        print("No esta a outputs_PBC:", mol)
+        continue
 
     if not json_file.exists():
-        print("No trobo:", mol)
+        row[col1] = "NA"
+        row[col2] = "NA"
+        print("No trobo results.json:", mol)
         continue
 
     with open(json_file, "r") as f:
