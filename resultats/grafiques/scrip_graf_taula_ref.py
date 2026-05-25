@@ -133,7 +133,7 @@ def main():
     # Etiquetes i títol.
     plt.xlabel(x_col)
     plt.ylabel(y_col)
-    plt.title('Correlacio: bibliografics (X) vs experimentals (Y)')
+    plt.title('Correlació: resultats bibliografics (X) vs resultatsexperimentals (Y)')
     # Graella suau per facilitar lectura.
     plt.grid(alpha=0.25)
     # Llegenda amb la línia y=x.

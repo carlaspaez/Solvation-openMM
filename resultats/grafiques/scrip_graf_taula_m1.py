@@ -11,9 +11,9 @@ import numpy as np
 # Carpeta de resultats del projecte.
 RESULTATS_DIR = Path(__file__).resolve().parents[1]
 # Fitxer CSV d'entrada amb valors i incerteses.
-CSV_PATH = RESULTATS_DIR / 'TAULA REF1.csv'
+CSV_PATH = RESULTATS_DIR / 'database_carla.csv'
 # Fitxer PNG de sortida on guardem la figura.
-OUT_PATH = Path(__file__).resolve().parent / 'graf_taula_ref1.png'
+OUT_PATH = Path(__file__).resolve().parent / 'graf_taula_m1.png'
 
 
 # Punt d'entrada principal de l'script.
@@ -37,16 +37,12 @@ def main():
         # Definició explícita de columnes per al gràfic:
         # Eix X: bibliogràfic.
         x_col = 'resultats a partir de bibliografia (kcal/mol)'
-        # Eix Y: experimental (admet diverses capçaleres).
-        exp_candidates = [
-            'resultats experimentals (kcal/mol)',
-            'resultats experimentals (AMBER/GAFF) (kcal/mol)',
-        ]
-        y_col = next((c for c in exp_candidates if c in fields), exp_candidates[0])
+        # Eix Y: mètode 1.
+        y_col = 'metode 1 (kcal/mol)'
         # Error en X: incertesa calculada/bibliogràfica.
-        x_unc_col = 'uncertesa calculada (kcal/mol)'
-        # Error en Y: incertesa experimental.
-        y_unc_col = 'uncertesa experimental (kcal/mol)'
+        x_unc_col = 'incertesa calculada (kcal/mol)'
+        # Error en Y: incertesa del mètode 1.
+        y_unc_col = 'incertesa metode 1 (kcal/mol)'
 
         # Validem que existeixin totes les columnes imprescindibles.
         required = [x_col, y_col, x_unc_col, y_unc_col]
@@ -131,9 +127,9 @@ def main():
     plt.plot([lim_min, lim_max], [lim_min, lim_max], '-', linewidth=1.2, color='black', label='y = x')
 
     # Etiquetes i títol.
-    plt.xlabel(x_col)
-    plt.ylabel(y_col)
-    plt.title('Correlacio: bibliografics (X) vs experimentals (Y) - TAULA REF1')
+    plt.xlabel('resultats a partir de la bibliografia (kcal/mol)')
+    plt.ylabel('resultats a partir de mètode 1 (kcal/mol)')
+    plt.title('Correlació entre les dades bibliogràfiques (X) vs mètode 1 (Y)')
     # Graella suau per facilitar lectura.
     plt.grid(alpha=0.25)
     # Llegenda amb la línia y=x.
@@ -144,11 +140,11 @@ def main():
     plt.savefig(OUT_PATH, dpi=300)
 
     # Resum per terminal.
-    print(f'Grafica guardada a: {OUT_PATH}')
+    print(f'Gràfica guardada a: {OUT_PATH}')
     print(f'Columna X usada: {x_col} (+ {x_unc_col})')
     print(f'Columna Y usada: {y_col} (+ {y_unc_col})')
     print(f'Punts representats: {len(x_arr)}')
-    print(f'Correlacio de Pearson (r): {r:.4f}')
+    print(f'Correlació de Pearson (r): {r:.4f}')
 
 
 # Execució directa de l'script des de terminal.
