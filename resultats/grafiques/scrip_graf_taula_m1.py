@@ -87,6 +87,7 @@ def main():
 
     # Coeficient de correlació de Pearson entre X i Y.
     r = np.corrcoef(x_arr, y_arr)[0, 1]
+    r2 = r ** 2
 
     # Creem la figura de mida 8x6 polzades.
     plt.figure(figsize=(8, 6))
@@ -134,6 +135,16 @@ def main():
     plt.grid(alpha=0.25)
     # Llegenda amb la línia y=x.
     plt.legend(loc='best')
+    plt.text(
+        0.03,
+        0.97,
+        f'$R^2$ = {r2:.4f}',
+        transform=plt.gca().transAxes,
+        va='top',
+        ha='left',
+        fontsize=11,
+        bbox={'facecolor': 'white', 'edgecolor': 'black', 'alpha': 0.8},
+    )
     # Ajust automàtic d'espais perquè no es talli text.
     plt.tight_layout()
     # Guardem la figura a PNG.
@@ -145,6 +156,7 @@ def main():
     print(f'Columna Y usada: {y_col} (+ {y_unc_col})')
     print(f'Punts representats: {len(x_arr)}')
     print(f'Correlació de Pearson (r): {r:.4f}')
+    print(f'Coeficient de determinació (R^2): {r2:.4f}')
 
 
 # Execució directa de l'script des de terminal.

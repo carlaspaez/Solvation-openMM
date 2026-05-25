@@ -25,9 +25,9 @@ def find_value(d, keys):
 
 
 def main():
-    base = Path(__file__).resolve().parents[2] / 'outputs_PBC'
+    base = Path(__file__).resolve().parents[2] / 'outputs_PBC-ok'
     if not base.exists():
-        base = Path('outputs_PBC')
+        base = Path('outputs_PBC-ok')
 
     elec_diffs = []
     lj_diffs = []
@@ -63,7 +63,7 @@ def main():
 
     # require some data
     if len(elec_diffs) == 0 and len(lj_diffs) == 0:
-        print('No he trobat dades a outputs_PBC/*/TIP3P/results.json')
+        print('No he trobat dades a outputs_PBC-ok/*/TIP3P/results.json')
         return
 
     # Make arrays and remove NaNs

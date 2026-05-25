@@ -8,6 +8,8 @@ __pycache__/
 
 outputs_PBC/
 outputs_sbc/
+outputs_PBC-ok/
+
 cluster/
 error*
 sortid*

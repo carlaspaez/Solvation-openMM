@@ -9,9 +9,9 @@ os.environ.setdefault('MPLCONFIGDIR', str(Path(tempfile.gettempdir()) / 'matplot
 import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[2]
-OUTPUTS = ROOT / 'outputs_PBC'
+OUTPUTS = ROOT / 'outputs_PBC-ok'
 
-MOLES = ['mobley_3105103', 'mobley_2923700', 'mobley_3201701']
+MOLES = ['mobley_2518989', 'mobley_8705848', 'mobley_2923700']
 
 
 def get_float(data, key):
