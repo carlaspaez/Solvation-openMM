@@ -226,36 +226,54 @@ def prepare_topology_file():
     top_moleculetypes = read_moleculetypes(top_file)
     itp_moleculetypes = read_moleculetypes(solvent_itp_file)
 
-    if itp_moleculetypes and itp_moleculetypes.issubset(top_moleculetypes):
-        return top_file
-
     prepared_top = output_root / f"{top_file.stem}_with_solvent.top"
     include_line = f'#include "{solvent_itp_file.as_posix()}"\n'
 
     with open(top_file) as f:
         lines = f.readlines()
 
-    if any(solvent_itp_file.name in line for line in lines):
-        return top_file
+    has_solvent_include = False
+    new_lines = []
+
+    for line in lines:
+        if line.lstrip().startswith("#include") and solvent_itp_file.name in line:
+            if not has_solvent_include:
+                new_lines.append(include_line)
+                has_solvent_include = True
+            continue
+
+        new_lines.append(line)
+
+    if itp_moleculetypes and itp_moleculetypes.issubset(top_moleculetypes):
+        with open(prepared_top, "w") as f:
+            f.writelines(new_lines)
+
+        return prepared_top
+
+    if has_solvent_include:
+        with open(prepared_top, "w") as f:
+            f.writelines(new_lines)
+
+        return prepared_top
 
     insert_at = next(
-        ( i for i, line in enumerate(lines)
+        ( i for i, line in enumerate(new_lines)
             if gromacs_section(line) in {"system", "molecules"}
         ),
-        len(lines),
+        len(new_lines),
     )
 
-    new_lines = lines[:insert_at]
+    prepared_lines = new_lines[:insert_at]
 
-    if new_lines and new_lines[-1].strip():
-        new_lines.append("\n")
+    if prepared_lines and prepared_lines[-1].strip():
+        prepared_lines.append("\n")
 
-    new_lines.append(include_line)
-    new_lines.append("\n")
-    new_lines.extend(lines[insert_at:])
+    prepared_lines.append(include_line)
+    prepared_lines.append("\n")
+    prepared_lines.extend(new_lines[insert_at:])
 
     with open(prepared_top, "w") as f:
-        f.writelines(new_lines)
+        f.writelines(prepared_lines)
 
     return prepared_top
 
