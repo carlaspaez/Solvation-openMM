@@ -9,6 +9,8 @@ __pycache__/
 outputs_PBC/
 outputs_sbc/
 outputs_PBC-ok/
+outputs_sbc-ok/
+outputs_SBC-ok/
 
 cluster/
 error*

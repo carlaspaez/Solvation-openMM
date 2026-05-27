@@ -1,6 +1,0 @@
-; posre_mobley_9029594.itp created by acpype (v: 2023.10.27) on Wed May 20 23:50:20 2026
-
-[ position_restraints ]
-; atom  type      fx      fy      fz
-     1     1  1000  1000  1000
-     2     1  1000  1000  1000
