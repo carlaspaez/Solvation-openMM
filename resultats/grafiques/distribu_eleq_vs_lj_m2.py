@@ -25,9 +25,9 @@ def find_value(d, keys):
 
 
 def main():
-    base = Path(__file__).resolve().parents[2] / 'outputs_PBC-ok'
+    base = Path(__file__).resolve().parents[2] / 'outputs_SBC-ok'
     if not base.exists():
-        base = Path('outputs_PBC-ok')
+        base = Path('outputs_SBC-ok')
 
     elec_diffs = []
     lj_diffs = []
@@ -42,7 +42,7 @@ def main():
     for moldir in sorted(base.iterdir() if base.exists() else []):
         if not moldir.is_dir():
             continue
-        rj = moldir / 'TIP3P' / 'results.json'
+        rj = moldir / 'results.json'
         if not rj.exists():
             continue
         try:
@@ -67,7 +67,7 @@ def main():
 
     # require some data
     if len(elec_diffs) == 0 and len(lj_diffs) == 0:
-        print('No he trobat dades a outputs_PBC-ok/*/TIP3P/results.json')
+        print('No he trobat dades a outputs_SBC-ok/*/results.json')
         return
 
     # Make arrays and remove NaNs
@@ -119,7 +119,7 @@ def main():
     plt.xticks(positions, labels)
     plt.xlabel("Tipus d'interacció")
     plt.ylabel('Contribució a ΔG_hyd (kcal/mol)')
-    plt.title('Distribució PBC de les contribucions a ΔG_hyd')
+    plt.title('Distribució SBC de les contribucions a ΔG_hyd')
 
     plt.tight_layout()
 

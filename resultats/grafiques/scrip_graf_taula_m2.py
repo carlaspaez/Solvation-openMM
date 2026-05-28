@@ -13,7 +13,7 @@ RESULTATS_DIR = Path(__file__).resolve().parents[1]
 # Fitxer CSV d'entrada amb valors i incerteses.
 CSV_PATH = RESULTATS_DIR / 'database_carla.csv'
 # Fitxer PNG de sortida on guardem la figura.
-OUT_PATH = Path(__file__).resolve().parent / 'graf_taula_m1.png'
+OUT_PATH = Path(__file__).resolve().parent / 'graf_taula_m2.png'
 
 
 # Punt d'entrada principal de l'script.
@@ -37,12 +37,12 @@ def main():
         # Definició explícita de columnes per al gràfic:
         # Eix X: bibliogràfic.
         x_col = 'resultats a partir de bibliografia (kcal/mol)'
-        # Eix Y: mètode 1.
-        y_col = 'metode 1 (kcal/mol)'
+        # Eix Y: mètode 2.
+        y_col = 'metode 2 (kcal/mol)'
         # Error en X: incertesa calculada/bibliogràfica.
         x_unc_col = 'incertesa calculada (kcal/mol)'
-        # Error en Y: incertesa del mètode 1.
-        y_unc_col = 'incertesa metode 1 (kcal/mol)'
+        # Error en Y: incertesa del mètode 2.
+        y_unc_col = 'incertesa metode 2 (kcal/mol)'
         # Identificador de la molècula, útil per etiquetar outliers.
         id_col = 'identificador'
 
@@ -168,8 +168,8 @@ def main():
 
     # Etiquetes i títol.
     plt.xlabel('resultats a partir de la bibliografia (kcal/mol)')
-    plt.ylabel('resultats a partir de mètode 1 (kcal/mol)')
-    plt.title('Comparació de ΔG d’hidratació: bibliografia vs mètode 1')
+    plt.ylabel('resultats a partir de mètode 2 (kcal/mol)')
+    plt.title('Comparació de ΔG d’hidratació: bibliografia vs mètode 2')
     # Graella suau per facilitar lectura.
     plt.grid(alpha=0.25)
     # Llegenda amb la línia y=x.

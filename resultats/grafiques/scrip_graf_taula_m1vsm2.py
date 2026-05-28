@@ -13,7 +13,7 @@ RESULTATS_DIR = Path(__file__).resolve().parents[1]
 # Fitxer CSV d'entrada amb valors i incerteses.
 CSV_PATH = RESULTATS_DIR / 'database_carla.csv'
 # Fitxer PNG de sortida on guardem la figura.
-OUT_PATH = Path(__file__).resolve().parent / 'graf_taula_m1.png'
+OUT_PATH = Path(__file__).resolve().parent / 'graf_taula_m1vsm2.png'
 
 
 # Punt d'entrada principal de l'script.
@@ -35,14 +35,14 @@ def main():
         fields = reader.fieldnames or []
 
         # Definició explícita de columnes per al gràfic:
-        # Eix X: bibliogràfic.
-        x_col = 'resultats a partir de bibliografia (kcal/mol)'
-        # Eix Y: mètode 1.
-        y_col = 'metode 1 (kcal/mol)'
-        # Error en X: incertesa calculada/bibliogràfica.
-        x_unc_col = 'incertesa calculada (kcal/mol)'
-        # Error en Y: incertesa del mètode 1.
-        y_unc_col = 'incertesa metode 1 (kcal/mol)'
+        # Eix X: metode 1.
+        x_col = 'metode 1 (kcal/mol)'
+        # Eix Y: mètode 2.
+        y_col = 'metode 2 (kcal/mol)'
+        # Error en X: incertesa del mètode 1.
+        x_unc_col = 'incertesa metode 1 (kcal/mol)'
+        # Error en Y: incertesa del mètode 2.
+        y_unc_col = 'incertesa metode 2 (kcal/mol)'
         # Identificador de la molècula, útil per etiquetar outliers.
         id_col = 'identificador'
 
@@ -95,7 +95,7 @@ def main():
     r2 = r ** 2
     n = len(x_arr)
 
-    # Errors respecte a la diagonal y=x: positiu vol dir que mètode 1 sobreestima.
+    # Errors respecte a la diagonal y=x: positiu vol dir que mètode 2 és més alt.
     residuals = y_arr - x_arr
     abs_errors = np.abs(residuals)
     rmse = np.sqrt(np.mean(residuals ** 2))
@@ -108,7 +108,7 @@ def main():
     # Outliers estadístics: errors absoluts clarament grans respecte al conjunt.
     outlier_threshold = abs_errors.mean() + 2 * abs_errors.std(ddof=0)
     outlier_mask = abs_errors > outlier_threshold
-    # Etiquetes al gràfic: només punts amb mètode 1 molt negatiu.
+    # Etiquetes al gràfic: només punts amb mètode 2 molt negatiu.
     label_mask = y_arr < -75.0
 
     # Creem la figura de mida 8x6 polzades.
@@ -154,7 +154,7 @@ def main():
     y_line = slope * x_line + intercept
     plt.plot(x_line, y_line, '--', linewidth=1.2, color='red', label='regressió')
 
-    # Etiquetem només els punts amb mètode 1 per sota de -75 kcal/mol.
+    # Etiquetem només els punts amb mètode 2 per sota de -75 kcal/mol.
     for x, y, ident in zip(x_arr[label_mask], y_arr[label_mask], ids_arr[label_mask]):
         plt.annotate(
             ident,
@@ -167,9 +167,9 @@ def main():
         )
 
     # Etiquetes i títol.
-    plt.xlabel('resultats a partir de la bibliografia (kcal/mol)')
-    plt.ylabel('resultats a partir de mètode 1 (kcal/mol)')
-    plt.title('Comparació de ΔG d’hidratació: bibliografia vs mètode 1')
+    plt.xlabel('resultats a partir de mètode 1 (kcal/mol)')
+    plt.ylabel('resultats a partir de mètode 2 (kcal/mol)')
+    plt.title('Comparació de ΔG d’hidratació: mètode 1 vs mètode 2')
     # Graella suau per facilitar lectura.
     plt.grid(alpha=0.25)
     # Llegenda amb la línia y=x.
@@ -208,18 +208,18 @@ def main():
     print(f'n: {n}')
     print(f'RMSE: {rmse:.4f} kcal/mol')
     print(f'MAE: {mae:.4f} kcal/mol')
-    print(f'Biaix mitjà (mètode 1 - bibliografia): {bias:.4f} kcal/mol')
+    print(f'Biaix mitjà (mètode 2 - mètode 1): {bias:.4f} kcal/mol')
     print(f'Regressió y = pendent*x + intercepció: pendent={slope:.4f}, intercepció={intercept:.4f}')
     print(f'Llindar outlier |error|: {outlier_threshold:.4f} kcal/mol')
     print(f'Outliers estadístics: {int(outlier_mask.sum())}')
-    print(f'Punts etiquetats amb mètode 1 < -75 kcal/mol: {int(label_mask.sum())}')
+    print(f'Punts etiquetats amb mètode 2 < -75 kcal/mol: {int(label_mask.sum())}')
     for ident, x, y, err in zip(
         ids_arr[label_mask],
         x_arr[label_mask],
         y_arr[label_mask],
         residuals[label_mask],
     ):
-        print(f'  {ident}: bibliografia={x:.4f}, metode1={y:.4f}, error={err:.4f}')
+        print(f'  {ident}: metode1={x:.4f}, metode2={y:.4f}, error={err:.4f}')
 
 
 # Execució directa de l'script des de terminal.

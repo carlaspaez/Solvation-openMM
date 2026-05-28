@@ -5,10 +5,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 csv_file = ROOT / "resultats/database_carla.csv"
-output_dir = ROOT / "outputs_PBC-ok"
+output_dir = ROOT / "outputs_SBC-ok"
 
-col1 = "metode 1 (kcal/mol)"
-col2 = "incertesa metode 1 (kcal/mol)"
+col1 = "metode 2 (kcal/mol)"
+col2 = "incertesa metode 2 (kcal/mol)"
 
 with open(csv_file, "r", encoding="utf-8") as f:
     reader = csv.DictReader(f)
@@ -29,9 +29,13 @@ def falta_resultat(row):
 
 
 def busca_results_json(mol):
-    json_file = output_dir / mol / "TIP3P" / "results.json"
-    if json_file.exists():
-        return json_file
+    candidates = [
+        output_dir / mol / "results.json",
+        output_dir / mol / "TIP3P" / "results.json",
+    ]
+    for json_file in candidates:
+        if json_file.exists():
+            return json_file
     return None
 
 
