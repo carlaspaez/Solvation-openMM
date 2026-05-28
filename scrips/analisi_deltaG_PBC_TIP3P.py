@@ -49,8 +49,8 @@ for row in rows:
     json_file = busca_results_json(mol)
     if json_file is None:
         pendents += 1
-        row[col1] = row.get(col1, "")
-        row[col2] = row.get(col2, "")
+        row[col1] = "NA"
+        row[col2] = "NA"
         print("Encara no trobo results.json:", mol)
         continue
 
