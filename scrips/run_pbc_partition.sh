@@ -10,7 +10,7 @@ MOLECULE_LIST="$1"
 MAX_PARALLEL="$2"
 PARTITION_LABEL="$3"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CLUSTER_OUT_DIR="$SCRIPT_DIR/../outputs_SBC2/cluster"
+CLUSTER_OUT_DIR="$SCRIPT_DIR/../outputs_PBC2/cluster"
 
 if [ ! -f "$MOLECULE_LIST" ]; then
     echo "Molecule list not found: $MOLECULE_LIST"
@@ -30,7 +30,7 @@ while IFS= read -r mol; do
 
     (
         set -euo pipefail
-        python "$SCRIPT_DIR/deltaG_SBC_TIP3P.py" -m "$mol" -s SOL.TIP3P.itp \
+        python "$SCRIPT_DIR/deltaG_PBC_TIP3P-ok.py" -m "$mol" -s SOL.TIP3P.itp \
             > "$CLUSTER_OUT_DIR/sortid_${SLURM_JOB_ID}_${PARTITION_LABEL}_${index}_${mol}.txt" \
             2> "$CLUSTER_OUT_DIR/error_${SLURM_JOB_ID}_${PARTITION_LABEL}_${index}_${mol}.txt"
     ) &

@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TOPGRO_DIR="$SCRIPT_DIR/../DADES/topgro_SBC"
-CLUSTER_OUT_DIR="$SCRIPT_DIR/../outputs_sbc/cluster"
+CLUSTER_OUT_DIR="$SCRIPT_DIR/../outputs_SBC2/cluster"
 PARTITIONS=(highmem normal1 normal2 normal3 normal4 normal5)
 
 if [ ! -d "$TOPGRO_DIR" ]; then

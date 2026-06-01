@@ -4,12 +4,12 @@ set -euo pipefail
 # Directori on viu aquest script, independentment d'on s'executi.
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Entrada: fitxers .gro de les molècules SBC.
-TOPGRO_DIR="$SCRIPT_DIR/../DADES/topgro_SBC"
+# Entrada: fitxers .gro de les molecules PBC.
+TOPGRO_DIR="$SCRIPT_DIR/../DADES/topgro_actu"
 
 # Sortida: llistes de molècules per partició i logs dels jobs de SLURM.
-CLUSTER_OUT_DIR="$SCRIPT_DIR/../outputs_SBC2/cluster"
-MOLECULE_LIST="$CLUSTER_OUT_DIR/molecules_sbc.txt"
+CLUSTER_OUT_DIR="$SCRIPT_DIR/../outputs_PBC2/cluster"
+MOLECULE_LIST="$CLUSTER_OUT_DIR/molecules_pbc.txt"
 
 # Particions/nodes disponibles i nombre de processos paral·lels que volem
 # executar dins de cada job dispatcher.
@@ -41,7 +41,7 @@ fi
 
 # Reiniciem les llistes per partició perquè cada execució sigui neta i no es repeteixil la feina.
 for partition in "${PARTITIONS[@]}"; do
-    : > "$CLUSTER_OUT_DIR/molecules_sbc_${partition}.txt"
+    : > "$CLUSTER_OUT_DIR/molecules_pbc_${partition}.txt"
 done
 
 # Repartim les molècules en cicles de TOTAL_SLOTS.
@@ -57,7 +57,7 @@ while IFS= read -r mol; do
         next_offset=$((offset + SLOTS[i]))
 
         if [ "$slot" -lt "$next_offset" ]; then
-            echo "$mol" >> "$CLUSTER_OUT_DIR/molecules_sbc_${PARTITIONS[i]}.txt"
+            echo "$mol" >> "$CLUSTER_OUT_DIR/molecules_pbc_${PARTITIONS[i]}.txt"
             break
         fi
 
@@ -76,7 +76,7 @@ echo "Submitting one dispatcher job per partition/node."
 for i in "${!PARTITIONS[@]}"; do
     partition="${PARTITIONS[i]}"
     slots="${SLOTS[i]}"
-    partition_list="$CLUSTER_OUT_DIR/molecules_sbc_${partition}.txt"
+    partition_list="$CLUSTER_OUT_DIR/molecules_pbc_${partition}.txt"
     partition_count="$(wc -l < "$partition_list")"
 
     if [ "$partition_count" -eq 0 ]; then
@@ -86,18 +86,18 @@ for i in "${!PARTITIONS[@]}"; do
 
     echo "Submitting $partition: $partition_count molecules, $slots parallel processes inside one job"
 
-    # SLURM executarà run_sbc_partition.sh dins del directori d'aquest script.
+    # SLURM executarà run_pbc_partition.sh dins del directori d'aquest script.
     # Els logs queden separats per job id i partició.
     sbatch \
         --partition="$partition" \
         --nodes=1 \
         --ntasks=1 \
         --cpus-per-task="$slots" \
-        --job-name="SBC_${partition}" \
+        --job-name="PBC_${partition}" \
         --chdir="$SCRIPT_DIR" \
         --output="$CLUSTER_OUT_DIR/sortid_%j_${partition}.txt" \
         --error="$CLUSTER_OUT_DIR/error_%j_${partition}.txt" \
-        --wrap="bash \"$SCRIPT_DIR/run_sbc_partition.sh\" \"$partition_list\" \"$slots\" \"$partition\""
+        --wrap="bash \"$SCRIPT_DIR/run_pbc_partition.sh\" \"$partition_list\" \"$slots\" \"$partition\""
 done
 
-echo "Submitted SBC dispatcher jobs for all partitions."
+echo "Submitted PBC dispatcher jobs for all partitions."

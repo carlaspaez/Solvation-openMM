@@ -3,6 +3,7 @@ import argparse
 import json
 import math
 import shutil
+import time
 
 
 # ============================================================
@@ -193,7 +194,7 @@ def solvent_output_label(path):
 
 solvent_itp_file = resolve_input_file(args.solvent_file)
 solvent_label = solvent_output_label(solvent_itp_file)
-output_root = ROOT / "outputs-OK" / args.molecule / solvent_label
+output_root = ROOT / "outputs_PBC2" / args.molecule / solvent_label
 output_root.mkdir(parents=True, exist_ok=True)
 
 solvent_names = read_solvent_names_from_itp(solvent_itp_file)
@@ -558,6 +559,105 @@ def build_gas_lj_system(lambda_lj):
 
 
 # ============================================================
+# LOG GLOBAL DE LA MOLECULA
+# ============================================================
+
+molecule_log_file = output_root / "molecula.log"
+molecule_log = {
+    "completed_steps": 0,
+    "total_steps": 0,
+    "start_time": None,
+    "window_summaries": []
+}
+
+
+def window_total_steps(is_aq):
+    equilibration_steps = nvt_steps + (npt_steps if is_aq else 0)
+    return equilibration_steps + prod_steps
+
+
+def molecule_total_steps():
+    aq_windows = len(lambdas_elec) + len(lambdas_lj)
+    gas_windows = len(lambdas_elec) + len(lambdas_lj)
+    return (aq_windows * window_total_steps(True)) + (gas_windows * window_total_steps(False))
+
+
+def format_seconds(seconds):
+    if seconds is None:
+        return ""
+    return f"{seconds:.1f}"
+
+
+def init_molecule_log():
+    molecule_log["completed_steps"] = 0
+    molecule_log["total_steps"] = molecule_total_steps()
+    molecule_log["start_time"] = time.perf_counter()
+    molecule_log["window_summaries"] = []
+
+    with open(molecule_log_file, "w") as f:
+        f.write(f"molecule={args.molecule}\n")
+        f.write(f"solvent_label={solvent_label}\n")
+        f.write(f"total_steps={molecule_log['total_steps']}\n")
+        f.write("\n[progress]\n")
+        f.write("event,window,lambda,phase,phase_step,phase_steps,window_step,window_steps,total_step,total_steps,progress_percent,elapsed_seconds,remaining_seconds\n")
+
+
+def append_molecule_progress(event, name, lam, phase, phase_step, phase_steps, window_step, window_steps):
+    elapsed = time.perf_counter() - molecule_log["start_time"]
+    completed = molecule_log["completed_steps"]
+    total = molecule_log["total_steps"]
+    progress = 100.0 * completed / total if total else 0.0
+    remaining = None
+    if completed > 0:
+        remaining = elapsed * (total - completed) / completed
+
+    with open(molecule_log_file, "a") as f:
+        f.write(
+            f"{event},{name},{lambda_tag(lam)},{phase},{phase_step},{phase_steps},"
+            f"{window_step},{window_steps},{completed},{total},{progress:.3f},"
+            f"{format_seconds(elapsed)},{format_seconds(remaining)}\n"
+        )
+
+
+def step_with_molecule_log(simulation, steps, phase, name, lam, window_state):
+    phase_step = 0
+    remaining = steps
+
+    while remaining > 0:
+        chunk = min(report_interval, remaining)
+        simulation.step(chunk)
+        phase_step += chunk
+        window_state["completed_steps"] += chunk
+        molecule_log["completed_steps"] += chunk
+        remaining -= chunk
+
+        append_molecule_progress(
+            "progress",
+            name,
+            lam,
+            phase,
+            phase_step,
+            steps,
+            window_state["completed_steps"],
+            window_state["total_steps"]
+        )
+
+
+def append_molecule_summary():
+    elapsed = time.perf_counter() - molecule_log["start_time"]
+
+    with open(molecule_log_file, "a") as f:
+        f.write("\n[summary]\n")
+        f.write("window,lambda,steps,elapsed_seconds\n")
+        for item in molecule_log["window_summaries"]:
+            f.write(
+                f"{item['name']},{lambda_tag(item['lambda'])},{item['steps']},{item['elapsed_seconds']:.1f}\n"
+            )
+        f.write(f"total_steps={molecule_log['completed_steps']}\n")
+        f.write(f"total_elapsed_seconds={elapsed:.1f}\n")
+
+
+# ============================================================
 # SIMULACIÓ D'UNA FINESTRA
 # ============================================================
 
@@ -574,24 +674,49 @@ def run_window(name, lam, builder, is_aq):
     simulation = Simulation(topology, system, integrator)
     simulation.context.setPositions(positions)
 
-    simulation.reporters.append(StateDataReporter(str(outdir / "state.csv"), report_interval, step=True, potentialEnergy=True, temperature=True, speed=True))
+    simulation.reporters.append(
+        StateDataReporter(
+            str(outdir / "state.csv"),
+            report_interval,
+            step=True,
+            time=True,
+            potentialEnergy=True,
+            temperature=True,
+            speed=True,
+            progress=True,
+            remainingTime=True,
+            elapsedTime=True,
+            totalSteps=window_total_steps(is_aq)
+        )
+    )
 
     if not is_aq:
         PDBFile.writeFile(topology, positions, open(outdir / "gas_topology.pdb", "w"))
 
     print(f"Simulant {name}, lambda={lam}")
 
+    window_state = {"completed_steps": 0, "total_steps": window_total_steps(is_aq)}
+    window_start = time.perf_counter()
+    append_molecule_progress("start", name, lam, "setup", 0, 0, 0, window_state["total_steps"])
+
     simulation.minimizeEnergy(maxIterations=100)
     simulation.context.setVelocitiesToTemperature(temperature)
 
+    step_with_molecule_log(simulation, nvt_steps, "nvt", name, lam, window_state)
     if is_aq:
-        simulation.step(nvt_steps)
-        simulation.step(npt_steps)
-    else:
-        simulation.step(nvt_steps)
+        step_with_molecule_log(simulation, npt_steps, "npt", name, lam, window_state)
 
     simulation.reporters.append(DCDReporter(str(outdir / "traj.dcd"), report_interval))
-    simulation.step(prod_steps)
+    step_with_molecule_log(simulation, prod_steps, "prod", name, lam, window_state)
+
+    window_elapsed = time.perf_counter() - window_start
+    molecule_log["window_summaries"].append({
+        "name": name,
+        "lambda": lam,
+        "steps": window_state["completed_steps"],
+        "elapsed_seconds": window_elapsed
+    })
+    append_molecule_progress("end", name, lam, "done", 0, 0, window_state["completed_steps"], window_state["total_steps"])
 
 
 # ============================================================
@@ -700,7 +825,9 @@ print("Output:", output_root)
 shutil.copy(top_file, output_root / top_file.name)
 shutil.copy(gro_file, output_root / gro_file.name)
 
+init_molecule_log()
 run_all_simulations()
+append_molecule_summary()
 
 DG_elec_aq, err_elec_aq = analyze("elec_aq", lambdas_elec, build_aq_elec_system, gro_file)
 DG_lj_aq, err_lj_aq = analyze("lj_aq", lambdas_lj, build_aq_lj_system, gro_file)

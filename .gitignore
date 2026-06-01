@@ -7,7 +7,9 @@ __pycache__/
 *$py.class
 
 outputs_PBC/
+outputs_PBC2/
 outputs_sbc/
+outputs_SBC2/
 outputs_PBC-ok/
 outputs_sbc-ok/
 outputs_SBC-ok/
