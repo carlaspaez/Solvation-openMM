@@ -11,11 +11,13 @@ outputs_PBC2/
 outputs_PBC_ampli10/
 outputs_PBC_ampli30/
 outputs_PBC_ampli50/
+outputs_PBC_ampli150/
 outputs_sbc/
 outputs_SBC2/
 outputs_SBC_ampli10/
 outputs_SBC_ampli30/
 outputs_SBC_ampli50/
+outputs_SBC_ampli150/
 outputs_PBC-ok/
 outputs_sbc-ok/
 outputs_SBC-ok/
