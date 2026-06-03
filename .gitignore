@@ -1,5 +1,10 @@
 .codex
 intents/
+scrips/DADES/
+scrips/submit_all_SBC.sh
+scrips/submit_all.sh
+scrips/deltaG_PBC_TIP3P.py
+scrips/enviartot_deltaG_PBC_TIP3P
 resultats/simulacio_mobley_7375018/simple/
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -29,6 +34,7 @@ outputs/
 outputs-OK/
 pretractament_work/
 DADES/pretractament_work_SBC/
+DADES/mobley_5857.acpype/
 outputs_sbc/
 # C extensions
 *.so

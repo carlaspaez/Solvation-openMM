@@ -1,0 +1,644 @@
+molecula,nom,smiles,fallida_pbc,fallida_sbc,fallida_qualsevol,fallida_comuna_pbc_sbc,pes_molecular,atoms_pesants,anells,anells_aromatics,atoms_aromatics,heteroatoms,halogens,donadors_h,acceptors_h,tpsa,enllacos_rotables,logp,es_aromatica,es_halogenada,gran_pes_molecular_gt_200,polar_tpsa_gt_60
+mobley_1017962,methyl hexanoate,CCCCCC(=O)OC,False,False,False,False,130.18699999999998,9,0,0,0,2,0,0,2,26.3,4,1.7397,False,False,False,False
+mobley_1019269,butan-1-ol,CCCCO,False,False,False,False,74.12299999999999,5,0,0,0,1,0,1,1,20.23,2,0.7787999999999999,False,False,False,False
+mobley_1034539,"1,2,3,4-tetrachloro-5-(3,4-dichlorophenyl)benzene",c1cc(c(cc1c2cc(c(c(c2Cl)Cl)Cl)Cl)Cl)Cl,False,False,False,False,360.88199999999995,18,2,2,12,6,6,0,0,0.0,1,7.274,True,True,True,False
+mobley_1036761,cyclohexanamine,C1CCC(CC1)N,False,False,False,False,99.17700000000002,7,1,0,0,1,0,1,1,26.02,0,1.2778,False,False,False,False
+mobley_1046331,phenyl formate,c1ccc(cc1)OC=O,False,False,False,False,122.12299999999996,9,1,1,6,2,0,0,2,26.3,2,1.2217999999999996,True,False,False,False
+mobley_1075836,methyl propanoate,CCC(=O)OC,False,False,False,False,88.106,6,0,0,0,2,0,0,2,26.3,1,0.5694,False,False,False,False
+mobley_1079207,"1,3-dichlorobenzene",c1cc(cc(c1)Cl)Cl,False,False,False,False,147.004,8,1,1,6,2,2,0,0,0.0,0,2.9934000000000003,True,True,False,False
+mobley_1107178,iodoethane,CCI,False,False,False,False,155.966,3,0,0,0,1,1,0,0,0.0,0,1.4413,False,True,False,False
+mobley_1139153,"2,2,4-trimethylpentane",CC(C)CC(C)(C)C,True,False,True,False,114.23199999999999,8,0,0,0,0,0,0,0,0.0,1,3.0786000000000016,False,False,False,False
+mobley_1144156,ethoxyethane,CCOCC,False,False,False,False,74.123,5,0,0,0,1,0,0,1,9.23,2,1.0428000000000002,False,False,False,False
+mobley_1160109,"(2R,5R)-2-methyl-5-(1-methylethenyl)-cyclohexanone",C[C@@H]1CC[C@H](CC1=O)C(=C)C,False,False,False,False,152.23699999999997,11,1,0,0,1,0,0,1,17.07,1,2.567800000000001,False,False,False,False
+mobley_1178614,2-chlorophenol,c1ccc(c(c1)O)Cl,False,False,False,False,128.558,8,1,1,6,2,1,1,1,20.23,0,2.0456,True,True,False,False
+mobley_1189457,methylsulfanylbenzene,CSc1ccccc1,False,False,False,False,124.20799999999996,8,1,1,6,1,0,0,1,0.0,1,2.4085,True,False,False,False
+mobley_1199854,1-iodopropane,CCCI,False,False,False,False,169.993,4,0,0,0,1,1,0,0,0.0,1,1.8314,False,True,False,False
+mobley_1231151,2-chloropropane,CC(C)Cl,False,False,False,False,78.542,4,0,0,0,1,1,0,0,0.0,0,1.6336,False,True,False,False
+mobley_1235151,1-nitropentane,CCCCC[N+](=O)[O-],False,False,False,False,117.148,8,0,0,0,3,0,0,2,43.14,4,1.4533,False,False,False,False
+mobley_1244778,cycloheptanol,C1CCCC(CC1)O,False,False,False,False,114.18799999999999,8,1,0,0,1,0,1,1,20.23,0,1.7015,False,False,False,False
+mobley_1261349,neopentane,CC(C)(C)C,False,False,False,False,72.151,5,0,0,0,0,0,0,0,0.0,0,2.0524,False,False,False,False
+mobley_1278715,hexachloroethane,C(C(Cl)(Cl)Cl)(Cl)(Cl)Cl,False,False,False,False,236.74,8,0,0,0,6,6,0,0,0.0,0,3.7268,False,True,True,False
+mobley_129464,1-butoxybutane,CCCCOCCCC,False,False,False,False,130.231,9,0,0,0,1,0,0,1,9.23,6,2.603200000000001,False,False,False,False
+mobley_1323538,triethylphosphate,CCOP(=O)(OCC)OCC,True,True,True,True,182.15599999999998,11,0,0,0,5,0,0,4,44.760000000000005,6,2.2039999999999997,False,False,False,False
+mobley_1328465,"1,1,2-trichloroethane",C(C(Cl)Cl)Cl,False,False,False,False,133.405,5,0,0,0,3,3,0,0,0.0,1,2.0289,False,True,False,False
+mobley_1328936,methyl 4-nitrobenzoate,COC(=O)c1ccc(cc1)[N+](=O)[O-],False,False,False,False,181.147,13,1,1,6,5,0,0,4,69.44,2,1.3814,True,False,False,True
+mobley_1352110,pebulate,CCCCN(CC)C(=O)SCCC,False,False,False,False,203.35099999999997,13,0,0,0,3,0,0,2,20.310000000000002,6,3.3716000000000026,False,False,True,False
+mobley_1363784,"3,5-dimethylpyridine",Cc1cc(cnc1)C,False,False,False,False,107.15599999999999,8,1,1,6,1,0,0,1,12.89,0,1.69844,True,False,False,False
+mobley_1396156,pentachloronitrobenzene,c1(c(c(c(c(c1Cl)Cl)Cl)Cl)Cl)N(=O)=O,False,False,False,False,295.336,14,1,1,6,8,5,0,2,43.14,1,4.8618,True,True,True,False
+mobley_1417007,captan,C1C=CC[C@@H]2[C@@H]1C(=O)N(C2=O)SC(Cl)(Cl)Cl,False,False,False,False,300.59399999999994,16,2,0,0,7,3,0,3,37.38,1,2.9135000000000018,False,True,True,False
+mobley_1424265,m-xylene,Cc1cccc(c1)C,False,False,False,False,106.16799999999999,8,1,1,6,0,0,0,0,0.0,0,2.30344,True,False,False,False
+mobley_1449384,1-isopropyl-4-methyl-benzene,Cc1ccc(cc1)C(C)C,False,False,False,False,134.22199999999998,10,1,1,6,0,0,0,0,0.0,1,3.118420000000002,True,False,False,False
+mobley_1469079,"2,3-dichlorodibenzo-p-dioxin",c1ccc2c(c1)Oc3cc(c(cc3O2)Cl)Cl,False,False,False,False,253.08399999999997,16,3,2,12,4,2,0,2,18.46,0,4.891400000000001,True,True,True,False
+mobley_1502181,nonan-2-one,CCCCCCCC(=O)C,False,False,False,False,142.242,10,0,0,0,1,0,0,1,17.07,6,2.935900000000001,False,False,False,False
+mobley_1520842,4-methylpyridine,Cc1ccncc1,False,False,False,False,93.12899999999999,7,1,1,6,1,0,0,1,12.89,0,1.39002,True,False,False,False
+mobley_1527293,flurbiprofen,C[C@@H](c1ccc(c(c1)F)c2ccccc2)C(=O)O,False,False,False,False,244.26500000000001,18,2,2,12,3,1,1,1,37.3,3,3.6808000000000023,True,True,True,False
+mobley_1563176,butane-1-thiol,CCCCS,False,False,False,False,90.19099999999999,5,0,0,0,1,0,1,1,0.0,2,1.7163,False,False,False,False
+mobley_1571523,"2,3-dimethylphenol",Cc1cccc(c1C)O,False,False,False,False,122.16699999999999,9,1,1,6,1,0,1,1,20.23,0,2.00904,True,False,False,False
+mobley_1592519,ethyl hexanoate,CCCCCC(=O)OCC,False,False,False,False,144.21399999999997,10,0,0,0,2,0,0,2,26.3,5,2.1298000000000004,False,False,False,False
+mobley_1615431,2-isopropoxypropane,CC(C)OC(C)C,False,False,False,False,102.17699999999999,7,0,0,0,1,0,0,1,9.23,2,1.8197999999999999,False,False,False,False
+mobley_1636752,methanol,CO,False,False,False,False,32.042,2,0,0,0,1,0,1,1,20.23,0,-0.3915,False,False,False,False
+mobley_1650157,2-methylpropan-2-ol,CC(C)(C)O,False,False,False,False,74.12299999999999,5,0,0,0,1,0,1,1,20.23,0,0.7771999999999999,False,False,False,False
+mobley_1659169,morpholine,C1COCCN1,False,True,True,False,87.122,6,1,0,0,2,0,1,2,21.259999999999998,0,-0.3938000000000001,False,False,False,False
+mobley_1662128,but-1-ene,CCC=C,False,False,False,False,56.108,4,0,0,0,0,0,0,0,0.0,1,1.5824,False,False,False,False
+mobley_1674094,hex-1-yne,CCCCC#C,False,False,False,False,82.14599999999999,6,0,0,0,0,0,0,0,0.0,2,1.8098,False,False,False,False
+mobley_1708457,methylsulfonylmethane,CS(=O)(=O)C,False,False,False,False,94.135,5,0,0,0,3,0,0,2,34.14,0,-0.33919999999999995,False,False,False,False
+mobley_1717215,methyl formate,COC=O,False,False,False,False,60.05200000000001,4,0,0,0,2,0,0,2,26.3,1,-0.2108000000000001,False,False,False,False
+mobley_1722522,ethyl butanoate,CCCC(=O)OCC,False,False,False,False,116.15999999999998,8,0,0,0,2,0,0,2,26.3,3,1.3496000000000001,False,False,False,False
+mobley_1723043,octafluorocyclobutane,C1(C(C(C1(F)F)(F)F)(F)F)(F)F,False,False,False,False,200.028,12,1,0,0,8,8,0,0,0.0,0,2.5412,False,True,True,False
+mobley_1728386,benzamide,c1ccc(cc1)C(=O)N,False,False,False,False,121.13899999999998,9,1,1,6,2,0,1,1,43.09,1,0.7855000000000001,True,False,False,False
+mobley_172879,dibenzo-p-dioxin,c1ccc2c(c1)Oc3ccccc3O2,False,False,False,False,184.194,14,3,2,12,2,0,0,2,18.46,0,3.584600000000002,True,False,False,False
+mobley_1733799,4-bromophenol,c1cc(ccc1O)Br,False,False,False,False,173.00899999999996,8,1,1,6,2,1,1,1,20.23,0,2.1547000000000005,True,True,False,False
+mobley_1735893,hexanoic acid,CCCCCC(=O)O,False,False,False,False,116.15999999999998,8,0,0,0,2,0,1,1,37.3,4,1.6513,False,False,False,False
+mobley_1743409,diethyl butanedioate,CCOC(=O)CCC(=O)OCC,False,False,False,False,174.19599999999997,12,0,0,0,4,0,0,4,52.60000000000001,5,0.8927999999999999,False,False,False,False
+mobley_1755375,"2,6-dimethylphenol",Cc1cccc(c1O)C,True,False,True,False,122.16699999999999,9,1,1,6,1,0,1,1,20.23,0,2.0090399999999997,True,False,False,False
+mobley_1760914,1-chloro-2-methyl-benzene,Cc1ccccc1Cl,False,False,False,False,126.586,8,1,1,6,1,1,0,0,0.0,0,2.6484200000000007,True,True,False,False
+mobley_1770205,"3-(dimethoxyphosphinothioylsulfanylmethyl)-1,2,3-benzotriazin-4-one",COP(=S)(OC)SCn1c(=O)c2ccccc2nn1,False,True,True,False,317.332,19,2,2,10,9,0,0,8,66.24000000000001,5,1.9994999999999998,True,False,True,True
+mobley_1781152,"methyl 2,2-dimethylpropanoate",CC(C)(C)C(=O)OC,False,False,False,False,116.15999999999998,8,0,0,0,2,0,0,2,26.3,0,1.2055,False,False,False,False
+mobley_1792062,"1,2-dibromoethane",C(CBr)Br,False,False,False,False,187.862,4,0,0,0,2,2,0,0,0.0,1,1.7762,False,True,False,False
+mobley_1800170,ethanethiol,CCS,False,False,False,False,62.137,3,0,0,0,1,0,1,1,0.0,0,0.9360999999999999,False,False,False,False
+mobley_1803862,isopentane,CCC(C)C,False,False,False,False,72.151,5,0,0,0,0,0,0,0,0.0,1,2.0524,False,False,False,False
+mobley_1821184,3-methyl-1H-indole,Cc1c[nH]c2c1cccc2,False,False,False,False,131.178,10,2,2,9,1,0,1,0,15.79,0,2.4763200000000003,True,False,False,False
+mobley_1827204,hexanal,CCCCCC=O,False,False,False,False,100.16099999999999,7,0,0,0,1,0,0,1,17.07,4,1.7656,False,False,False,False
+mobley_1838110,"1,1,2-trichloro-1,2,2-trifluoro-ethane",C(C(F)(Cl)Cl)(F)(F)Cl,False,False,False,False,187.375,8,0,0,0,6,6,0,0,0.0,1,2.9189,False,True,False,False
+mobley_1849020,4-chlorophenyl)sulfanylmethylsulfanyl-diethoxy-thioxo-$l^{5}-phosphane,CCOP(=S)(OCC)SCSc1ccc(cc1)Cl,True,True,True,True,342.875,18,1,1,6,7,1,0,5,18.46,8,5.420300000000004,True,True,True,False
+mobley_1855337,"1,2,3,5-tetrachlorobenzene",c1c(cc(c(c1Cl)Cl)Cl)Cl,False,False,False,False,215.894,10,1,1,6,4,4,0,0,0.0,0,4.3002,True,True,True,False
+mobley_1857976,"1,2-dichloroethane",C(CCl)Cl,False,False,False,False,98.96000000000001,4,0,0,0,2,2,0,0,0.0,1,1.464,False,True,False,False
+mobley_1858644,2-phenylethanol,c1ccc(cc1)CCO,False,False,False,False,122.16699999999997,9,1,1,6,1,0,1,1,20.23,2,1.2213999999999998,True,False,False,False
+mobley_186894,propanethiol,CCCS,False,False,False,False,76.16399999999999,4,0,0,0,1,0,1,1,0.0,1,1.3262,False,False,False,False
+mobley_1873346,toluene,Cc1ccccc1,False,False,False,False,92.14099999999999,7,1,1,6,0,0,0,0,0.0,0,1.99502,True,False,False,False
+mobley_1875719,pentan-3-one,CCC(=O)CC,False,False,False,False,86.134,6,0,0,0,1,0,0,1,17.07,2,1.3755,False,False,False,False
+mobley_1881249,pentan-2-one,CCCC(=O)C,False,False,False,False,86.13399999999999,6,0,0,0,1,0,0,1,17.07,2,1.3755,False,False,False,False
+mobley_1893815,"1,1,1,2-tetrachloroethane",C(C(Cl)(Cl)Cl)Cl,False,False,False,False,167.85,6,0,0,0,4,4,0,0,0.0,0,2.5954000000000006,False,True,False,False
+mobley_1893937,1-chlorohexane,CCCCCCCl,False,False,False,False,120.623,7,0,0,0,1,1,0,0,0.0,4,2.805500000000001,False,True,False,False
+mobley_1896013,"(2S,3R,4S,5R)-oxane-2,3,4,5-tetrol",C1[C@H]([C@@H]([C@H]([C@H](O1)O)O)O)O,False,False,False,False,150.13,10,1,0,0,5,0,4,5,90.15,0,-2.5823,False,False,False,True
+mobley_1899443,2-methylpent-1-ene,CCCC(=C)C,False,False,False,False,84.16199999999999,6,0,0,0,0,0,0,0,0.0,2,2.3626000000000005,False,False,False,False
+mobley_1903702,butan-2-ol,CC[C@H](C)O,False,False,False,False,74.12299999999999,5,0,0,0,1,0,1,1,20.23,1,0.7771999999999999,False,False,False,False
+mobley_1905088,benzyl bromide,c1ccc(cc1)CBr,False,True,True,False,171.03699999999998,8,1,1,6,1,1,0,0,0.0,1,2.581500000000001,True,True,False,False
+mobley_1922649,methylparathion,COP(=S)(OC)Oc1ccc(cc1)[N+](=O)[O-],False,False,False,False,263.211,16,1,1,6,8,0,0,6,70.83,5,2.490900000000001,True,False,True,True
+mobley_1923244,n-butane,CCCC,False,False,False,False,58.123999999999995,4,0,0,0,0,0,0,0,0.0,1,1.8064,False,False,False,False
+mobley_1929982,hydrogen sulfide,S,False,False,False,False,34.083,1,0,0,0,1,0,0,0,0.0,0,0.11280000000000001,False,False,False,False
+mobley_194273,bromacil,CC[C@H](C)n1c(=O)c(c([nH]c1=O)C)Br,False,False,False,False,261.11899999999997,14,1,1,6,5,1,1,3,54.86,2,1.57852,True,True,True,False
+mobley_1944394,[2-benzhydryloxyethyl]-dimethyl-amine,CN(C)CCOC(c1ccccc1)c2ccccc2,False,False,False,False,255.36100000000002,19,2,2,12,2,0,0,2,12.47,6,3.3542000000000023,True,False,True,False
+mobley_1952272,nitromethane,C[N+](=O)[O-],False,False,False,False,61.040000000000006,4,0,0,0,3,0,0,2,43.14,0,-0.10710000000000008,False,False,False,False
+mobley_1963873,N-methylacetamide,CC(=O)NC,False,False,False,False,73.095,5,0,0,0,2,0,1,1,29.1,0,-0.24770000000000003,False,False,False,False
+mobley_1967551,acetaldehyde,CC=O,False,False,False,False,44.053,3,0,0,0,1,0,0,1,17.07,0,0.2052,False,False,False,False
+mobley_197466,1-cyclopropylethanone,CC(=O)C1CC1,False,False,False,False,84.11800000000001,6,1,0,0,1,0,0,1,17.07,1,0.9854,False,False,False,False
+mobley_1976156,nonanal,CCCCCCCCC=O,False,False,False,False,142.242,10,0,0,0,1,0,0,1,17.07,7,2.935900000000001,False,False,False,False
+mobley_1977493,1-chloropropane,CCCCl,False,False,False,False,78.542,4,0,0,0,1,1,0,0,0.0,1,1.6352,False,True,False,False
+mobley_1987439,mesitylene,Cc1cc(cc(c1)C)C,False,False,False,False,120.19499999999998,9,1,1,6,0,0,0,0,0.0,0,2.611860000000001,True,False,False,False
+mobley_2005792,biphenyl,c1ccc(cc1)c2ccccc2,False,False,False,False,154.21199999999996,12,2,2,12,0,0,0,0,0.0,1,3.353600000000002,True,False,False,False
+mobley_2008055,ethane,CC,False,False,False,False,30.07,2,0,0,0,0,0,0,0,0.0,0,1.0262,False,False,False,False
+mobley_2023925,"2-chloro-2-(difluoromethoxy)-1,1,1-trifluoro-ethane",[C@@H](C(F)(F)F)(OC(F)F)Cl,False,False,False,False,184.49099999999999,10,0,0,0,7,6,0,1,9.23,2,2.3528000000000002,False,True,False,False
+mobley_2043882,1-cyclohexylethanone,CC(=O)C1CCCCC1,False,False,False,False,126.19900000000001,9,1,0,0,1,0,0,1,17.07,1,2.1557000000000004,False,False,False,False
+mobley_2049967,methylsulfanylethane,CCSC,False,False,False,False,76.164,4,0,0,0,1,0,0,1,0.0,1,1.3693,False,False,False,False
+mobley_20524,phenol,c1ccc(cc1)O,False,False,False,False,94.11299999999997,7,1,1,6,1,0,1,1,20.23,0,1.3921999999999997,True,False,False,False
+mobley_2068538,propane,CCC,False,False,False,False,44.096999999999994,3,0,0,0,0,0,0,0,0.0,0,1.4163,False,False,False,False
+mobley_2078467,ibuprofen,C[C@@H](c1ccc(cc1)CC(C)C)C(=O)O,False,False,False,False,206.28499999999997,15,1,1,6,2,0,1,1,37.3,4,3.073200000000001,True,False,True,False
+mobley_2099370,ketoprofen,C[C@@H](c1cccc(c1)C(=O)c2ccccc2)C(=O)O,True,True,True,True,254.285,19,2,2,12,3,0,1,2,54.370000000000005,4,3.1057000000000006,True,False,True,False
+mobley_210639,2-iodopropane,CC(C)I,False,False,False,False,169.993,4,0,0,0,1,1,0,0,0.0,0,1.8298,False,True,False,False
+mobley_2123854,4-hydroxybenzonitrile,c1cc(ccc1C#N)O,False,False,False,False,119.12299999999998,9,1,1,6,2,0,1,2,44.019999999999996,0,1.2638799999999994,True,False,False,False
+mobley_2126135,2-ethylphenol,CCc1ccccc1O,False,False,False,False,122.16699999999996,9,1,1,6,1,0,1,1,20.23,1,1.9545999999999997,True,False,False,False
+mobley_2143011,3-methylbut-1-ene,CC(C)C=C,False,False,False,False,70.135,5,0,0,0,0,0,0,0,0.0,1,1.8284,False,False,False,False
+mobley_2146331,formaldehyde,C=O,False,False,False,False,30.026,2,0,0,0,1,0,0,1,17.07,0,-0.1849,False,False,False,False
+mobley_2178600,1-chloro-pentane,CCCCCCl,False,False,False,False,106.596,6,0,0,0,1,1,0,0,0.0,3,2.415400000000001,False,True,False,False
+mobley_2183616,sec-butylbenzene,CC[C@H](C)c1ccccc1,False,False,False,False,134.22199999999998,10,1,1,6,0,0,0,0,0.0,2,3.2001000000000017,True,False,False,False
+mobley_2197088,decane,CCCCCCCCCC,False,False,False,False,142.286,10,0,0,0,0,0,0,0,0.0,7,4.147000000000004,False,False,False,False
+mobley_2198613,chloroethane,CCCl,False,False,False,False,64.515,3,0,0,0,1,1,0,0,0.0,0,1.2451,False,True,False,False
+mobley_2213823,3-methylpentane,CCC(C)CC,False,False,False,False,86.178,6,0,0,0,0,0,0,0,0.0,2,2.442500000000001,False,False,False,False
+mobley_2245668,2-methylpropan-1-ol,CC(C)CO,False,False,False,False,74.12299999999999,5,0,0,0,1,0,1,1,20.23,1,0.6347,False,False,False,False
+mobley_2261979,acenaphthene,c1cc2cccc3c2c(c1)CC3,False,False,False,False,154.21199999999993,12,3,2,10,0,0,0,0,0.0,0,2.9384000000000015,True,False,False,False
+mobley_2269032,naproxen,C[C@@H](c1ccc2cc(ccc2c1)OC)C(=O)O,False,False,False,False,230.26299999999998,17,2,2,10,3,0,1,2,46.53,3,3.036500000000001,True,False,True,False
+mobley_2279874,trimethoxymethane,COC(OC)OC,False,False,False,False,106.121,7,0,0,0,3,0,0,3,27.69,3,0.20920000000000005,False,False,False,False
+mobley_2294995,ethyl formate,CCOC=O,False,False,False,False,74.07900000000001,5,0,0,0,2,0,0,2,26.3,2,0.17930000000000001,False,False,False,False
+mobley_2295058,methyl paraben,COC(=O)c1ccc(cc1)O,False,False,False,False,152.149,11,1,1,6,3,0,1,3,46.53,1,1.1788,True,False,False,False
+mobley_2310185,ethanol,CCO,False,False,False,False,46.069,3,0,0,0,1,0,1,1,20.23,0,-0.0014000000000000123,False,False,False,False
+mobley_2316618,"1-(2-hydroxyethylamino)-9,10-anthraquinone",c1ccc2c(c1)C(=O)c3cccc(c3C2=O)NCCO,False,False,False,False,267.28399999999993,20,3,2,12,4,0,2,4,66.4,3,1.8661999999999996,True,False,True,True
+mobley_2328633,pentylcyclopentane,CCCCCC1CCCC1,False,False,False,False,140.26999999999998,10,1,0,0,0,0,0,0,0.0,4,3.7569000000000026,False,False,False,False
+mobley_2341732,methyl pentanoate,CCCCC(=O)OC,False,False,False,False,116.15999999999998,8,0,0,0,2,0,0,2,26.3,3,1.3496000000000001,False,False,False,False
+mobley_2354112,3-ethylphenol,CCc1cccc(c1)O,False,True,True,False,122.16699999999996,9,1,1,6,1,0,1,1,20.23,1,1.9545999999999997,True,False,False,False
+mobley_2364370,butyl acetate,CCCCOC(=O)C,False,False,False,False,116.15999999999998,8,0,0,0,2,0,0,2,26.3,3,1.3496000000000001,False,False,False,False
+mobley_2371092,"3,4-dimethylpyridine",Cc1ccncc1C,False,False,False,False,107.15599999999999,8,1,1,6,1,0,0,1,12.89,0,1.69844,True,False,False,False
+mobley_2390199,heptan-4-one,CCCC(=O)CCC,False,False,False,False,114.18799999999999,8,0,0,0,1,0,0,1,17.07,4,2.1557000000000004,False,False,False,False
+mobley_2402487,diethyl propanedioate,CCOC(=O)CC(=O)OCC,False,False,False,False,160.16899999999998,11,0,0,0,4,0,0,4,52.60000000000001,4,0.5027,False,False,False,False
+mobley_2410897,ethanamine,CCN,False,False,False,False,45.084999999999994,3,0,0,0,1,0,1,1,26.02,0,-0.03499999999999981,False,False,False,False
+mobley_2422586,1-methoxypropane,CCCOC,False,False,False,False,74.12299999999999,5,0,0,0,1,0,0,1,9.23,2,1.0428,False,False,False,False
+mobley_242480,"1,4-diamino-9,10-anthracenedione",c1ccc2c(c1)C(=O)c3c(ccc(c3C2=O)N)N,False,True,True,False,238.24599999999995,18,3,2,12,4,0,2,4,86.17999999999999,0,1.6263999999999998,True,False,True,True
+mobley_2451097,benzonitrile,c1ccc(cc1)C#N,False,False,False,False,103.12399999999998,8,1,1,6,1,0,0,1,23.79,0,1.5582799999999999,True,False,False,False
+mobley_2457863,3-methoxyphenol,COc1cccc(c1)O,False,False,False,False,124.13899999999997,9,1,1,6,2,0,1,2,29.46,1,1.4007999999999996,True,False,False,False
+mobley_2481002,trichloro(nitro)methane,C([N+](=O)[O-])(Cl)(Cl)Cl,False,False,False,False,164.37500000000003,7,0,0,0,6,3,0,2,43.14,0,1.5908,False,True,False,False
+mobley_2484519,benzyl chloride,c1ccc(cc1)CCl,False,False,False,False,126.58599999999998,8,1,1,6,1,1,0,0,0.0,1,2.4254000000000007,True,True,False,False
+mobley_2487143,hexan-2-one,CCCCC(=O)C,False,False,False,False,100.16099999999999,7,0,0,0,1,0,0,1,17.07,3,1.7656,False,False,False,False
+mobley_2489709,"1,2-dichlorobenzene",c1ccc(c(c1)Cl)Cl,False,False,False,False,147.004,8,1,1,6,2,2,0,0,0.0,0,2.9934000000000003,True,True,False,False
+mobley_2492140,"1,1,1,2,2-pentachloroethane",C(C(Cl)(Cl)Cl)(Cl)Cl,False,False,False,False,202.29500000000002,7,0,0,0,5,5,0,0,0.0,0,3.1603000000000003,False,True,True,False
+mobley_2493732,"1,1-dichloroethylene",C=C(Cl)Cl,False,False,False,False,96.944,4,0,0,0,2,2,0,0,0.0,0,1.9352,False,True,False,False
+mobley_2501588,profluralin,CCC[N@@](CC1CC1)c2c(cc(cc2[N+](=O)[O-])C(F)(F)F)[N+](=O)[O-],True,False,True,False,347.293,24,2,1,6,10,3,0,5,89.52,7,4.148200000000004,True,True,True,True
+mobley_2517158,1-bromoheptane,CCCCCCCBr,False,False,False,False,179.101,8,0,0,0,1,1,0,0,0.0,5,3.351700000000002,False,True,False,False
+mobley_2518989,dialifor,CCOP(=S)(OCC)S[C@@H](CCl)N1C(=O)c2ccccc2C1=O,True,True,True,True,393.85400000000016,23,2,1,6,9,1,0,6,55.84,8,3.878200000000003,True,True,True,False
+mobley_2523689,5-Amino-4-chloro-2-phenylpyridazin-3(2H)-one,c1ccc(cc1)n2c(=O)c(c(cn2)N)Cl,False,False,False,False,221.647,15,2,2,12,5,1,1,4,60.91,1,1.4680999999999997,True,True,True,True
+mobley_252413,"2,2-dimethylpentane",CCCC(C)(C)C,False,False,False,False,100.20499999999998,7,0,0,0,0,0,0,0,0.0,1,2.832600000000001,False,False,False,False
+mobley_2577969,pyrene,c1cc2ccc3cccc4c3c2c(c1)cc4,False,False,False,False,202.25599999999997,16,4,4,16,0,0,0,0,0.0,0,4.584000000000002,True,False,True,False
+mobley_2607611,hexyl acetate,CCCCCCOC(=O)C,False,False,False,False,144.214,10,0,0,0,2,0,0,2,26.3,5,2.1298000000000004,False,False,False,False
+mobley_2609604,"3,3-dimethylpentane",CCC(C)(C)CC,False,False,False,False,100.20499999999998,7,0,0,0,0,0,0,0,0.0,2,2.832600000000001,False,False,False,False
+mobley_2613240,"1,2-dimethoxybenzene",COc1ccccc1OC,False,False,False,False,138.16599999999997,10,1,1,6,2,0,0,2,18.46,2,1.7038,True,False,False,False
+mobley_2636578,3-nitrooxypropyl nitrate,C(CO[N+](=O)[O-])CO[N+](=O)[O-],False,False,False,False,166.08899999999997,11,0,0,0,8,0,0,6,104.74000000000001,6,-0.20690000000000008,False,False,False,True
+mobley_2659552,"N,N-4-trimethylbenzamide",Cc1ccc(cc1)C(=O)N(C)C,False,False,False,False,163.21999999999997,12,1,1,6,2,0,0,1,20.310000000000002,1,1.69682,True,False,False,False
+mobley_2661134,3-hydroxybenzonitrile,c1cc(cc(c1)O)C#N,False,False,False,False,119.12299999999998,9,1,1,6,2,0,1,2,44.019999999999996,0,1.2638799999999997,True,False,False,False
+mobley_2681549,"1,3,5-trichlorobenzene",c1c(cc(cc1Cl)Cl)Cl,False,False,False,False,181.449,9,1,1,6,3,3,0,0,0.0,0,3.6468000000000007,True,True,False,False
+mobley_2689721,cyclohexane,C1CCCCC1,False,False,False,False,84.162,6,1,0,0,0,0,0,0,0.0,0,2.3406000000000002,False,False,False,False
+mobley_2693089,2-isobutylpyrazine,CC(C)Cc1cnccn1,False,False,False,False,136.19799999999998,10,1,1,6,2,0,0,2,25.78,2,1.6751,True,False,False,False
+mobley_2725215,nitralin,CCCN(CCC)c1c(cc(cc1[N+](=O)[O-])S(=O)(=O)C)[N+](=O)[O-],False,False,False,False,345.3770000000001,23,1,1,6,10,0,0,7,123.66,8,2.5329000000000006,True,False,True,True
+mobley_2725802,1-pyrrolidin-1-ylethanone,CC(=O)N1CCCC1,False,False,False,False,113.16000000000001,8,1,0,0,2,0,0,1,20.310000000000002,0,0.6287,False,False,False,False
+mobley_2727678,5-iodouracil,c1c(c(=O)[nH]c(=O)[nH]1)I,False,False,False,False,237.98399999999998,9,1,1,6,5,1,2,2,65.72,0,-0.3322,True,True,True,True
+mobley_2751110,4-nitrophenol,c1cc(ccc1[N+](=O)[O-])O,False,False,False,False,139.10999999999999,10,1,1,6,4,0,1,3,63.370000000000005,1,1.3003999999999998,True,False,False,True
+mobley_2763835,ethoxybenzene,CCOc1ccccc1,False,False,False,False,122.16699999999996,9,1,1,6,1,0,0,1,9.23,2,2.0853,True,False,False,False
+mobley_2771569,1-methylpiperazine,CN1CCNCC1,False,False,False,False,100.16499999999999,7,1,0,0,2,0,1,2,15.27,0,-0.4785999999999999,False,False,False,False
+mobley_2782339,phthalimide,c1ccc2c(c1)C(=O)NC2=O,False,False,False,False,147.13299999999998,11,2,1,6,3,0,1,2,46.17,0,0.5702,True,False,False,False
+mobley_2784376,cyclopropane,C1CC1,False,False,False,False,42.080999999999996,3,1,0,0,0,0,0,0,0.0,0,1.1703,False,False,False,False
+mobley_2789243,3-chloropyridine,c1cc(cnc1)Cl,False,False,False,False,113.54699999999998,7,1,1,6,2,1,0,1,12.89,0,1.7349999999999999,True,True,False,False
+mobley_2792521,(2E)-hex-2-enal,CCC/C=C/C=O,False,False,False,False,98.14499999999998,7,0,0,0,1,0,0,1,17.07,3,1.5416,False,False,False,False
+mobley_2802855,1-bromobutane,CCCCBr,False,False,False,False,137.01999999999998,5,0,0,0,1,1,0,0,0.0,2,2.1814,False,True,False,False
+mobley_282648,naphthalene,c1ccc2ccccc2c1,False,False,False,False,128.17399999999995,10,2,2,10,0,0,0,0,0.0,0,2.839800000000001,True,False,False,False
+mobley_2837389,pyrrole,c1cc[nH]c1,False,False,False,False,67.091,5,1,1,5,1,0,1,0,15.79,0,1.0147,True,False,False,False
+mobley_2844990,"1,2,3,7-tetrachlorodibenzo-p-dioxin",c1cc2c(cc1Cl)Oc3cc(c(c(c3O2)Cl)Cl)Cl,False,False,False,False,321.97399999999993,18,3,2,12,6,4,0,2,18.46,0,6.1982,True,True,True,False
+mobley_2845466,"2,3,7,8-tetrachlorodibenzo-p-dioxin",c1c2c(cc(c1Cl)Cl)Oc3cc(c(cc3O2)Cl)Cl,False,False,False,False,321.97399999999993,18,3,2,12,6,4,0,2,18.46,0,6.1982,True,True,True,False
+mobley_2850833,2-hydroxybenzaldehyde,c1ccc(c(c1)C=O)O,False,False,False,False,122.12299999999996,9,1,1,6,2,0,1,2,37.3,1,1.2046999999999997,True,False,False,False
+mobley_2859600,styrene,C=Cc1ccccc1,False,False,False,False,104.15199999999997,8,1,1,6,0,0,0,0,0.0,1,2.3296,True,False,False,False
+mobley_2864987,pentan-2-ol,CCC[C@@H](C)O,False,False,False,False,88.14999999999999,6,0,0,0,1,0,1,1,20.23,2,1.1673,False,False,False,False
+mobley_2881590,isobutyl nitrate,CC(C)CO[N+](=O)[O-],False,False,False,False,119.11999999999999,8,0,0,0,4,0,0,3,52.370000000000005,3,0.8507,False,False,False,False
+mobley_2913224,acetylsalicylic acid,CC(=O)Oc1ccccc1C(=O)O,False,False,False,False,180.15899999999996,13,1,1,6,4,0,1,3,63.60000000000001,2,1.3101,True,False,False,True
+mobley_2923700,4-ethylphenol,CCc1ccc(cc1)O,False,False,False,False,122.16699999999996,9,1,1,6,1,0,1,1,20.23,1,1.9545999999999997,True,False,False,False
+mobley_2925352,p-cresol,Cc1ccc(cc1)O,False,False,False,False,108.13999999999999,8,1,1,6,1,0,1,1,20.23,0,1.7006199999999996,True,False,False,False
+mobley_2929847,3-methylbutanoic acid,CC(C)CC(=O)O,False,False,False,False,102.13299999999998,7,0,0,0,2,0,1,1,37.3,2,1.1171,False,False,False,False
+mobley_2958326,N-propylpropan-1-amine,CCCNCCC,False,False,False,False,101.193,7,0,0,0,1,0,1,1,12.03,4,1.396,False,False,False,False
+mobley_2960202,"1,2,3,4,7,8-hexachlorodibenzo-p-dioxin",c1c2c(cc(c1Cl)Cl)Oc3c(c(c(c(c3Cl)Cl)Cl)Cl)O2,False,False,False,False,390.8639999999999,20,3,2,12,8,6,0,2,18.46,0,7.504999999999999,True,True,True,False
+mobley_296847,pyridine,c1ccncc1,False,False,False,False,79.10199999999998,6,1,1,6,1,0,0,1,12.89,0,1.0816,True,False,False,False
+mobley_2972345,"9,10-dihydroanthracene",c1ccc2c(c1)Cc3ccccc3C2,True,False,True,False,180.24999999999997,14,3,2,12,0,0,0,0,0.0,0,3.1816000000000013,True,False,False,False
+mobley_2972906,thiophene,c1ccsc1,False,False,False,False,84.14299999999999,5,1,1,5,1,0,0,1,0.0,0,1.7480999999999998,True,False,False,False
+mobley_299266,2-methylprop-1-ene,CC(=C)C,False,False,False,False,56.108000000000004,4,0,0,0,0,0,0,0,0.0,0,1.5824,False,False,False,False
+mobley_2996632,chloroform,C(Cl)(Cl)Cl,False,False,False,False,119.37800000000001,4,0,0,0,3,3,0,0,0.0,0,1.9864,False,True,False,False
+mobley_3006808,"2,2,2-trifluoroethanol",C(C(F)(F)F)O,False,False,False,False,100.039,6,0,0,0,4,3,1,1,20.23,0,0.5410000000000001,False,True,False,False
+mobley_303222,prop-1-ene,CC=C,False,False,False,False,42.080999999999996,3,0,0,0,0,0,0,0,0.0,0,1.1923000000000001,False,False,False,False
+mobley_3034976,acetic acid,CC(=O)O,False,False,False,False,60.05200000000001,4,0,0,0,2,0,1,1,37.3,0,0.09089999999999993,False,False,False,False
+mobley_3040612,1-ethyl-2-methylbenzene,CCc1ccccc1C,True,False,True,False,120.19499999999996,9,1,1,6,0,0,0,0,0.0,1,2.5574200000000005,True,False,False,False
+mobley_3047364,"2-N-ethyl-6-(methylsulfanyl)-4-N-(propan-2-yl)-1,3,5-triazine-2,4-diamine",CCNc1nc(nc(n1)SC)NC(C)C,False,True,True,False,227.33700000000002,15,1,1,6,6,0,2,6,62.730000000000004,5,1.8455999999999997,True,False,True,True
+mobley_3053621,benzene,c1ccccc1,False,False,False,False,78.11399999999999,6,1,1,6,0,0,0,0,0.0,0,1.6866,True,False,False,False
+mobley_3060426,"2,2,5-trimethylhexane",CC(C)CCC(C)(C)C,False,False,False,False,128.259,9,0,0,0,0,0,0,0,0.0,2,3.468700000000003,False,False,False,False
+mobley_3083321,dimethoxymethane,COCOC,False,False,False,False,76.095,5,0,0,0,2,0,0,2,18.46,2,0.23670000000000002,False,False,False,False
+mobley_3105103,terbacil,Cc1c(c(=O)n(c(=O)[nH]1)C(C)(C)C)Cl,False,False,False,False,216.66799999999998,14,1,1,6,5,1,1,3,54.86,0,1.2534199999999995,True,True,True,False
+mobley_313406,propan-1-ol,CCCO,False,False,False,False,60.096,4,0,0,0,1,0,1,1,20.23,1,0.3887,False,False,False,False
+mobley_3144334,"2,5-dimethylphenol",Cc1ccc(c(c1)O)C,False,False,False,False,122.16699999999999,9,1,1,6,1,0,1,1,20.23,0,2.0090399999999997,True,False,False,False
+mobley_3151666,decan-1-ol,CCCCCCCCCCO,False,False,False,False,158.285,11,0,0,0,1,0,1,1,20.23,8,3.119400000000002,False,False,False,False
+mobley_3167746,octane,CCCCCCCC,False,False,False,False,114.232,8,0,0,0,0,0,0,0,0.0,5,3.3668000000000022,False,False,False,False
+mobley_3169935,2-chloroaniline,c1ccc(c(c1)N)Cl,False,True,True,False,127.574,8,1,1,6,2,1,1,1,26.02,0,1.9222,True,True,False,False
+mobley_3183805,"1,2,4-trimethylbenzene",Cc1ccc(c(c1)C)C,True,False,True,False,120.195,9,1,1,6,0,0,0,0,0.0,0,2.611860000000001,True,False,False,False
+mobley_3187514,2-methylaniline,Cc1ccccc1N,False,True,True,False,107.156,8,1,1,6,1,0,1,1,26.02,0,1.57722,True,False,False,False
+mobley_3201701,pirimor,Cc1c(nc(nc1OC(=O)N(C)C)N(C)C)C,True,False,True,False,238.291,17,1,1,6,6,0,0,5,58.56000000000001,2,1.2198399999999998,True,False,True,False
+mobley_3210206,"1,2-dinitroxypropane",C[C@@H](CO[N+](=O)[O-])O[N+](=O)[O-],False,False,False,False,166.08899999999997,11,0,0,0,8,0,0,6,104.74000000000001,5,-0.20850000000000013,False,False,False,True
+mobley_3211679,cyclohexene,C1CCC=CC1,False,False,False,False,82.146,6,1,0,0,0,0,0,0,0.0,0,2.1166,False,False,False,False
+mobley_3234716,p-xylene,Cc1ccc(cc1)C,False,False,False,False,106.16799999999999,8,1,1,6,0,0,0,0,0.0,0,2.30344,True,False,False,False
+mobley_3259411,glycerol,C(C(CO)O)O,False,False,False,False,92.09399999999998,6,0,0,0,3,0,3,3,60.69,2,-1.6681000000000001,False,False,False,True
+mobley_3264884,naphthalen-2-amine,c1ccc2cc(ccc2c1)N,True,True,True,True,143.18899999999994,11,2,2,10,1,0,1,1,26.02,0,2.4219999999999997,True,False,False,False
+mobley_3265457,2-chlorosyringaldehyde,COc1cc(c(c(c1O)OC)Cl)C=O,False,False,False,False,216.61999999999998,14,1,1,6,5,1,1,4,55.76,3,1.8752999999999997,True,True,True,False
+mobley_3266352,"N-methyl-N-(2,2,2-trifluoroethyl)aniline",CN(CC(F)(F)F)c1ccccc1,False,False,False,False,189.18000000000004,13,1,1,6,4,3,0,1,3.24,2,2.685100000000001,True,True,False,False
+mobley_3269565,2-methoxypropane,CC(C)OC,False,False,False,False,74.123,5,0,0,0,1,0,0,1,9.23,1,1.0412,False,False,False,False
+mobley_3269819,"1,2,3,4-tetrachloro-5-(3,4,5-trichlorophenyl)benzene",c1c(cc(c(c1Cl)Cl)Cl)c2cc(c(c(c2Cl)Cl)Cl)Cl,False,False,False,False,395.3269999999999,19,2,2,12,7,7,0,0,0.0,1,7.9274000000000004,True,True,True,False
+mobley_3274817,"2-[(1R)-1-methylpropyl]-4,6-dinitro-phenolate",CC[C@@H](C)c1cc(cc(c1O)[N+](=O)[O-])[N+](=O)[O-],False,False,False,False,240.21499999999997,17,1,1,6,7,0,1,5,106.51000000000002,4,2.7221000000000024,True,False,True,True
+mobley_3318135,nonan-5-one,CCCCC(=O)CCCC,False,False,False,False,142.242,10,0,0,0,1,0,0,1,17.07,6,2.935900000000001,False,False,False,False
+mobley_3323117,sulfolane,C1CC[S+2](C1)([O-])[O-],False,False,False,False,120.17299999999999,7,1,0,0,3,0,0,2,46.12,0,0.19500000000000006,False,False,False,False
+mobley_3325209,trimethoxymethylbenzene,COC(c1ccccc1)(OC)OC,False,False,False,False,182.21899999999994,13,1,1,6,3,0,0,3,27.69,4,1.7360999999999998,True,False,False,False
+mobley_3359593,4-propylguaiacol,CCCc1ccc(c(c1)OC)O,False,False,False,False,166.21999999999997,12,1,1,6,2,0,1,2,29.46,3,2.3533000000000004,True,False,False,False
+mobley_3370989,"1,1-difluoroethane",CC(F)F,False,False,False,False,66.05,4,0,0,0,2,2,0,0,0.0,0,1.2714,False,True,False,False
+mobley_337666,5-fluorouracil,c1c(c(=O)[nH]c(=O)[nH]1)F,False,False,False,False,130.07799999999997,9,1,1,6,5,1,2,2,65.72,0,-0.7977000000000001,True,True,False,True
+mobley_3378420,nonan-1-ol,CCCCCCCCCO,False,False,False,False,144.258,10,0,0,0,1,0,1,1,20.23,7,2.7293000000000016,False,False,False,False
+mobley_3395921,tetrahydropyran,C1CCOCC1,False,False,False,False,86.134,6,1,0,0,1,0,0,1,9.23,0,1.1869,False,False,False,False
+mobley_3398536,iodobenzene,c1ccc(cc1)I,False,False,False,False,204.01,7,1,1,6,1,1,0,0,0.0,0,2.291200000000001,True,True,True,False
+mobley_3414356,2-methylpentan-2-ol,CCCC(C)(C)O,False,False,False,False,102.17699999999998,7,0,0,0,1,0,1,1,20.23,2,1.5574,False,False,False,False
+mobley_3425174,chloro-fluoro-methane,C(F)Cl,False,False,False,False,68.47800000000001,3,0,0,0,2,2,0,0,0.0,0,1.1522,False,True,False,False
+mobley_3452749,"1,2,3-trimethylbenzene",Cc1cccc(c1C)C,False,False,False,False,120.195,9,1,1,6,0,0,0,0,0.0,0,2.611860000000001,True,False,False,False
+mobley_349850,1-(p-tolyl)ethanone,Cc1ccc(cc1)C(=O)C,False,False,False,False,134.178,10,1,1,6,1,0,0,1,17.07,1,2.1976199999999997,True,False,False,False
+mobley_3515580,2-methoxyphenol,COc1ccccc1O,False,False,False,False,124.13899999999997,9,1,1,6,2,0,1,2,29.46,1,1.4008,True,False,False,False
+mobley_352111,2-acetoxyethyl acetate,CC(=O)OCCOC(=O)C,True,False,True,False,146.142,10,0,0,0,4,0,0,4,52.6,3,0.11260000000000003,False,False,False,False
+mobley_3525176,pentylbenzene,CCCCCc1ccccc1,False,False,False,False,148.249,11,1,1,6,0,0,0,0,0.0,4,3.4193000000000024,True,False,False,False
+mobley_3546460,hexan-1-ol,CCCCCCO,False,False,False,False,102.17699999999999,7,0,0,0,1,0,1,1,20.23,4,1.559,False,False,False,False
+mobley_3572203,pentyl propanoate,CCCCCOC(=O)CC,False,False,False,False,144.21399999999997,10,0,0,0,2,0,0,2,26.3,5,2.1298000000000004,False,False,False,False
+mobley_3573480,heptan-2-one,CCCCCC(=O)C,False,False,False,False,114.18799999999999,8,0,0,0,1,0,0,1,17.07,4,2.1557000000000004,False,False,False,False
+mobley_3589456,"2-chloro-1,1,1-trimethoxy-ethane",COC(CCl)(OC)OC,True,True,True,True,154.593,9,0,0,0,4,1,0,3,27.69,4,0.8182,False,True,False,False
+mobley_36119,octan-1-ol,CCCCCCCCO,False,False,False,False,130.23100000000002,9,0,0,0,1,0,1,1,20.23,6,2.3392000000000013,False,False,False,False
+mobley_3639400,1-chlorobutane,CCCCCl,False,False,False,False,92.56899999999999,5,0,0,0,1,1,0,0,0.0,2,2.0253,False,True,False,False
+mobley_3663158,naphthalen-2-ol,c1ccc2cc(ccc2c1)O,False,False,False,False,144.17299999999997,11,2,2,10,1,0,1,1,20.23,0,2.545400000000001,True,False,False,False
+mobley_3682850,cyclohexanone,C1CCC(=O)CC1,False,False,False,False,98.145,7,1,0,0,1,0,0,1,17.07,0,1.5196,False,False,False,False
+mobley_3686115,"1,1-diethoxyethane",CCOC(C)OCC,False,False,False,False,118.176,8,0,0,0,2,0,0,2,18.46,4,1.4054,False,False,False,False
+mobley_3690931,propyl butanoate,CCCC(=O)OCCC,False,False,False,False,130.18699999999998,9,0,0,0,2,0,0,2,26.3,4,1.7397,False,False,False,False
+mobley_3709920,non-1-ene,CCCCCCCC=C,False,False,False,False,126.243,9,0,0,0,0,0,0,0,0.0,6,3.5329000000000024,False,False,False,False
+mobley_3715043,"1,4-dimethylnaphthalene",Cc1ccc(c2c1cccc2)C,False,False,False,False,156.22799999999998,12,2,2,10,0,0,0,0,0.0,0,3.456640000000002,True,False,False,False
+mobley_3727287,quinone,C1=CC(=O)C=CC1=O,False,False,False,False,108.09599999999998,8,1,0,0,2,0,0,2,34.14,0,0.25059999999999993,False,False,False,False
+mobley_3738859,1-bromo-pentane,CCCCCBr,False,False,False,False,151.047,6,0,0,0,1,1,0,0,0.0,3,2.5715000000000012,False,True,False,False
+mobley_3746675,isopropenylbenzene,CC(=C)c1ccccc1,False,False,False,False,118.17899999999996,9,1,1,6,0,0,0,0,0.0,1,2.7197000000000005,True,False,False,False
+mobley_3761215,"1,1,1-trichloroethane",CC(Cl)(Cl)Cl,False,False,False,False,133.405,5,0,0,0,3,3,0,0,0.0,0,2.376500000000001,False,True,False,False
+mobley_3762186,dichloromethane,C(Cl)Cl,False,False,False,False,84.933,3,0,0,0,2,2,0,0,0.0,0,1.4215,False,True,False,False
+mobley_3775790,1-methylpyrrole,Cn1cccc1,False,False,False,False,81.118,6,1,1,5,1,0,0,1,4.93,0,1.0251,True,False,False,False
+mobley_3777264,3-nitroaniline,c1cc(cc(c1)[N+](=O)[O-])N,False,True,True,False,138.12599999999998,10,1,1,6,4,0,1,3,69.16,1,1.1769999999999998,True,False,False,True
+mobley_3802803,hexyl nitrate,CCCCCCON([O-])[O-],False,False,False,False,147.174,10,0,0,0,4,0,0,4,58.59,6,1.7959,False,False,False,False
+mobley_3843583,naphthalen-1-amine,c1ccc2c(c1)cccc2N,True,True,True,True,143.18899999999994,11,2,2,10,1,0,1,1,26.02,0,2.4219999999999993,True,False,False,False
+mobley_3867265,acetone,CC(=O)C,False,False,False,False,58.08,4,0,0,0,1,0,0,1,17.07,0,0.5952999999999999,False,False,False,False
+mobley_3968043,cyclopentanone,C1CCC(=O)C1,False,False,False,False,84.118,6,1,0,0,1,0,0,1,17.07,0,1.1295,False,False,False,False
+mobley_3968739,methyl benzoate,COC(=O)c1ccccc1,False,False,False,False,136.14999999999998,10,1,1,6,2,0,0,2,26.3,1,1.4732,True,False,False,False
+mobley_3969312,benzaldehyde,c1ccc(cc1)C=O,False,False,False,False,106.12399999999997,8,1,1,6,1,0,0,1,17.07,1,1.4990999999999999,True,False,False,False
+mobley_397645,ethyl benzoate,CCOC(=O)c1ccccc1,False,False,False,False,150.177,11,1,1,6,2,0,0,2,26.3,2,1.8633,True,False,False,False
+mobley_3976574,"1,2,3,4,7-pentachlorodibenzo-p-dioxin",c1cc2c(cc1Cl)Oc3c(c(c(c(c3Cl)Cl)Cl)Cl)O2,False,False,False,False,356.419,19,3,2,12,7,5,0,2,18.46,0,6.8515999999999995,True,True,True,False
+mobley_3980099,"1,2,3-trichlorobenzene",c1cc(c(c(c1)Cl)Cl)Cl,False,False,False,False,181.44899999999998,9,1,1,6,3,3,0,0,0.0,0,3.6468000000000007,True,True,False,False
+mobley_3982371,methyl acetate,CC(=O)OC,False,False,False,False,74.07900000000001,5,0,0,0,2,0,0,2,26.3,0,0.17930000000000001,False,False,False,False
+mobley_3999471,"1,1-dichloroethane",CC(Cl)Cl,False,False,False,False,98.96000000000001,4,0,0,0,2,2,0,0,0.0,0,1.81,False,True,False,False
+mobley_4013838,"2,4-dimethylpentan-3-one",CC(C)C(=O)C(C)C,False,False,False,False,114.18799999999997,8,0,0,0,1,0,0,1,17.07,2,1.8675,False,False,False,False
+mobley_4035953,o-cresol,Cc1ccccc1O,False,False,False,False,108.13999999999999,8,1,1,6,1,0,1,1,20.23,0,1.70062,True,False,False,False
+mobley_4039055,5-bromouracil,c1c(c(=O)[nH]c(=O)[nH]1)Br,False,False,False,False,190.98399999999998,9,1,1,6,5,1,2,2,65.72,0,-0.17430000000000012,True,True,False,True
+mobley_4043951,pent-1-ene,CCCC=C,False,False,False,False,70.135,5,0,0,0,0,0,0,0,0.0,2,1.9725,False,False,False,False
+mobley_4043987,2-methylhexane,CCCCC(C)C,False,False,False,False,100.20499999999998,7,0,0,0,0,0,0,0,0.0,3,2.832600000000001,False,False,False,False
+mobley_4059279,"1,4-dimethylpiperazine",CN1CCN(CC1)C,False,False,False,False,114.192,8,1,0,0,2,0,0,2,6.48,0,-0.13640000000000008,False,False,False,False
+mobley_4149784,"2,7-dichlorodibenzo-p-dioxin",c1cc2c(cc1Cl)Oc3ccc(cc3O2)Cl,False,False,False,False,253.084,16,3,2,12,4,2,0,2,18.46,0,4.891400000000001,True,True,True,False
+mobley_4177472,"2,3,4-trimethylpentane",CC(C)C(C)C(C)C,False,False,False,False,114.23199999999999,8,0,0,0,0,0,0,0,0.0,2,2.9345000000000017,False,False,False,False
+mobley_4188615,"N,N-dimethylbenzamide",CN(C)C(=O)c1ccccc1,False,False,False,False,149.19299999999998,11,1,1,6,2,0,0,1,20.310000000000002,1,1.3884,True,False,False,False
+mobley_4193752,nitrobenzene,c1ccc(cc1)[N+](=O)[O-],False,False,False,False,123.11099999999998,9,1,1,6,3,0,0,2,43.14,1,1.5947999999999998,True,False,False,False
+mobley_4218209,4-methoxyaniline,COc1ccc(cc1)N,True,False,True,False,123.15499999999999,9,1,1,6,2,0,1,2,35.25,1,1.2773999999999999,True,False,False,False
+mobley_4219614,"1,2,3,4-tetrachlorobenzene",c1cc(c(c(c1Cl)Cl)Cl)Cl,False,False,False,False,215.894,10,1,1,6,4,4,0,0,0.0,0,4.3002,True,True,True,False
+mobley_4252724,isobutylbenzene,CC(C)Cc1ccccc1,False,False,False,False,134.22199999999998,10,1,1,6,0,0,0,0,0.0,2,2.8851000000000013,True,False,False,False
+mobley_4287564,2-methylpyridine,Cc1ccccn1,False,False,False,False,93.129,7,1,1,6,1,0,0,1,12.89,0,1.39002,True,False,False,False
+mobley_4291494,2-chloropyridine,c1ccnc(c1)Cl,False,False,False,False,113.54699999999998,7,1,1,6,2,1,0,1,12.89,0,1.7349999999999999,True,True,False,False
+mobley_430089,pent-1-yne,CCCC#C,False,False,False,False,68.11899999999999,5,0,0,0,0,0,0,0,0.0,1,1.4197,False,False,False,False
+mobley_4305650,propanenitrile,CCC#N,False,False,False,False,55.07999999999999,4,0,0,0,1,0,0,1,23.79,0,0.91998,False,False,False,False
+mobley_4338603,6-chlorouracil,c1c(=O)[nH]c(=O)[nH]c1Cl,False,False,False,False,146.533,9,1,1,6,5,1,2,2,65.72,0,-0.2834000000000002,True,True,False,True
+mobley_4364398,iodomethane,CI,False,False,False,False,141.939,2,0,0,0,1,1,0,0,0.0,0,1.0512000000000001,False,True,False,False
+mobley_4371692,"1-amino-4-hydroxy-9,10-anthracenedione",c1ccc2c(c1)C(=O)c3c(ccc(c3C2=O)O)N,False,True,True,False,239.22999999999996,18,3,2,12,4,0,2,4,80.39,0,1.7497999999999998,True,False,True,True
+mobley_4375719,nonane,CCCCCCCCC,False,False,False,False,128.259,9,0,0,0,0,0,0,0,0.0,6,3.7569000000000026,False,False,False,False
+mobley_4395315,4-chloro-3-methyl-phenol,Cc1cc(ccc1Cl)O,False,False,False,False,142.585,9,1,1,6,2,1,1,1,20.23,0,2.3540200000000016,True,True,False,False
+mobley_4434915,chloromethane,CCl,False,False,False,False,50.488,2,0,0,0,1,1,0,0,0.0,0,0.855,False,True,False,False
+mobley_4463913,1-acetoxyethyl acetate,CC(OC(=O)C)OC(=O)C,False,False,False,False,146.14199999999997,10,0,0,0,4,0,0,4,52.6,2,0.4586,False,False,False,False
+mobley_4465023,"(Z)-1,2-dichloroethylene",C(=C\Cl)\Cl,False,False,False,False,96.944,4,0,0,0,2,2,0,0,0.0,0,1.9352,False,True,False,False
+mobley_4479135,"1,1-diphenylethene",C=C(c1ccccc1)c2ccccc2,False,False,False,False,180.24999999999997,14,2,2,12,0,0,0,0,0.0,2,3.7481000000000018,True,False,False,False
+mobley_4483973,fluorobenzene,c1ccc(cc1)F,False,False,False,False,96.10399999999998,7,1,1,6,1,1,0,0,0.0,0,1.8257,True,True,False,False
+mobley_4494568,1-bromo-4-methyl-benzene,Cc1ccc(cc1)Br,False,False,False,False,171.03699999999998,8,1,1,6,1,1,0,0,0.0,0,2.7575200000000013,True,True,False,False
+mobley_4506634,"2-bromo-2-chloro-1,1,1-trifluoro-ethane",[C@@H](C(F)(F)F)(Cl)Br,False,False,False,False,197.381,7,0,0,0,5,5,0,0,0.0,0,2.5084999999999997,False,True,False,False
+mobley_4553008,"1,4-dichlorobenzene",c1cc(ccc1Cl)Cl,False,False,False,False,147.004,8,1,1,6,2,2,0,0,0.0,0,2.9934000000000003,True,True,False,False
+mobley_4561957,"2,3-dimethylbutane",CC(C)C(C)C,False,False,False,False,86.178,6,0,0,0,0,0,0,0,0.0,1,2.2984,False,False,False,False
+mobley_4584540,"2,6-dimethylpyridine",Cc1cccc(n1)C,False,False,False,False,107.156,8,1,1,6,1,0,0,1,12.89,0,1.69844,True,False,False,False
+mobley_4587267,"(2R,3R,4R,5R)-Hexan-1,2,3,4,5,6-hexol",C([C@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)O,True,False,True,False,182.172,12,0,0,0,6,0,6,6,121.38000000000001,5,-3.585399999999998,False,False,False,True
+mobley_4603202,1-chloro-2-(2-chloroethoxy)ethane,C(CCl)OCCCl,False,False,False,False,143.013,7,0,0,0,3,2,0,1,9.23,4,1.4806000000000001,False,True,False,False
+mobley_4609460,ethyl paraben,CCOC(=O)c1ccc(cc1)O,False,False,False,False,166.176,12,1,1,6,3,0,1,3,46.53,2,1.5688999999999997,True,False,False,False
+mobley_4613090,1-benzylimidazole,c1ccc(cc1)Cn2ccnc2,False,False,False,False,158.204,12,2,2,11,2,0,0,2,17.82,2,1.9313999999999998,True,False,False,False
+mobley_4620651,methyl cyclopropanecarboxylate,COC(=O)C1CC1,False,False,False,False,100.117,7,1,0,0,2,0,0,2,26.3,1,0.5693999999999999,False,False,False,False
+mobley_4630641,"1,2-dimethoxyethane",COCCOC,False,False,False,False,90.122,6,0,0,0,2,0,0,2,18.46,3,0.2792,False,False,False,False
+mobley_4639255,ethylene glycol,C(CO)O,False,False,False,False,62.068000000000005,4,0,0,0,2,0,2,2,40.46,1,-1.029,False,False,False,False
+mobley_4678740,m-bis(trifluoromethyl)benzene,c1cc(cc(c1)C(F)(F)F)C(F)(F)F,True,False,True,False,214.10799999999995,14,1,1,6,6,6,0,0,0.0,0,3.7242000000000006,True,True,True,False
+mobley_4683624,4-propylphenol,CCCc1ccc(cc1)O,False,False,False,False,136.19399999999996,10,1,1,6,1,0,1,1,20.23,2,2.344700000000001,True,False,False,False
+mobley_4687447,2-propoxyethanol,CCCOCCO,False,False,False,False,104.14899999999999,7,0,0,0,2,0,1,2,29.46,4,0.40530000000000005,False,False,False,False
+mobley_468867,heptachlor,C1=C[C@@H]([C@@H]2[C@H]1[C@@]3(C(=C([C@]2(C3(Cl)Cl)Cl)Cl)Cl)Cl)Cl,False,False,False,False,373.3209999999999,17,3,0,0,7,7,0,0,0.0,0,5.2415,False,True,True,False
+mobley_4689084,2-acetoxyethyl acetate,CC(=O)OCCOC(=O)C,False,False,False,False,146.142,10,0,0,0,4,0,0,4,52.6,3,0.11260000000000003,False,False,False,False
+mobley_4690963,"1,2-diethoxyethane",CCOCCOCC,False,False,False,False,118.176,8,0,0,0,2,0,0,2,18.46,5,1.0594000000000001,False,False,False,False
+mobley_4694328,octanal,CCCCCCCC=O,False,False,False,False,128.215,9,0,0,0,1,0,0,1,17.07,6,2.5458000000000007,False,False,False,False
+mobley_4699732,"1,2-dichloropropane",C[C@@H](CCl)Cl,False,True,True,False,112.987,5,0,0,0,2,2,0,0,0.0,1,1.8525,False,True,False,False
+mobley_4715906,"1,2-dimethylcyclohexane",C[C@@H]1CCCC[C@@H]1C,False,False,False,False,112.216,8,1,0,0,0,0,0,0,0.0,0,2.832600000000001,False,False,False,False
+mobley_4759887,1-iodoheptane,CCCCCCCI,False,False,False,False,226.101,8,0,0,0,1,1,0,0,0.0,5,3.3918000000000026,False,True,True,False
+mobley_4762983,hept-1-ene,CCCCCC=C,False,False,False,False,98.189,7,0,0,0,0,0,0,0,0.0,4,2.752700000000001,False,False,False,False
+mobley_4780078,"2,4-dimethylphenol",Cc1ccc(c(c1)C)O,False,True,True,False,122.16699999999999,9,1,1,6,1,0,1,1,20.23,0,2.00904,True,False,False,False
+mobley_4792268,pentanoic acid,CCCCC(=O)O,False,False,False,False,102.13299999999998,7,0,0,0,2,0,1,1,37.3,3,1.2612,False,False,False,False
+mobley_4845722,hexachlorobenzene,c1(c(c(c(c(c1Cl)Cl)Cl)Cl)Cl)Cl,False,False,False,False,284.784,12,1,1,6,6,6,0,0,0.0,0,5.606999999999999,True,True,True,False
+mobley_4850657,methanesulfonyl chloride,CS(=O)(=O)Cl,False,False,False,False,114.55300000000001,5,0,0,0,4,1,0,2,34.14,0,0.18480000000000008,False,True,False,False
+mobley_486214,"2,6-dimethoxyphenol",COc1cccc(c1O)OC,False,False,False,False,154.16499999999996,11,1,1,6,3,0,1,3,38.69,2,1.4093999999999998,True,False,False,False
+mobley_4883284,aniline,c1ccc(cc1)N,True,True,True,True,93.12899999999999,7,1,1,6,1,0,1,1,26.02,0,1.2687999999999997,True,False,False,False
+mobley_4884177,3-ethylpyridine,CCc1cccnc1,False,False,False,False,107.15599999999998,8,1,1,6,1,0,0,1,12.89,1,1.644,True,False,False,False
+mobley_4893032,pentanenitrile,CCCCC#N,False,False,False,False,83.134,6,0,0,0,1,0,0,1,23.79,2,1.70018,False,False,False,False
+mobley_4924862,isopentyl formate,CC(C)CCOC=O,False,False,False,False,116.15999999999998,8,0,0,0,2,0,0,2,26.3,4,1.2055,False,False,False,False
+mobley_49274,hept-1-yne,CCCCCC#C,False,False,False,False,96.17299999999999,7,0,0,0,0,0,0,0,0.0,3,2.1999000000000004,False,False,False,False
+mobley_4934872,diethoxymethoxybenzene,CCOC(OCC)Oc1ccccc1,False,False,False,False,196.24600000000004,14,1,1,6,3,0,0,3,27.69,6,2.4220000000000006,True,False,False,False
+mobley_4936555,"2-(2,3-dimethylphenyl)aminobenzoic acid",Cc1cccc(c1C)Nc2ccccc2C(=O)O,False,True,True,False,241.29000000000002,18,2,2,12,3,0,2,2,49.33,3,3.7452400000000017,True,False,True,False
+mobley_4964807,nitroxyacetone,CC(=O)CO[N+](=O)[O-],False,False,False,False,119.076,8,0,0,0,5,0,0,4,69.44,3,-0.21630000000000005,False,False,False,True
+mobley_4983965,ethylsulfanylethane,CCSCC,False,False,False,False,90.191,5,0,0,0,1,0,0,1,0.0,2,1.7593999999999999,False,False,False,False
+mobley_5003962,"2-amino-9,10-anthraquinone",c1ccc2c(c1)C(=O)c3ccc(cc3C2=O)N,True,True,True,True,223.23099999999997,17,3,2,12,3,0,1,3,60.16,0,2.0441999999999996,True,False,True,True
+mobley_5006685,4-(1-Methylethenyl)-1-cyclohexene-1-carboxaldehyde,CC(=C)[C@H]1CCC(=CC1)C=O,False,False,False,False,150.221,11,1,0,0,1,0,0,1,17.07,2,2.4879000000000007,False,False,False,False
+mobley_5026370,pyridine-4-carbonitrile,c1cnccc1C#N,False,False,False,False,104.112,8,1,1,6,2,0,0,2,36.68,0,0.9532799999999999,True,False,False,False
+mobley_5052949,1-propylsulfanylpropane,CCCSCCC,False,False,False,False,118.24499999999999,7,0,0,0,1,0,0,1,0.0,4,2.539600000000001,False,False,False,False
+mobley_5056289,2-methyltetrahydrofuran,C[C@H]1CCCO1,False,False,False,False,86.134,6,1,0,0,1,0,0,1,9.23,0,1.1853,False,False,False,False
+mobley_5063386,2-nitrophenol,c1ccc(c(c1)[N+](=O)[O-])O,False,False,False,False,139.10999999999999,10,1,1,6,4,0,1,3,63.370000000000005,1,1.3003999999999998,True,False,False,True
+mobley_5072416,2-methoxyaniline,COc1ccccc1N,True,False,True,False,123.15499999999999,9,1,1,6,2,0,1,2,35.25,1,1.2773999999999999,True,False,False,False
+mobley_5076071,"1-N,1-N-diethyl-2,6-dinitro-4-(trifluoromethyl)benzene-1,3-diamine",CCN(CC)c1c(cc(c(c1[N+](=O)[O-])N)C(F)(F)F)[N+](=O)[O-],True,True,True,True,322.243,22,1,1,6,11,3,1,6,115.53999999999999,5,2.9502000000000015,True,True,True,True
+mobley_5079234,heptan-1-ol,CCCCCCCO,False,False,False,False,116.204,8,0,0,0,1,0,1,1,20.23,5,1.9491,False,False,False,False
+mobley_5094777,indane,c1ccc2c(c1)CCC2,False,False,False,False,118.17899999999999,9,2,1,6,0,0,0,0,0.0,0,2.1753,True,False,False,False
+mobley_5110043,"2,6-dimethylnaphthalene",Cc1ccc2cc(ccc2c1)C,False,False,False,False,156.22799999999998,12,2,2,10,0,0,0,0,0.0,0,3.456640000000002,True,False,False,False
+mobley_511661,butadiene,C=CC=C,False,False,False,False,54.09199999999999,4,0,0,0,0,0,0,0,0.0,1,1.3584,False,False,False,False
+mobley_5123639,4-methylpentan-2-ol,C[C@H](CC(C)C)O,False,False,False,False,102.17699999999999,7,0,0,0,1,0,1,1,20.23,2,1.4133,False,False,False,False
+mobley_5157661,isobutane,CC(C)C,False,False,False,False,58.123999999999995,4,0,0,0,0,0,0,0,0.0,0,1.6622999999999999,False,False,False,False
+mobley_5200358,aldicarb,CC(C)(/C=N\OC(=O)NC)SC,False,False,False,False,190.268,12,0,0,0,5,0,1,4,50.69,3,1.4698,False,False,False,False
+mobley_5220185,2-ethylpyrazine,CCc1cnccn1,False,False,False,False,108.14399999999998,8,1,1,6,2,0,0,2,25.78,1,1.039,True,False,False,False
+mobley_525934,methanethiol,CS,False,False,False,False,48.11000000000001,2,0,0,0,1,0,1,1,0.0,0,0.546,False,False,False,False
+mobley_5263791,1-ethylnaphthalene,CCc1cccc2c1cccc2,False,False,False,False,156.22799999999998,12,2,2,10,0,0,0,0,0.0,1,3.4022000000000023,True,False,False,False
+mobley_52782,"1,2-dinitroxyethane",C(CO[N+](=O)[O-])O[N+](=O)[O-],False,False,False,False,152.06199999999998,10,0,0,0,8,0,0,6,104.74000000000001,5,-0.597,False,False,False,True
+mobley_5282042,Amitriptyline,CN(C)CCC=C1c2ccccc2CCc3c1cccc3,False,True,True,False,277.41099999999994,21,3,2,12,1,0,0,1,3.24,3,4.168600000000003,True,False,True,False
+mobley_5286200,"1,4-dichlorobutane",C(CCCl)CCl,False,False,False,False,127.014,6,0,0,0,2,2,0,0,0.0,3,2.2442,False,True,False,False
+mobley_5310099,hex-1-ene,CCCCC=C,False,False,False,False,84.16199999999999,6,0,0,0,0,0,0,0,0.0,3,2.3626000000000005,False,False,False,False
+mobley_5311804,phenylmethanol,c1ccc(cc1)CO,False,False,False,False,108.13999999999997,8,1,1,6,1,0,1,1,20.23,1,1.1788999999999998,True,False,False,False
+mobley_5326154,"N,N-dimethylaniline",CN(C)c1ccccc1,False,False,False,False,121.18299999999995,9,1,1,6,1,0,0,1,3.24,1,1.7526,True,False,False,False
+mobley_5346580,"3,3-dimethylbutan-2-one",CC(=O)C(C)(C)C,False,False,False,False,100.16099999999999,7,0,0,0,1,0,0,1,17.07,0,1.6215,False,False,False,False
+mobley_5347550,"2,2-dichloro-1,1-difluoro-1-methoxy-ethane",COC(C(Cl)Cl)(F)F,False,False,False,False,164.96599999999998,8,0,0,0,5,4,0,1,9.23,2,2.0293,False,True,False,False
+mobley_5371840,2-chlorodibenzo-p-dioxin,c1ccc2c(c1)Oc3ccc(cc3O2)Cl,False,False,False,False,218.63899999999998,15,3,2,12,3,1,0,2,18.46,0,4.238000000000001,True,True,True,False
+mobley_5390332,methyl butanoate,CCCC(=O)OC,True,False,True,False,102.13299999999998,7,0,0,0,2,0,0,2,26.3,2,0.9595,False,False,False,False
+mobley_5393242,diazinon,CCOP(=S)(OCC)Oc1cc(nc(n1)C(C)C)C,False,True,True,False,304.35200000000003,19,1,1,6,7,0,0,6,53.47,7,3.5847200000000026,True,False,True,False
+mobley_5445548,cumene,CC(C)c1ccccc1,False,False,False,False,120.19499999999995,9,1,1,6,0,0,0,0,0.0,1,2.8100000000000014,True,False,False,False
+mobley_5449201,n-pentane,CCCCC,False,False,False,False,72.151,5,0,0,0,0,0,0,0,0.0,2,2.1965000000000003,False,False,False,False
+mobley_5456566,"1,2,3,4,5-pentachloro-6-(2,3,4,5,6-pentachlorophenyl)benzene",c1(c(c(c(c(c1Cl)Cl)Cl)Cl)Cl)c2c(c(c(c(c2Cl)Cl)Cl)Cl)Cl,False,False,False,False,498.66200000000003,22,2,2,12,10,10,0,0,0.0,1,9.8876,True,True,True,False
+mobley_5467162,4-tert-butylphenol,CC(C)(C)c1ccc(cc1)O,False,False,False,False,150.22099999999998,11,1,1,6,1,0,1,1,20.23,0,2.6897000000000015,True,False,False,False
+mobley_5471704,isopentyl acetate,CC(C)CCOC(=O)C,False,False,False,False,130.18699999999998,9,0,0,0,2,0,0,2,26.3,3,1.5956000000000001,False,False,False,False
+mobley_547634,"2,3-dimethylnaphthalene",Cc1cc2ccccc2cc1C,True,False,True,False,156.22799999999998,12,2,2,10,0,0,0,0,0.0,0,3.456640000000002,True,False,False,False
+mobley_5494918,"1,1,2,3,3,3-hexafluoroprop-1-ene",C(=C(F)F)(C(F)(F)F)F,False,False,False,False,150.021,9,0,0,0,6,6,0,0,0.0,0,2.6262999999999996,False,True,False,False
+mobley_5499659,1-methylimidazole,Cn1ccnc1,False,False,False,False,82.106,6,1,1,5,2,0,0,2,17.82,0,0.4200999999999999,True,False,False,False
+mobley_550662,"1,1,1-trimethoxyethane",CC(OC)(OC)OC,False,True,True,False,120.14799999999998,8,0,0,0,3,0,0,3,27.69,3,0.5992999999999999,False,False,False,False
+mobley_5510474,"1,2,3,4-tetrachlorodibenzo-p-dioxin",c1ccc2c(c1)Oc3c(c(c(c(c3Cl)Cl)Cl)Cl)O2,False,False,False,False,321.97399999999993,18,3,2,12,6,4,0,2,18.46,0,6.1982,True,True,True,False
+mobley_5518547,4-methylaniline,Cc1ccc(cc1)N,False,True,True,False,107.156,8,1,1,6,1,0,1,1,26.02,0,1.5772199999999998,True,False,False,False
+mobley_5520946,benzenethiol,c1ccc(cc1)S,False,False,False,False,110.18099999999997,7,1,1,6,1,0,1,1,0.0,0,1.9753000000000003,True,False,False,False
+mobley_5538249,"1,3,5-trichloro-2-phenyl-benzene",c1ccc(cc1)c2c(cc(cc2Cl)Cl)Cl,False,False,False,False,257.54699999999997,15,2,2,12,3,3,0,0,0.0,1,5.313800000000001,True,True,True,False
+mobley_5561855,"1,3,5-trichloro-2-(2,6-dichlorophenyl)benzene",c1cc(c(c(c1)Cl)c2c(cc(cc2Cl)Cl)Cl)Cl,False,False,False,False,326.437,17,2,2,12,5,5,0,0,0.0,1,6.6206000000000005,True,True,True,False
+mobley_5571660,"2,6-dimethylaniline",Cc1cccc(c1N)C,True,True,True,True,121.183,9,1,1,6,1,0,1,1,26.02,0,1.88564,True,False,False,False
+mobley_5600967,"4-methoxy-N,N-dimethyl-benzamide",CN(C)C(=O)c1ccc(cc1)OC,False,False,False,False,179.21899999999997,13,1,1,6,3,0,0,2,29.540000000000003,2,1.397,True,False,False,False
+mobley_5616693,"(2S,5R)-2-isopropyl-5-methylcyclohexanone",C[C@@H]1CC[C@H](C(=O)C1)C(C)C,True,False,True,False,154.253,11,1,0,0,1,0,0,1,17.07,1,2.6477000000000013,False,False,False,False
+mobley_5627459,2-methylpropanal,CC(C)C=O,False,False,False,False,72.107,5,0,0,0,1,0,0,1,17.07,1,0.8412999999999999,False,False,False,False
+mobley_5631798,ammonia,N,False,False,False,False,17.031,1,0,0,0,1,0,1,1,35.0,0,0.16199999999999998,False,False,False,False
+mobley_5665561,"1,3-dimethylnaphthalene",Cc1cc(c2ccccc2c1)C,False,False,False,False,156.22799999999998,12,2,2,10,0,0,0,0,0.0,0,3.456640000000002,True,False,False,False
+mobley_5690766,"hexa-1,5-diene",C=CCCC=C,False,False,False,False,82.14599999999999,6,0,0,0,0,0,0,0,0.0,3,2.1386000000000003,False,False,False,False
+mobley_5692472,N-methylmethanamine,CNC,False,False,False,False,45.085,3,0,0,0,1,0,1,1,12.03,0,-0.1644000000000001,False,False,False,False
+mobley_5708811,dicamba,COc1c(ccc(c1C(=O)O)Cl)Cl,False,False,False,False,221.039,13,1,1,6,5,2,1,2,46.53,2,2.7002000000000006,True,True,True,False
+mobley_5732611,4-methyl-1H-imidazole,Cc1c[nH]cn1,False,False,False,False,82.10600000000001,6,1,1,5,2,0,1,1,28.68,0,0.7181199999999999,True,False,False,False
+mobley_5747188,1-methyl-2-nitro-benzene,Cc1ccccc1[N+](=O)[O-],False,False,False,False,137.138,10,1,1,6,3,0,0,2,43.14,1,1.9032200000000001,True,False,False,False
+mobley_5747981,"1,1,1,2-tetramethoxyethane",COCC(OC)(OC)OC,False,True,True,False,150.17399999999998,10,0,0,0,4,0,0,4,36.92,5,0.2258,False,False,False,False
+mobley_5759258,pentan-1-ol,CCCCCO,False,False,False,False,88.14999999999999,6,0,0,0,1,0,1,1,20.23,3,1.1689,False,False,False,False
+mobley_5760563,dimethyl sulfate,COS(=O)(=O)OC,False,False,False,False,126.13299999999998,7,0,0,0,5,0,0,4,52.60000000000001,2,-0.476,False,False,False,False
+mobley_5816127,2-methoxyethanol,COCCO,False,False,False,False,76.095,5,0,0,0,2,0,1,2,29.46,2,-0.37489999999999996,False,False,False,False
+mobley_5852491,methylcyclopentane,CC1CCCC1,False,False,False,False,84.162,6,1,0,0,0,0,0,0,0.0,0,2.1965000000000003,False,False,False,False
+mobley_5857,quinoline,c1ccc2c(c1)cccn2,False,False,False,False,129.16199999999995,10,2,2,10,1,0,0,1,12.89,0,2.2348,True,False,False,False
+mobley_5880265,2-butoxyethanol,CCCCOCCO,False,False,False,False,118.17599999999999,8,0,0,0,2,0,1,2,29.46,5,0.7953999999999999,False,False,False,False
+mobley_588781,hexylbenzene,CCCCCCc1ccccc1,False,False,False,False,162.276,12,1,1,6,0,0,0,0,0.0,5,3.809400000000003,True,False,False,False
+mobley_5890803,propyl propanoate,CCCOC(=O)CC,False,False,False,False,116.15999999999998,8,0,0,0,2,0,0,2,26.3,3,1.3496000000000001,False,False,False,False
+mobley_590519,ethyldisulfanylethane,CCSSCC,False,False,False,False,122.258,6,0,0,0,2,0,0,2,0.0,3,2.4076000000000004,False,False,False,False
+mobley_5917842,4-methyl-2-methoxyphenol,Cc1ccc(c(c1)OC)O,False,False,False,False,138.166,10,1,1,6,2,0,1,2,29.46,1,1.70922,True,False,False,False
+mobley_5935995,"2,2-dimethylbutane",CCC(C)(C)C,False,False,False,False,86.17799999999998,6,0,0,0,0,0,0,0,0.0,0,2.442500000000001,False,False,False,False
+mobley_5948990,2-nitroaniline,c1ccc(c(c1)N)[N+](=O)[O-],True,False,True,False,138.126,10,1,1,6,4,0,1,3,69.16,1,1.1769999999999998,True,False,False,True
+mobley_5952846,"1,1,2,2-tetrachloroethylene",C(=C(Cl)Cl)(Cl)Cl,False,False,False,False,165.834,6,0,0,0,4,4,0,0,0.0,0,3.0682,False,True,False,False
+mobley_5973402,3-methylbutan-1-ol,CC(C)CCO,False,False,False,False,88.14999999999999,6,0,0,0,1,0,1,1,20.23,2,1.0248,False,False,False,False
+mobley_5977084,3-methylpyridine,Cc1cccnc1,False,False,False,False,93.129,7,1,1,6,1,0,0,1,12.89,0,1.39002,True,False,False,False
+mobley_6006813,1-nitrobutane,CCCC[N+](=O)[O-],False,False,False,False,103.12099999999998,7,0,0,0,3,0,0,2,43.14,3,1.0632000000000001,False,False,False,False
+mobley_6055410,diflunisal,c1cc(c(cc1c2ccc(cc2F)F)C(=O)O)O,False,False,False,False,250.19999999999996,18,2,2,12,5,2,2,2,57.53,2,3.035600000000001,True,True,True,False
+mobley_6060301,hexan-1-amine,CCCCCCN,False,False,False,False,101.19300000000001,7,0,0,0,1,0,1,1,26.02,4,1.5253999999999999,False,False,False,False
+mobley_6081058,oct-2-enal,CCCCC/C=C/C=O,False,True,True,False,126.19899999999997,9,0,0,0,1,0,0,1,17.07,5,2.3218000000000005,False,False,False,False
+mobley_6082662,4-nitroaniline,c1cc(ccc1N)N(=O)=O,True,False,True,False,138.126,10,1,1,6,4,0,1,3,69.16,1,1.177,True,False,False,True
+mobley_6091882,ethylene,C=C,False,False,False,False,28.053999999999995,2,0,0,0,0,0,0,0,0.0,0,0.8022,False,False,False,False
+mobley_6102880,diphenyl ether,c1ccc(cc1)Oc2ccccc2,False,False,False,False,170.21099999999998,13,2,2,12,1,0,0,1,9.23,2,3.478900000000001,True,False,False,False
+mobley_6115639,trimethyl phosphate,COP(=O)(OC)OC,False,False,False,False,140.075,8,0,0,0,5,0,0,4,44.760000000000005,3,1.0337,False,False,False,False
+mobley_6175884,4-methylbenzaldehyde,Cc1ccc(cc1)C=O,False,False,False,False,120.15099999999998,9,1,1,6,1,0,0,1,17.07,1,1.80752,True,False,False,False
+mobley_6190089,"1,1,2,2-tetrachloroethane",C(C(Cl)Cl)(Cl)Cl,False,False,False,False,167.85,6,0,0,0,4,4,0,0,0.0,1,2.5938000000000008,False,True,False,False
+mobley_6195751,"2,6-dichlorosyringaldehyde",COc1c(c(c(c(c1Cl)C=O)Cl)OC)O,False,True,True,False,251.065,15,1,1,6,6,2,1,4,55.760000000000005,3,2.528700000000001,True,True,True,False
+mobley_6198745,"2,3-diacetoxypropyl acetate",CC(=O)OCC(COC(=O)C)OC(=O)C,False,False,False,False,218.20499999999998,15,0,0,0,6,0,0,6,78.9,5,0.044299999999999784,False,False,True,True
+mobley_6201330,propyl paraben,CCCOC(=O)c1ccc(cc1)O,False,True,True,False,180.20299999999997,13,1,1,6,3,0,1,3,46.53,3,1.959,True,False,False,False
+mobley_6232400,pyridine-3-carbaldehyde,c1cc(cnc1)C=O,False,False,False,False,107.11199999999997,8,1,1,6,2,0,0,2,29.96,1,0.8940999999999999,True,False,False,False
+mobley_6235784,2-chlorobutane,CC[C@H](C)Cl,False,False,False,False,92.569,5,0,0,0,1,1,0,0,0.0,1,2.0237,False,True,False,False
+mobley_6239320,cyanuric acid,c1(=O)[nH]c(=O)[nH]c(=O)[nH]1,True,True,True,True,129.075,9,1,1,6,6,0,3,3,98.57999999999998,0,-2.2485000000000004,True,False,False,True
+mobley_6248915,octan-1-amine,CCCCCCCCN,False,False,False,False,129.247,9,0,0,0,1,0,1,1,26.02,6,2.3056,False,False,False,False
+mobley_6250025,1-iodohexane,CCCCCCI,False,False,False,False,212.074,7,0,0,0,1,1,0,0,0.0,4,3.0017000000000014,False,True,True,False
+mobley_6257907,3-chloroaniline,c1cc(cc(c1)Cl)N,True,False,True,False,127.574,8,1,1,6,2,1,1,1,26.02,0,1.9222,True,True,False,False
+mobley_6266306,azetidine,C1CNC1,False,False,False,False,57.096,4,1,0,0,1,0,1,1,12.03,0,-0.02030000000000004,False,False,False,False
+mobley_627267,1-bromo-2-methyl-propane,CC(C)CBr,False,False,False,False,137.01999999999998,5,0,0,0,1,1,0,0,0.0,1,2.0373,False,True,False,False
+mobley_628086,"1,1,1-trifluoropropan-2-ol",C[C@@H](C(F)(F)F)O,False,False,False,False,114.066,7,0,0,0,4,3,1,1,20.23,0,0.9295,False,True,False,False
+mobley_628951,"1,3-dichloro-2-(2,6-dichlorophenyl)benzene",c1cc(c(c(c1)Cl)c2c(cccc2Cl)Cl)Cl,False,False,False,False,291.99199999999996,16,2,2,12,4,4,0,0,0.0,1,5.967200000000001,True,True,True,False
+mobley_6303022,4-ethylpyridine,CCc1ccncc1,False,False,False,False,107.15599999999998,8,1,1,6,1,0,0,1,12.89,1,1.644,True,False,False,False
+mobley_6309289,piperidine,C1CCNCC1,False,False,False,False,85.15,6,1,0,0,1,0,1,1,12.03,0,0.7599,False,False,False,False
+mobley_632905,1-(4-methoxyphenyl)ethanone,CC(=O)c1ccc(cc1)OC,False,False,False,False,150.17699999999996,11,1,1,6,2,0,0,2,26.3,2,1.8978,True,False,False,False
+mobley_6334915,"(1R)-2,2,2-trichloro-1-dimethoxyphosphoryl-ethanol",COP(=O)([C@H](C(Cl)(Cl)Cl)O)OC,True,True,True,True,257.43699999999995,12,0,0,0,8,3,1,4,55.760000000000005,3,2.1609,False,True,True,False
+mobley_6338073,terbutryn,CCNc1nc(nc(n1)SC)NC(C)(C)C,True,True,True,True,241.364,16,1,1,6,6,0,2,6,62.730000000000004,4,2.2356999999999996,True,False,True,True
+mobley_6353617,1-(3-pyridyl)ethanone,CC(=O)c1cccnc1,False,False,False,False,121.13899999999997,9,1,1,6,2,0,0,2,29.96,1,1.2842,True,False,False,False
+mobley_6358463,"1,2-bis(trifluoromethyl)benzene",c1ccc(c(c1)C(F)(F)F)C(F)(F)F,False,False,False,False,214.10799999999995,14,1,1,6,6,6,0,0,0.0,0,3.7242000000000006,True,True,True,False
+mobley_6359135,carbon tetrachloride,C(Cl)(Cl)(Cl)Cl,False,False,False,False,153.823,5,0,0,0,4,4,0,0,0.0,0,2.5529,False,True,False,False
+mobley_6359156,"1,4-dichloro-2-phenyl-benzene",c1ccc(cc1)c2cc(ccc2Cl)Cl,False,False,False,False,223.10199999999998,14,2,2,12,2,2,0,0,0.0,1,4.660400000000001,True,True,True,False
+mobley_63712,1-methylpiperidine,CN1CCCCC1,False,False,False,False,99.177,7,1,0,0,1,0,0,1,3.24,0,1.1021,False,False,False,False
+mobley_637522,anthracene,c1ccc2cc3ccccc3cc2c1,False,False,False,False,178.23399999999995,14,3,3,14,0,0,0,0,0.0,0,3.993000000000002,True,False,False,False
+mobley_6416775,propylcyclopentane,CCCC1CCCC1,False,False,False,False,112.21600000000001,8,1,0,0,0,0,0,0,0.0,2,2.976700000000002,False,False,False,False
+mobley_6430250,propylbenzene,CCCc1ccccc1,False,False,False,False,120.19499999999995,9,1,1,6,0,0,0,0,0.0,2,2.639100000000001,True,False,False,False
+mobley_6456034,isobutyl 2-methylpropanoate,CC(C)COC(=O)C(C)C,False,False,False,False,144.21399999999997,10,0,0,0,2,0,0,2,26.3,3,1.8416000000000001,False,False,False,False
+mobley_646007,pyrrolidine,C1CCNC1,False,False,False,False,71.123,5,1,0,0,1,0,1,1,12.03,0,0.36979999999999996,False,False,False,False
+mobley_6474572,chloroethylene,C=CCl,False,False,False,False,62.498999999999995,3,0,0,0,1,1,0,0,0.0,0,1.3687,False,True,False,False
+mobley_6497672,but-2-enal,C/C=C/C=O,False,False,False,False,70.09100000000001,5,0,0,0,1,0,0,1,17.07,1,0.7614000000000001,False,False,False,False
+mobley_6522117,"2-chloro-1-(2,4-dichlorophenyl)ethenyl diethyl phosphate",CCOP(=O)(OCC)O/C(=C/Cl)/c1ccc(cc1Cl)Cl,True,True,True,True,359.573,20,1,1,6,8,3,0,4,44.760000000000005,7,5.7283000000000035,True,True,True,False
+mobley_6571751,1-methylcyclohexene,CC1=CCCCC1,False,False,False,False,96.17300000000002,7,1,0,0,0,0,0,0,0.0,0,2.5067000000000004,False,False,False,False
+mobley_6619554,ethyl pentanoate,CCCCC(=O)OCC,False,False,False,False,130.18699999999998,9,0,0,0,2,0,0,2,26.3,4,1.7397,False,False,False,False
+mobley_6620221,carbofuran,CC1(Cc2cccc(c2O1)OC(=O)NC)C,False,False,False,False,221.25599999999997,16,2,1,6,4,0,1,3,47.56,1,2.1182999999999996,True,False,True,False
+mobley_6632459,propanal,CCC=O,False,False,False,False,58.08,4,0,0,0,1,0,0,1,17.07,1,0.5952999999999999,False,False,False,False
+mobley_664966,diiodomethane,C(I)I,False,False,False,False,267.835,3,0,0,0,2,2,0,0,0.0,0,1.8139,False,True,True,False
+mobley_667278,"1,2,3,4-tetrachloro-5-(2,3,4-trichlorophenyl)benzene",c1cc(c(c(c1c2cc(c(c(c2Cl)Cl)Cl)Cl)Cl)Cl)Cl,False,False,False,False,395.3269999999999,19,2,2,12,7,7,0,0,0.0,1,7.9274,True,True,True,False
+mobley_6688723,"3,5-dichloro-2,6-dimethoxyphenol",COc1c(cc(c(c1O)OC)Cl)Cl,False,False,False,False,223.05499999999998,13,1,1,6,5,2,1,3,38.69,2,2.7162000000000006,True,True,True,False
+mobley_6714389,methanamine,CN,False,False,False,False,31.058,2,0,0,0,1,0,1,1,26.02,0,-0.4251,False,False,False,False
+mobley_6727159,2-(nitrooxy)ethan-1-ol,C(CO[N+](=O)[O-])O,False,False,False,False,107.06499999999998,7,0,0,0,5,0,1,4,72.60000000000001,3,-0.8130000000000002,False,False,False,True
+mobley_6733657,chlordane,C1[C@H]([C@@H]2[C@H]([C@H]1Cl)[C@]3(C(=C([C@@]2(C3(Cl)Cl)Cl)Cl)Cl)Cl)Cl,True,False,True,False,409.7819999999999,18,3,0,0,8,8,0,0,0.0,0,5.6828,False,True,True,False
+mobley_6739648,"1,4-dioxane",C1COCCO1,False,False,False,False,88.106,6,1,0,0,2,0,0,2,18.46,0,0.03320000000000001,False,False,False,False
+mobley_6743808,"3,4-dimethylphenol",Cc1ccc(cc1C)O,False,False,False,False,122.16699999999999,9,1,1,6,1,0,1,1,20.23,0,2.00904,True,False,False,False
+mobley_676247,tetrafluoromethane,C(F)(F)(F)F,False,False,False,False,88.00300000000001,5,0,0,0,4,4,0,0,0.0,0,1.4756999999999998,False,True,False,False
+mobley_6794076,1-(4-pyridyl)ethanone,CC(=O)c1ccncc1,False,True,True,False,121.13899999999997,9,1,1,6,2,0,0,2,29.96,1,1.2842,True,False,False,False
+mobley_6804509,"1,2,4,5-tetrachlorobenzene",c1c(c(cc(c1Cl)Cl)Cl)Cl,False,False,False,False,215.894,10,1,1,6,4,4,0,0,0.0,0,4.3002,True,True,True,False
+mobley_6812653,hexane,CCCCCC,False,False,False,False,86.178,6,0,0,0,0,0,0,0,0.0,3,2.5866000000000007,False,False,False,False
+mobley_6843802,"1,2,2-trifluoroethoxybenzene",c1ccc(cc1)O[C@@H](C(F)F)F,False,False,False,False,176.13699999999994,12,1,1,6,4,3,0,1,9.23,3,2.6261,True,True,False,False
+mobley_6854178,isopropyl formate,CC(C)OC=O,False,False,False,False,88.106,6,0,0,0,2,0,0,2,26.3,2,0.5678,False,False,False,False
+mobley_6861308,fenuron,CN(C)C(=O)Nc1ccccc1,False,False,False,False,164.208,12,1,1,6,3,0,1,1,32.34,1,1.7801,True,False,False,False
+mobley_6896128,3-methylheptane,CCCC[C@@H](C)CC,False,False,False,False,114.23199999999999,8,0,0,0,0,0,0,0,0.0,4,3.2227000000000023,False,False,False,False
+mobley_6911232,methoxyethane,CCOC,False,False,False,False,60.096000000000004,4,0,0,0,1,0,0,1,9.23,1,0.6527000000000001,False,False,False,False
+mobley_6917738,2-methoxyethanamine,COCCN,False,False,False,False,75.111,5,0,0,0,2,0,1,2,35.25,2,-0.4084999999999998,False,False,False,False
+mobley_6929123,methyl 2-chloroacetate,COC(=O)CCl,False,False,False,False,108.52400000000002,6,0,0,0,3,1,0,2,26.3,1,0.3981999999999999,False,True,False,False
+mobley_6935906,"(3R)-3,7-Dimethylocta-1,6-dien-3-yl acetate",CC(=CCC[C@](C)(C=C)OC(=O)C)C,False,False,False,False,196.29,14,0,0,0,2,0,0,2,26.3,5,3.2406000000000024,False,False,False,False
+mobley_6973347,ethyl acetate,CCOC(=O)C,False,False,False,False,88.106,6,0,0,0,2,0,0,2,26.3,1,0.5694,False,False,False,False
+mobley_6978427,methyl cyclohexanecarboxylate,COC(=O)C1CCCCC1,False,True,True,False,142.19799999999998,10,1,0,0,2,0,0,2,26.3,1,1.7397,False,False,False,False
+mobley_6981465,isopropyl acetate,CC(C)OC(=O)C,True,False,True,False,102.133,7,0,0,0,2,0,0,2,26.3,1,0.9579,False,False,False,False
+mobley_6988468,2-ethylpyridine,CCc1ccccn1,False,False,False,False,107.15599999999998,8,1,1,6,1,0,0,1,12.89,1,1.644,True,False,False,False
+mobley_7009711,"3,5-dimethylphenol",Cc1cc(cc(c1)O)C,False,False,False,False,122.16699999999997,9,1,1,6,1,0,1,1,20.23,0,2.0090399999999997,True,False,False,False
+mobley_7010316,cyclohexanol,C1CCC(CC1)O,False,False,False,False,100.161,7,1,0,0,1,0,1,1,20.23,0,1.3114,False,False,False,False
+mobley_7015518,methoxymethane,COC,False,False,False,False,46.069,3,0,0,0,1,0,0,1,9.23,0,0.26260000000000006,False,False,False,False
+mobley_7017274,phenanthrene,c1ccc2c(c1)ccc3c2cccc3,False,False,False,False,178.23399999999998,14,3,3,14,0,0,0,0,0.0,0,3.993000000000002,True,False,False,False
+mobley_7039935,naphthalen-1-ol,c1ccc2c(c1)cccc2O,True,True,True,True,144.17299999999997,11,2,2,10,1,0,1,1,20.23,0,2.545400000000001,True,False,False,False
+mobley_7047032,2-chloro-2-methyl-propane,CC(C)(C)Cl,False,False,False,False,92.569,5,0,0,0,1,1,0,0,0.0,0,2.0237,False,True,False,False
+mobley_7066554,4-chlorophenol,c1cc(ccc1O)Cl,False,True,True,False,128.558,8,1,1,6,2,1,1,1,20.23,0,2.0456000000000008,True,True,False,False
+mobley_7099614,3-chloroprop-1-ene,C=CCCl,False,False,False,False,76.526,4,0,0,0,1,1,0,0,0.0,1,1.4112,False,True,False,False
+mobley_7106722,isohexane,CCCC(C)C,False,False,False,False,86.178,6,0,0,0,0,0,0,0,0.0,2,2.442500000000001,False,False,False,False
+mobley_7142697,pentan-1-amine,CCCCCN,False,False,False,False,87.16600000000001,6,0,0,0,1,0,1,1,26.02,3,1.1353,False,False,False,False
+mobley_7150646,"1,4-dibromobenzene",c1cc(ccc1Br)Br,False,False,False,False,235.90599999999998,8,1,1,6,2,2,0,0,0.0,0,3.2116000000000007,True,True,True,False
+mobley_7157427,1-chloroheptane,CCCCCCCCl,False,False,False,False,134.65,8,0,0,0,1,1,0,0,0.0,5,3.1956000000000016,False,True,False,False
+mobley_7176248,trifluralin,CCCN(CCC)c1c(cc(cc1[N+](=O)[O-])C(F)(F)F)[N+](=O)[O-],True,True,True,True,335.28200000000004,23,1,1,6,10,3,0,5,89.52,7,4.148200000000004,True,True,True,True
+mobley_7176290,3-nitrophenol,c1cc(cc(c1)O)[N+](=O)[O-],False,False,False,False,139.10999999999999,10,1,1,6,4,0,1,3,63.370000000000005,1,1.3004000000000002,True,False,False,True
+mobley_718988,heptan-1-amine,CCCCCCCN,True,False,True,False,115.22000000000001,8,0,0,0,1,0,1,1,26.02,5,1.9155,False,False,False,False
+mobley_7200804,2-fluorophenol,c1ccc(c(c1)O)F,False,False,False,False,112.10299999999998,8,1,1,6,2,1,1,1,20.23,0,1.5312999999999997,True,True,False,False
+mobley_7203421,hexanamide,CCCCCC(=O)N,False,False,False,False,115.176,8,0,0,0,2,0,1,1,43.09,4,1.052,False,False,False,False
+mobley_7227357,pentan-3-ol,CCC(CC)O,False,False,False,False,88.14999999999999,6,0,0,0,1,0,1,1,20.23,2,1.1673,False,False,False,False
+mobley_7239499,1-chlorodibenzo-p-dioxin,c1ccc2c(c1)Oc3cccc(c3O2)Cl,False,False,False,False,218.63899999999998,15,3,2,12,3,1,0,2,18.46,0,4.238000000000001,True,True,True,False
+mobley_7261305,hydrazine,NN,False,False,False,False,32.046,2,0,0,0,2,0,2,2,52.04,0,-1.1812,False,False,False,False
+mobley_7295828,anisole,COc1ccccc1,False,False,False,False,108.13999999999997,8,1,1,6,1,0,0,1,9.23,1,1.6952,True,False,False,False
+mobley_7298388,1-methyl-3-nitro-benzene,Cc1cccc(c1)[N+](=O)[O-],False,False,False,False,137.138,10,1,1,6,3,0,0,2,43.14,1,1.90322,True,False,False,False
+mobley_7326706,chlorpyrifos,CCOP(=S)(OCC)Oc1c(cc(c(n1)Cl)Cl)Cl,True,False,True,False,350.5909999999999,18,1,1,6,9,3,0,5,40.58,6,4.718100000000002,True,True,True,False
+mobley_7326982,propan-2-ol,CC(C)O,False,False,False,False,60.096000000000004,4,0,0,0,1,0,1,1,20.23,0,0.38710000000000006,False,False,False,False
+mobley_7360181,"1,1,1-trifluoro-2,2,2-trimethoxyethane",COC(C(F)(F)F)(OC)OC,False,True,True,False,174.118,11,0,0,0,6,3,0,3,27.69,3,1.1417,False,True,False,False
+mobley_7364468,"3,5,5-trimethylcyclohex-2-en-1-one",CC1=CC(=O)CC(C1)(C)C,True,False,True,False,138.21,10,1,0,0,1,0,0,1,17.07,0,2.3218000000000005,False,False,False,False
+mobley_7375018,undecan-2-one,CCCCCCCCCC(=O)C,False,False,False,False,170.296,12,0,0,0,1,0,0,1,17.07,8,3.7161000000000026,False,False,False,False
+mobley_7378987,caffeine,Cn1cnc2c1c(=O)n(c(=O)n2C)C,False,False,False,False,194.194,14,2,2,9,6,0,0,6,61.82,0,-1.0293,True,False,False,True
+mobley_7393673,methyl 4-methoxybenzoate,COc1ccc(cc1)C(=O)OC,False,False,False,False,166.17599999999996,12,1,1,6,3,0,0,3,35.53,2,1.4818,True,False,False,False
+mobley_7415647,"N,N-dimethyl-4-nitro-benzamide",CN(C)C(=O)c1ccc(cc1)[N+](=O)[O-],False,False,False,False,194.18999999999997,14,1,1,6,5,0,0,3,63.45,2,1.2966,True,False,False,True
+mobley_7417968,2-ethoxyethyl acetate,CCOCCOC(=O)C,False,False,False,False,132.159,9,0,0,0,3,0,0,3,35.53,4,0.586,False,False,False,False
+mobley_7455579,isobutyl formate,CC(C)COC=O,False,False,False,False,102.13299999999998,7,0,0,0,2,0,0,2,26.3,3,0.8154,False,False,False,False
+mobley_7463408,"N-(3,4-dichlorophenyl)propanimidic acid",CCC(=O)Nc1ccc(c(c1)Cl)Cl,False,False,False,False,218.08299999999997,13,1,1,6,4,2,1,1,29.1,2,3.3419000000000016,True,True,True,False
+mobley_7463799,3-phenylpropan-1-ol,c1ccc(cc1)CCCO,False,False,False,False,136.194,10,1,1,6,1,0,1,1,20.23,3,1.6115000000000002,True,False,False,False
+mobley_7497999,1-phenylethanone,CC(=O)c1ccccc1,False,False,False,False,120.15099999999995,9,1,1,6,1,0,0,1,17.07,1,1.8892,True,False,False,False
+mobley_7532833,acetonitrile,CC#N,False,False,False,False,41.053,3,0,0,0,1,0,0,1,23.79,0,0.52988,False,False,False,False
+mobley_7542832,1-propoxypropane,CCCOCCC,True,False,True,False,102.17699999999999,7,0,0,0,1,0,0,1,9.23,4,1.823,False,False,False,False
+mobley_755351,3-methoxyaniline,COc1cccc(c1)N,False,True,True,False,123.15499999999999,9,1,1,6,2,0,1,2,35.25,1,1.2773999999999999,True,False,False,False
+mobley_7573149,propyl acetate,CCCOC(=O)C,False,False,False,False,102.13299999999998,7,0,0,0,2,0,0,2,26.3,2,0.9595,False,False,False,False
+mobley_7578802,bromoform,C(Br)(Br)Br,False,False,False,False,252.731,4,0,0,0,3,3,0,0,0.0,0,2.4547,False,True,True,False
+mobley_7599023,bromobenzene,c1ccc(cc1)Br,False,False,False,False,157.01,7,1,1,6,1,1,0,0,0.0,0,2.4491000000000005,True,True,False,False
+mobley_7608435,methyl octanoate,CCCCCCCC(=O)OC,False,False,False,False,158.24099999999999,11,0,0,0,2,0,0,2,26.3,6,2.5199000000000007,False,False,False,False
+mobley_7608462,chlorobenzene,c1ccc(cc1)Cl,False,False,False,False,112.55899999999998,7,1,1,6,1,1,0,0,0.0,0,2.34,True,True,False,False
+mobley_7610437,2-methylpentan-3-ol,CC[C@H](C(C)C)O,False,True,True,False,102.17699999999999,7,0,0,0,1,0,1,1,20.23,2,1.4133,False,False,False,False
+mobley_766666,"1,1,2-trichloroethylene",C(=C(Cl)Cl)Cl,False,False,False,False,131.389,5,0,0,0,3,3,0,0,0.0,0,2.5017000000000005,False,True,False,False
+mobley_7676709,6-isopropyl-3-methyl-1-cyclohex-2-enone,CC1=CC(=O)[C@@H](CC1)C(C)C,False,False,False,False,152.237,11,1,0,0,1,0,0,1,17.07,1,2.567800000000001,False,False,False,False
+mobley_7688753,3-hydroxybenzaldehyde,c1cc(cc(c1)O)C=O,False,False,False,False,122.12299999999996,9,1,1,6,2,0,1,2,37.3,1,1.2046999999999997,True,False,False,False
+mobley_7690440,methyldisulfanylmethane,CSSC,False,False,False,False,94.20400000000001,4,0,0,0,2,0,0,2,0.0,1,1.6274,False,False,False,False
+mobley_7708038,1-bromopropane,CCCBr,False,False,False,False,122.993,4,0,0,0,1,1,0,0,0.0,1,1.7913000000000001,False,True,False,False
+mobley_7732703,bromo-trifluoro-methane,C(F)(F)(F)Br,False,False,False,False,148.909,5,0,0,0,4,4,0,0,0.0,0,1.9011,False,True,False,False
+mobley_7735340,imidazole,c1cnc[nH]1,False,False,False,False,68.079,5,1,1,5,2,0,1,1,28.68,0,0.40969999999999995,True,False,False,False
+mobley_7754849,ethion,CCOP(=S)(OCC)SCSP(=S)(OCC)OCC,True,True,True,True,384.4870000000002,19,0,0,0,10,0,0,8,36.92,12,5.005300000000004,False,False,True,False
+mobley_7758918,propionic acid,CCC(=O)O,False,False,False,False,74.079,5,0,0,0,2,0,1,1,37.3,1,0.481,False,False,False,False
+mobley_7768165,1-bromo-2-chloro-ethane,C(CBr)Cl,False,False,False,False,143.411,4,0,0,0,2,2,0,0,0.0,1,1.6201,False,True,False,False
+mobley_7769613,2-bromo-2-methyl-propane,CC(C)(C)Br,False,False,False,False,137.01999999999998,5,0,0,0,1,1,0,0,0.0,0,2.1798,False,True,False,False
+mobley_7774695,N-methylaniline,CNc1ccccc1,False,False,False,False,107.15599999999998,8,1,1,6,1,0,1,1,12.03,1,1.7283,True,False,False,False
+mobley_778352,2-methylbut-2-ene,CC=C(C)C,False,False,False,False,70.13499999999999,5,0,0,0,0,0,0,0,0.0,0,1.9725,False,False,False,False
+mobley_7794077,5-trifluoromethyluracil,c1c(c(=O)[nH]c(=O)[nH]1)C(F)(F)F,False,False,False,False,180.08499999999995,12,1,1,6,7,3,2,2,65.72,0,0.08199999999999996,True,True,False,True
+mobley_7814642,"1,2,4-trichlorobenzene",c1cc(c(cc1Cl)Cl)Cl,False,False,False,False,181.44899999999998,9,1,1,6,3,3,0,0,0.0,0,3.6468000000000007,True,True,False,False
+mobley_7829570,"N-butyl-N-ethyl-2,6-dinitro-4-(trifluoromethyl)aniline",CCCC[N@](CC)c1c(cc(cc1[N+](=O)[O-])C(F)(F)F)[N+](=O)[O-],True,True,True,True,335.28200000000004,23,1,1,6,10,3,0,5,89.52,7,4.148200000000004,True,True,True,True
+mobley_7859387,heptanal,CCCCCCC=O,False,False,False,False,114.18799999999999,8,0,0,0,1,0,0,1,17.07,5,2.1557000000000004,False,False,False,False
+mobley_7860938,N-butylbutan-1-amine,CCCCNCCCC,False,False,False,False,129.24699999999999,9,0,0,0,1,0,1,1,12.03,6,2.1761999999999997,False,False,False,False
+mobley_7869158,[(2S)-butan-2-yl] nitrate,CC[C@H](C)O[N+](=O)[O-],False,False,False,False,119.11999999999999,8,0,0,0,4,0,0,3,52.370000000000005,3,0.9932,False,False,False,False
+mobley_7893124,tert-butylbenzene,CC(C)(C)c1ccccc1,False,False,False,False,134.22199999999998,10,1,1,6,0,0,0,0,0.0,0,2.9841000000000015,True,False,False,False
+mobley_7912193,butyl paraben,CCCCOC(=O)c1ccc(cc1)O,False,False,False,False,194.23,14,1,1,6,3,0,1,3,46.53,4,2.3491000000000004,True,False,False,False
+mobley_7913234,1-butoxy-2-propanol,CCCCOC[C@H](C)O,False,True,True,False,132.203,9,0,0,0,2,0,1,2,29.46,5,1.1839,False,False,False,False
+mobley_7943327,ethyl propanoate,CCC(=O)OCC,False,False,False,False,102.133,7,0,0,0,2,0,0,2,26.3,2,0.9595,False,False,False,False
+mobley_7977115,hexan-3-ol,CCC[C@H](CC)O,False,False,False,False,102.17699999999999,7,0,0,0,1,0,1,1,20.23,3,1.5574,False,False,False,False
+mobley_7983227,2-methylbutan-1-ol,CC[C@@H](C)CO,False,False,False,False,88.14999999999999,6,0,0,0,1,0,1,1,20.23,2,1.0248,False,False,False,False
+mobley_7988076,4-hydroxybenzaldehyde,c1cc(ccc1C=O)O,False,True,True,False,122.12299999999996,9,1,1,6,2,0,1,2,37.3,1,1.2046999999999997,True,False,False,False
+mobley_8006582,cyclopentane,C1CCCC1,False,False,False,False,70.135,5,1,0,0,0,0,0,0,0.0,0,1.9505000000000001,False,False,False,False
+mobley_8011706,"N,N-dimethylformamide",CN(C)C=O,False,False,False,False,73.095,5,0,0,0,2,0,0,1,20.310000000000002,1,-0.2956000000000001,False,False,False,False
+mobley_8048190,acetamide,CC(=O)N,False,False,False,False,59.068,4,0,0,0,2,0,1,1,43.09,0,-0.5084,False,False,False,False
+mobley_8052240,"1-amino-9,10-anthracenedione",c1ccc2c(c1)C(=O)c3cccc(c3C2=O)N,True,False,True,False,223.23099999999997,17,3,2,12,3,0,1,3,60.16,0,2.0441999999999996,True,False,True,True
+mobley_8057732,3-chlorophenol,c1cc(cc(c1)Cl)O,False,False,False,False,128.558,8,1,1,6,2,1,1,1,20.23,0,2.0456,True,True,False,False
+mobley_8117218,endrin,C1[C@@H]2[C@H]3[C@@H]([C@H]1[C@H]4[C@@H]2O4)[C@@]5(C(=C([C@]3(C5(Cl)Cl)Cl)Cl)Cl)Cl,False,False,False,False,380.9129999999999,19,5,0,0,7,6,0,1,12.53,0,4.481400000000002,False,True,True,False
+mobley_8118832,prop-2-en-1-ol,C=CCO,False,False,False,False,58.08,4,0,0,0,1,0,1,1,20.23,1,0.1647,False,False,False,False
+mobley_8124669,alachlor,CCc1cccc(c1N(COC)C(=O)CCl)CC,True,False,True,False,269.77199999999993,18,1,1,6,4,1,0,2,29.54,6,2.9871000000000016,True,True,True,False
+mobley_8127829,ethylbenzene,CCc1ccccc1,False,False,False,False,106.16799999999996,8,1,1,6,0,0,0,0,0.0,1,2.2490000000000006,True,False,False,False
+mobley_819018,"(2E)-3,7-dimethylocta-2,6-dien-1-ol",CC(=CCC/C(=C/CO)/C)C,False,False,False,False,154.253,11,0,0,0,1,0,1,1,20.23,4,2.671400000000001,False,False,False,False
+mobley_8191186,"2-chloro-1,1,1-trifluoro-ethane",C(C(F)(F)F)Cl,False,False,False,False,118.48500000000001,6,0,0,0,4,4,0,0,0.0,0,1.7875,False,True,False,False
+mobley_8207196,simazine,CCNc1nc(nc(n1)Cl)NCC,False,True,True,False,201.661,13,1,1,6,6,1,2,5,62.730000000000004,4,1.3885999999999998,True,True,True,True
+mobley_820789,butyric acid,CCCC(=O)O,False,False,False,False,88.10599999999998,6,0,0,0,2,0,1,1,37.3,2,0.8711,False,False,False,False
+mobley_8208692,"1,2,3,4-tetrachloro-5-(2,3,4,6-tetrachlorophenyl)benzene",c1c(c(c(c(c1Cl)Cl)Cl)Cl)c2c(cc(c(c2Cl)Cl)Cl)Cl,False,False,False,False,429.77199999999993,20,2,2,12,8,8,0,0,0.0,1,8.580799999999998,True,True,True,False
+mobley_8221999,butanenitrile,CCCC#N,False,False,False,False,69.107,5,0,0,0,1,0,0,1,23.79,1,1.31008,False,False,False,False
+mobley_8260524,prop-1-yne,CC#C,False,False,False,False,40.065000000000005,3,0,0,0,0,0,0,0,0.0,0,0.6395,False,False,False,False
+mobley_8311303,"1,2,4,5-tetrachloro-3-(3,4-dichlorophenyl)benzene",c1cc(c(cc1c2c(c(cc(c2Cl)Cl)Cl)Cl)Cl)Cl,False,False,False,False,360.88199999999995,18,2,2,12,6,6,0,0,0.0,1,7.274,True,True,True,False
+mobley_8311321,chloro-difluoro-methane,C(F)(F)Cl,False,False,False,False,86.468,4,0,0,0,3,3,0,0,0.0,0,1.4478,False,True,False,False
+mobley_8320545,1-nitroethane,CC[N+](=O)[O-],False,False,False,False,75.067,5,0,0,0,3,0,0,2,43.14,1,0.2829999999999999,False,False,False,False
+mobley_8337722,"(1R,2S,5R)-2-isopropyl-5-methylcyclohexanol",C[C@@H]1CC[C@H]([C@@H](C1)O)C(C)C,False,False,False,False,156.26899999999998,11,1,0,0,1,0,1,1,20.23,1,2.4395000000000007,False,False,False,False
+mobley_8337977,4-methylpentan-2-one,CC(C)CC(=O)C,False,False,False,False,100.16099999999999,7,0,0,0,1,0,0,1,17.07,2,1.6215,False,False,False,False
+mobley_8426916,N-ethylethanamine,CCNCC,False,False,False,False,73.139,5,0,0,0,1,0,1,1,12.03,2,0.6157999999999999,False,False,False,False
+mobley_8427539,propionamide,CCC(=O)N,False,False,False,False,73.095,5,0,0,0,2,0,1,1,43.09,1,-0.11829999999999996,False,False,False,False
+mobley_8436428,"2,4-dimethylpentane",CC(C)CC(C)C,False,False,False,False,100.20499999999998,7,0,0,0,0,0,0,0,0.0,2,2.6885000000000012,False,False,False,False
+mobley_8449031,"N,N-diethylethanamine",CCN(CC)CC,False,False,False,False,101.193,7,0,0,0,1,0,0,1,3.24,3,1.3481,False,False,False,False
+mobley_8467917,hept-2-ene,CCCC/C=C/C,False,False,False,False,98.18899999999998,7,0,0,0,0,0,0,0,0.0,3,2.752700000000001,False,False,False,False
+mobley_8492526,pentanal,CCCCC=O,False,False,False,False,86.13399999999999,6,0,0,0,1,0,0,1,17.07,3,1.3755,False,False,False,False
+mobley_8514745,pentyl acetate,CCCCCOC(=O)C,False,False,False,False,130.18699999999998,9,0,0,0,2,0,0,2,26.3,4,1.7397,False,False,False,False
+mobley_8522124,oct-1-yne,CCCCCCC#C,False,False,False,False,110.19999999999999,8,0,0,0,0,0,0,0,0.0,4,2.5900000000000007,False,False,False,False
+mobley_8525830,1-iodopentane,CCCCCI,False,False,False,False,198.047,6,0,0,0,1,1,0,0,0.0,3,2.611600000000001,False,True,False,False
+mobley_852937,4-fluorophenol,c1cc(ccc1O)F,False,False,False,False,112.10299999999998,8,1,1,6,2,1,1,1,20.23,0,1.5312999999999999,True,True,False,False
+mobley_8558116,4-methylmorpholine,CN1CCOCC1,False,False,False,False,101.149,7,1,0,0,2,0,0,2,12.47,0,-0.05160000000000009,False,False,False,False
+mobley_8573194,butanal,CCCC=O,False,False,False,False,72.107,5,0,0,0,1,0,0,1,17.07,2,0.9854,False,False,False,False
+mobley_8578590,methylsulfinylmethane,CS(=O)C,False,False,False,False,78.13600000000001,4,0,0,0,2,0,0,1,17.07,0,-0.005299999999999971,False,False,False,False
+mobley_859464,isobutyl acetate,CC(C)COC(=O)C,False,False,False,False,116.15999999999998,8,0,0,0,2,0,0,2,26.3,2,1.2055,False,False,False,False
+mobley_8614858,heptane,CCCCCCC,False,False,False,False,100.205,7,0,0,0,0,0,0,0,0.0,4,2.976700000000002,False,False,False,False
+mobley_8668219,"2,3-dimethylpentane",CC[C@@H](C)C(C)C,False,False,False,False,100.20499999999998,7,0,0,0,0,0,0,0,0.0,2,2.6885000000000012,False,False,False,False
+mobley_8685905,"2-bromo-1,1,1,2-tetrafluoro-ethane",[C@@H](C(F)(F)F)(F)Br,False,False,False,False,180.926,7,0,0,0,5,5,0,0,0.0,0,2.2392000000000003,False,True,False,False
+mobley_8691603,m-cresol,Cc1cccc(c1)O,True,False,True,False,108.13999999999999,8,1,1,6,1,0,1,1,20.23,0,1.7006199999999996,True,False,False,False
+mobley_8705848,N-isopropylpropan-2-amine,CC(C)NC(C)C,False,True,True,False,101.19299999999998,7,0,0,0,1,0,1,1,12.03,2,1.3927999999999998,False,False,False,False
+mobley_8713762,"N,N-dipropyl(propylsulfanyl)formamide",CCCN(CCC)C(=O)SCCC,False,False,False,False,203.35099999999997,13,0,0,0,3,0,0,2,20.310000000000002,6,3.3716000000000026,False,False,True,False
+mobley_8723116,4-chloroaniline,c1cc(ccc1N)Cl,False,False,False,False,127.574,8,1,1,6,2,1,1,1,26.02,0,1.9222,True,True,False,False
+mobley_8739734,3-methylbutan-2-one,CC(C)C(=O)C,False,False,False,False,86.13399999999999,6,0,0,0,1,0,0,1,17.07,1,1.2314,False,False,False,False
+mobley_8746821,"2,3-dimethylpyridine",Cc1cccnc1C,False,True,True,False,107.156,8,1,1,6,1,0,0,1,12.89,0,1.69844,True,False,False,False
+mobley_8754702,propyl formate,CCCOC=O,False,False,False,False,88.10599999999998,6,0,0,0,2,0,0,2,26.3,3,0.5694,False,False,False,False
+mobley_8764620,pyridine-3-carbonitrile,c1cc(cnc1)C#N,False,False,False,False,104.11199999999998,8,1,1,6,2,0,0,2,36.68,0,0.9532799999999999,True,False,False,False
+mobley_8765203,isoprene,CC(=C)C=C,False,False,False,False,68.11900000000001,5,0,0,0,0,0,0,0,0.0,1,1.7485,False,False,False,False
+mobley_8772587,1-iodobutane,CCCCI,False,False,False,False,184.01999999999998,5,0,0,0,1,1,0,0,0.0,2,2.2215,False,True,False,False
+mobley_8785107,"2,5-dimethyltetrahydrofuran",C[C@H]1CC[C@@H](O1)C,False,False,False,False,100.16099999999999,7,1,0,0,1,0,0,1,9.23,0,1.5737999999999999,False,False,False,False
+mobley_8789465,2-iodophenol,c1ccc(c(c1)O)I,False,False,False,False,220.00899999999996,8,1,1,6,2,1,1,1,20.23,0,1.9968,True,True,True,False
+mobley_8789864,"3,3,3-trimethoxypropanenitrile",COC(CC#N)(OC)OC,True,True,True,True,145.158,10,0,0,0,4,0,0,4,51.480000000000004,4,0.49307999999999996,False,False,False,False
+mobley_8798016,pyridine-4-carbaldehyde,c1cnccc1C=O,False,False,False,False,107.11199999999998,8,1,1,6,2,0,0,2,29.96,1,0.8940999999999999,True,False,False,False
+mobley_8809190,butylbenzene,CCCCc1ccccc1,False,False,False,False,134.22199999999998,10,1,1,6,0,0,0,0,0.0,3,3.0292000000000012,True,False,False,False
+mobley_8809274,trifluoromethylbenzene,c1ccc(cc1)C(F)(F)F,False,False,False,False,146.111,10,1,1,6,3,3,0,0,0.0,0,2.705400000000001,True,True,False,False
+mobley_8823527,"1,2,3-trichloro-5-(2,5-dichlorophenyl)benzene",c1cc(c(cc1Cl)c2cc(c(c(c2)Cl)Cl)Cl)Cl,False,False,False,False,326.437,17,2,2,12,5,5,0,0,0.0,1,6.6206000000000005,True,True,True,False
+mobley_8827942,"1,2,4-trichlorodibenzo-p-dioxin",c1ccc2c(c1)Oc3c(cc(c(c3O2)Cl)Cl)Cl,False,False,False,False,287.529,17,3,2,12,5,3,0,2,18.46,0,5.5448,True,True,True,False
+mobley_8861672,"2,4-dimethylpyridine",Cc1ccnc(c1)C,False,False,False,False,107.15599999999999,8,1,1,6,1,0,0,1,12.89,0,1.69844,True,False,False,False
+mobley_8882696,tetrahydrofuran,C1CCOC1,False,False,False,False,72.107,5,1,0,0,1,0,0,1,9.23,0,0.7968,False,False,False,False
+mobley_8883511,2-methylbenzaldehyde,Cc1ccccc1C=O,False,False,False,False,120.15099999999998,9,1,1,6,1,0,0,1,17.07,1,1.80752,True,False,False,False
+mobley_8885088,cyclopentene,C1CC=CC1,False,False,False,False,68.11900000000001,5,1,0,0,0,0,0,0,0.0,0,1.7265,False,False,False,False
+mobley_8899867,cyclopentanol,C1CCC(C1)O,False,False,False,False,86.134,6,1,0,0,1,0,1,1,20.23,0,0.9213,False,False,False,False
+mobley_8916409,diethyl (2R)-2-dimethoxyphosphinothioylsulfanylbutanedioate,CCOC(=O)C[C@H](C(=O)OCC)SP(=S)(OC)OC,True,True,True,True,330.36400000000003,19,0,0,0,9,0,0,8,71.06000000000002,9,2.1218000000000004,False,False,True,True
+mobley_8966374,2-methylpyrazine,Cc1cnccn1,False,False,False,False,94.11699999999999,7,1,1,6,2,0,0,2,25.78,0,0.7850199999999998,True,False,False,False
+mobley_8983100,bromomethane,CBr,False,False,False,False,94.939,2,0,0,0,1,1,0,0,0.0,0,1.0110999999999999,False,True,False,False
+mobley_900088,"2,3-dimethylbuta-1,3-diene",CC(=C)C(=C)C,False,False,False,False,82.146,6,0,0,0,0,0,0,0,0.0,1,2.1386000000000003,False,False,False,False
+mobley_9007496,naphthalen-1-yl N-methylcarbamate,CNC(=O)Oc1cccc2c1cccc2,True,False,True,False,201.225,15,2,2,10,3,0,1,2,38.33,1,2.5580000000000007,True,False,True,False
+mobley_9015240,1-bromooctane,CCCCCCCCBr,False,False,False,False,193.128,9,0,0,0,1,1,0,0,0.0,6,3.741800000000003,False,True,False,False
+mobley_9028462,"methyl 2,2,2-trifluoroacetate",COC(=O)C(F)(F)F,False,False,False,False,128.049,8,0,0,0,5,3,0,2,26.3,0,0.7216999999999999,False,True,False,False
+mobley_902954,butyl nitrate,CCCCO[N+](=O)[O-],False,False,False,False,119.11999999999999,8,0,0,0,4,0,0,3,52.370000000000005,4,0.9948,False,False,False,False
+mobley_9029594,fluoromethane,CF,False,False,False,False,34.033,2,0,0,0,1,1,0,0,0.0,0,0.5857,False,True,False,False
+mobley_9055303,methane,C,False,False,False,False,16.043,1,0,0,0,0,0,0,0,0.0,0,0.6361,False,False,False,False
+mobley_9073553,methylsulfanylmethane,CSC,False,False,False,False,62.137,3,0,0,0,1,0,0,1,0.0,0,0.9792,False,False,False,False
+mobley_9100956,methylcyclohexane,CC1CCCCC1,False,False,False,False,98.18900000000001,7,1,0,0,0,0,0,0,0.0,0,2.5866000000000007,False,False,False,False
+mobley_9112978,pent-2-ene,CC/C=C\C,False,False,False,False,70.135,5,0,0,0,0,0,0,0,0.0,1,1.9725,False,False,False,False
+mobley_9114381,methyl 2-cyanoacetate,COC(=O)CC#N,False,False,False,False,99.08900000000001,7,0,0,0,3,0,0,3,50.09,1,0.07307999999999992,False,False,False,False
+mobley_9121449,but-1-yne,CCC#C,False,False,False,False,54.09199999999999,4,0,0,0,0,0,0,0,0.0,0,1.0295999999999998,False,False,False,False
+mobley_9139060,"1,4-dimethylcyclohexane",CC1CCC(CC1)C,False,False,False,False,112.216,8,1,0,0,0,0,0,0,0.0,0,2.832600000000001,False,False,False,False
+mobley_9185328,propan-1-amine,CCCN,False,False,False,False,59.11199999999999,4,0,0,0,1,0,1,1,26.02,1,0.3551000000000001,False,False,False,False
+mobley_9197172,oct-1-ene,CCCCCCC=C,False,False,False,False,112.216,8,0,0,0,0,0,0,0,0.0,5,3.142800000000002,False,False,False,False
+mobley_9201263,methyl methanesulfonate,COS(=O)(=O)C,False,False,False,False,110.13399999999999,6,0,0,0,4,0,0,3,43.370000000000005,1,-0.40759999999999996,False,False,False,False
+mobley_9209581,"N,N-dimethylmethanamine",CN(C)C,False,False,False,False,59.111999999999995,4,0,0,0,1,0,0,1,3.24,0,0.17779999999999996,False,False,False,False
+mobley_9246215,"penta-1,4-diene",C=CCC=C,False,False,False,False,68.119,5,0,0,0,0,0,0,0,0.0,2,1.7485,False,False,False,False
+mobley_9246351,dibromomethane,C(Br)Br,False,False,False,False,173.83499999999998,3,0,0,0,2,2,0,0,0.0,0,1.7337,False,True,False,False
+mobley_9257453,"3,4-dichlorophenol",c1cc(c(cc1O)Cl)Cl,False,False,False,False,163.003,9,1,1,6,3,2,1,1,20.23,0,2.6990000000000003,True,True,False,False
+mobley_9281946,diethoxy-(4-nitrophenoxy)-thioxo-$l^{5}-phosphane,CCOP(=S)(OCC)Oc1ccc(cc1)[N+](=O)[O-],True,False,True,False,291.26500000000004,18,1,1,6,8,0,0,6,70.83,7,3.2711000000000023,True,False,True,True
+mobley_929676,1-bromohexane,CCCCCCBr,False,False,False,False,165.074,7,0,0,0,1,1,0,0,0.0,4,2.9616000000000016,False,True,False,False
+mobley_9407874,octan-2-one,CCCCCCC(=O)C,False,False,False,False,128.21499999999997,9,0,0,0,1,0,0,1,17.07,5,2.5458000000000007,False,False,False,False
+mobley_9414831,1-methylnaphthalene,Cc1cccc2c1cccc2,False,False,False,False,142.201,11,2,2,10,0,0,0,0,0.0,0,3.148220000000001,True,False,False,False
+mobley_9434451,2-bromopropane,CC(C)Br,False,False,False,False,122.993,4,0,0,0,1,1,0,0,0.0,0,1.7897,False,True,False,False
+mobley_9460824,diethoxy-(ethylsulfanylmethylsulfanyl)-thioxo-$l^{5}-phosphane,CCOP(=S)(OCC)SCSCC,True,False,True,False,260.38599999999997,13,0,0,0,6,0,0,5,18.46,8,3.727700000000003,False,False,True,False
+mobley_9478823,o-xylene,Cc1ccccc1C,False,False,False,False,106.16799999999999,8,1,1,6,0,0,0,0,0.0,0,2.30344,True,False,False,False
+mobley_9507933,"2,5-dimethylpyridine",Cc1ccc(nc1)C,False,False,False,False,107.156,8,1,1,6,1,0,0,1,12.89,0,1.69844,True,False,False,False
+mobley_9510785,"1,2,3,4-tetrachloro-5-phenyl-benzene",c1ccc(cc1)c2cc(c(c(c2Cl)Cl)Cl)Cl,False,False,False,False,291.99199999999996,16,2,2,12,4,4,0,0,0.0,1,5.967200000000001,True,True,True,False
+mobley_951560,piperazine,C1CNCCN1,False,False,False,False,86.138,6,1,0,0,2,0,2,2,24.06,0,-0.8208,False,False,False,False
+mobley_9534740,"(2R,3R,4S,5S,6R)-6-(hydroxymethyl)tetrahydropyran-2,3,4,5-tetrol",C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O)O,True,True,True,True,180.156,12,1,0,0,6,0,5,6,110.38000000000001,1,-3.2213999999999987,False,False,False,True
+mobley_9557440,5-chlorouracil,c1c(c(=O)[nH]c(=O)[nH]1)Cl,False,False,False,False,146.533,9,1,1,6,5,1,2,2,65.72,0,-0.2834,True,True,False,True
+mobley_9565165,9H-fluorene,c1ccc-2c(c1)Cc3c2cccc3,False,False,False,False,166.22299999999998,13,3,2,12,0,0,0,0,0.0,0,3.2578000000000014,True,False,False,False
+mobley_9571888,endosulfan alpha,C1[C@@H]2[C@H](COS(=O)O1)[C@@]3(C(=C([C@]2(C3(Cl)Cl)Cl)Cl)Cl)Cl,False,False,False,False,406.92899999999986,19,3,0,0,10,6,0,3,35.53,0,3.689800000000001,False,True,True,False
+mobley_9617923,decan-2-one,CCCCCCCCC(=O)C,False,False,False,False,156.269,11,0,0,0,1,0,0,1,17.07,7,3.3260000000000023,False,False,False,False
+mobley_9624458,"1,3-dichloropropane",C(CCl)CCl,False,False,False,False,112.98700000000001,5,0,0,0,2,2,0,0,0.0,2,1.8540999999999999,False,True,False,False
+mobley_9626434,2-ethoxyethanol,CCOCCO,False,False,False,False,90.122,6,0,0,0,2,0,1,2,29.46,3,0.015200000000000047,False,False,False,False
+mobley_9653690,"(1S,5R)-2-methyl-5-(1-methylethenyl)-2-cyclohexen-1-ol",CC1=CC[C@H](C[C@@H]1O)C(=C)C,False,False,False,False,152.23699999999997,11,1,0,0,1,0,1,1,20.23,1,2.2797,False,False,False,False
+mobley_967099,2-nitropropane,CC(C)[N+](=O)[O-],False,False,False,False,89.094,6,0,0,0,3,0,0,2,43.14,1,0.6715,False,False,False,False
+mobley_9671033,1-nitropropane,CCC[N+](=O)[O-],False,False,False,False,89.09399999999998,6,0,0,0,3,0,0,2,43.14,2,0.6731,False,False,False,False
+mobley_9705941,2-methylthiophene,Cc1cccs1,False,False,False,False,98.17000000000002,6,1,1,5,1,0,0,1,0.0,0,2.05652,True,False,False,False
+mobley_9717937,1-chloro-2-phenyl-benzene,c1ccc(cc1)c2ccccc2Cl,False,False,False,False,188.65699999999995,13,2,2,12,1,1,0,0,0.0,1,4.0070000000000014,True,True,False,False
+mobley_9729792,"cyclohepta-1,3,5-triene",C1C=CC=CC=C1,False,False,False,False,92.14099999999998,7,1,0,0,0,0,0,0,0.0,0,2.0587,False,False,False,False
+mobley_9733743,butan-1-amine,CCCCN,False,False,False,False,73.139,5,0,0,0,1,0,1,1,26.02,2,0.7452000000000001,False,False,False,False
+mobley_9740891,dichlobenil,c1cc(c(c(c1)Cl)C#N)Cl,False,False,False,False,172.01399999999998,10,1,1,6,3,2,0,1,23.79,0,2.8650800000000007,True,True,False,False
+mobley_9741965,"1,3-bis-(nitrooxy)butane",C[C@@H](CCON([O-])[O-])ON([O-])[O-],False,False,False,False,180.11599999999999,12,0,0,0,8,0,0,8,117.18,6,0.22339999999999993,False,False,False,True
+mobley_9794857,2-methoxy-2-methyl-propane,CC(C)(C)OC,False,False,False,False,88.14999999999999,6,0,0,0,1,0,0,1,9.23,0,1.4313,False,False,False,False
+mobley_9821936,"1,2,3,4,6,7,8,9-octachlorodibenzo-p-dioxin",c12c(c(c(c(c1Cl)Cl)Cl)Cl)Oc3c(c(c(c(c3Cl)Cl)Cl)Cl)O2,False,False,False,False,459.754,22,3,2,12,10,8,0,2,18.46,0,8.811800000000002,True,True,True,False
+mobley_9838013,2-methylbutan-2-ol,CCC(C)(C)O,False,False,False,False,88.14999999999998,6,0,0,0,1,0,1,1,20.23,1,1.1673,False,False,False,False
+mobley_9883303,3-methylhexane,CCC[C@H](C)CC,False,False,False,False,100.205,7,0,0,0,0,0,0,0,0.0,3,2.832600000000001,False,False,False,False
+mobley_9897248,"(2Z)-3,7-dimethylocta-2,6-dien-1-ol",CC(=CCC/C(=C\CO)/C)C,False,False,False,False,154.253,11,0,0,0,1,0,1,1,20.23,4,2.671400000000001,False,False,False,False
+mobley_9913368,"(E)-1,2-dichloroethylene",C(=C/Cl)\Cl,False,False,False,False,96.944,4,0,0,0,2,2,0,0,0.0,0,1.9352,False,True,False,False
+mobley_9942801,1-ethyl-4-methyl-benzene,CCc1ccc(cc1)C,False,False,False,False,120.19499999999996,9,1,1,6,0,0,0,0,0.0,1,2.5574200000000005,True,False,False,False
+mobley_994483,bromoethane,CCBr,False,False,False,False,108.966,3,0,0,0,1,1,0,0,0.0,0,1.4012,False,True,False,False
+mobley_9974966,2-isopropylsulfanylpropane,CC(C)SC(C)C,False,False,False,False,118.24499999999999,7,0,0,0,1,0,0,1,0.0,2,2.5364000000000004,False,False,False,False
+mobley_9979854,111-trifluoropropan-2-ol,C[C@H](C(F)(F)F)O,False,False,False,False,114.066,7,0,0,0,4,3,1,1,20.23,0,0.9295,False,True,False,False
