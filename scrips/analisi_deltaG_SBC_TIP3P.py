@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 csv_file = ROOT / "resultats/database_carla.csv"
-output_dir = ROOT / "outputs_SBC-ok"
+output_dir = ROOT / "outputs_SBC2"
 
 col1 = "metode 2 (kcal/mol)"
 col2 = "incertesa metode 2 (kcal/mol)"
@@ -22,12 +22,6 @@ if col2 not in cols:
     cols.append(col2)
 
 
-def falta_resultat(row):
-    valor = row.get(col1, "").strip()
-    incertesa = row.get(col2, "").strip()
-    return valor in {"", "NA"} or incertesa in {"", "NA"}
-
-
 def busca_results_json(mol):
     candidates = [
         output_dir / mol / "results.json",
@@ -39,18 +33,12 @@ def busca_results_json(mol):
     return None
 
 
-afegides = 0
-ja_existents = 0
+actualitzades = 0
 pendents = 0
 
 for row in rows:
 
     mol = row["identificador"]
-
-    if not falta_resultat(row):
-        ja_existents += 1
-        print("Ja tenia resultat, salto:", mol)
-        continue
 
     json_file = busca_results_json(mol)
     if json_file is None:
@@ -65,9 +53,9 @@ for row in rows:
 
     row[col1] = data["DG_hyd_kcal_mol"]
     row[col2] = data["err_hyd_kcal_mol"]
-    afegides += 1
+    actualitzades += 1
 
-    print("Afegit:", mol, "des de", json_file)
+    print("Actualitzat:", mol, "des de", json_file)
 
 with open(csv_file, "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=cols)
@@ -75,6 +63,5 @@ with open(csv_file, "w", newline="", encoding="utf-8") as f:
     writer.writerows(rows)
 
 print("CSV actualitzat")
-print("Resultats nous afegits:", afegides)
-print("Molecules que ja tenien resultat:", ja_existents)
+print("Resultats actualitzats:", actualitzades)
 print("Molecules encara pendents:", pendents)

@@ -11,7 +11,7 @@ import numpy as np
 # Carpeta de resultats del projecte.
 RESULTATS_DIR = Path(__file__).resolve().parents[1]
 # Fitxer CSV d'entrada amb valors i incerteses.
-CSV_PATH = RESULTATS_DIR / 'database_carla.csv'
+CSV_PATH = RESULTATS_DIR / 'database_final.csv'
 # Fitxer PNG de sortida on guardem la figura.
 OUT_PATH = Path(__file__).resolve().parent / 'graf_taula_m2.png'
 
@@ -95,7 +95,7 @@ def main():
     r2 = r ** 2
     n = len(x_arr)
 
-    # Errors respecte a la diagonal y=x: positiu vol dir que mètode 1 sobreestima.
+    # Errors respecte a la diagonal y=x: positiu vol dir que mètode 2 sobreestima.
     residuals = y_arr - x_arr
     abs_errors = np.abs(residuals)
     rmse = np.sqrt(np.mean(residuals ** 2))
@@ -108,9 +108,6 @@ def main():
     # Outliers estadístics: errors absoluts clarament grans respecte al conjunt.
     outlier_threshold = abs_errors.mean() + 2 * abs_errors.std(ddof=0)
     outlier_mask = abs_errors > outlier_threshold
-    # Etiquetes al gràfic: només punts amb mètode 1 molt negatiu.
-    label_mask = y_arr < -75.0
-
     # Creem la figura de mida 8x6 polzades.
     plt.figure(figsize=(8, 6))
     # Dibuix principal: punts + barres d'error horitzontals i verticals.
@@ -143,9 +140,13 @@ def main():
         markeredgewidth=0.4,
     )
 
-    # Límits comuns per dibuixar la diagonal y = x.
-    lim_min = min(x_arr.min(), y_arr.min())
-    lim_max = max(x_arr.max(), y_arr.max())
+    # Límits automàtics que inclouen tots els punts visibles.
+    all_plot_vals = np.concatenate([x_arr, y_arr])
+    lim_min = all_plot_vals.min()
+    lim_max = all_plot_vals.max()
+    margin = 0.03 * (lim_max - lim_min)
+    lim_min -= margin
+    lim_max += margin
     # Línia de referència d'acord perfecte.
     plt.plot([lim_min, lim_max], [lim_min, lim_max], '-', linewidth=1.2, color='black', label='y = x')
 
@@ -153,23 +154,13 @@ def main():
     x_line = np.array([lim_min, lim_max])
     y_line = slope * x_line + intercept
     plt.plot(x_line, y_line, '--', linewidth=1.2, color='red', label='regressió')
-
-    # Etiquetem només els punts amb mètode 1 per sota de -75 kcal/mol.
-    for x, y, ident in zip(x_arr[label_mask], y_arr[label_mask], ids_arr[label_mask]):
-        plt.annotate(
-            ident,
-            (x, y),
-            textcoords='offset points',
-            xytext=(5, 5),
-            ha='left',
-            fontsize=7,
-            color='darkred',
-        )
+    plt.xlim(lim_min, lim_max)
+    plt.ylim(lim_min, lim_max)
 
     # Etiquetes i títol.
     plt.xlabel('resultats a partir de la bibliografia (kcal/mol)')
     plt.ylabel('resultats a partir de mètode 2 (kcal/mol)')
-    plt.title('Comparació de ΔG d’hidratació: bibliografia vs mètode 2')
+    plt.title('Comparació de ΔG lliure d’hidratació: bibliografia vs mètode 2')
     # Graella suau per facilitar lectura.
     plt.grid(alpha=0.25)
     # Llegenda amb la línia y=x.
@@ -208,18 +199,12 @@ def main():
     print(f'n: {n}')
     print(f'RMSE: {rmse:.4f} kcal/mol')
     print(f'MAE: {mae:.4f} kcal/mol')
-    print(f'Biaix mitjà (mètode 1 - bibliografia): {bias:.4f} kcal/mol')
+    print(f'Biaix mitjà (mètode 2 - bibliografia): {bias:.4f} kcal/mol')
     print(f'Regressió y = pendent*x + intercepció: pendent={slope:.4f}, intercepció={intercept:.4f}')
     print(f'Llindar outlier |error|: {outlier_threshold:.4f} kcal/mol')
     print(f'Outliers estadístics: {int(outlier_mask.sum())}')
-    print(f'Punts etiquetats amb mètode 1 < -75 kcal/mol: {int(label_mask.sum())}')
-    for ident, x, y, err in zip(
-        ids_arr[label_mask],
-        x_arr[label_mask],
-        y_arr[label_mask],
-        residuals[label_mask],
-    ):
-        print(f'  {ident}: bibliografia={x:.4f}, metode1={y:.4f}, error={err:.4f}')
+    print(f'Incerteses X representades: {len(x_unc_arr)}')
+    print(f'Incerteses Y representades: {len(y_unc_arr)}')
 
 
 # Execució directa de l'script des de terminal.

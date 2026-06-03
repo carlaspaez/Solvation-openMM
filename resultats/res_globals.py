@@ -12,8 +12,8 @@ RESULTATS_DIR = ROOT / "resultats"
 DATABASE_PATH = RESULTATS_DIR / "database_carla.csv"
 OUT_CSV_PATH = RESULTATS_DIR / "res_globals_taula.csv"
 
-PBC_ERRORS_PATH = ROOT / "outputs_PBC-ok" / "metadata_error_PBC.json"
-SBC_ERRORS_PATH = ROOT / "outputs_SBC-ok" / "metadata_error_SBC.json"
+PBC_ERRORS_PATH = ROOT / "outputs_PBC2" / "metadata_error_PBC.json"
+SBC_ERRORS_PATH = ROOT / "outputs_SBC2" / "metadata_error_SBC.json"
 
 BIB_COL = "resultats a partir de bibliografia (kcal/mol)"
 METHOD_COLUMNS = {
@@ -29,7 +29,9 @@ def carregar_database():
 
 def carregar_fallides(path):
     with path.open(encoding="utf-8") as fitxer:
-        return len(json.load(fitxer))
+        errors = json.load(fitxer)
+
+    return sum(not error.get("te_results_json", False) for error in errors)
 
 
 def valor_float(row, col):

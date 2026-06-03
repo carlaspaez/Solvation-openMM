@@ -11,7 +11,7 @@ import numpy as np
 # Carpeta de resultats del projecte.
 RESULTATS_DIR = Path(__file__).resolve().parents[1]
 # Fitxer CSV d'entrada amb valors i incerteses.
-CSV_PATH = RESULTATS_DIR / 'database_carla.csv'
+CSV_PATH = RESULTATS_DIR / 'database_final.csv'
 # Fitxer PNG de sortida on guardem la figura.
 OUT_PATH = Path(__file__).resolve().parent / 'graf_taula_m1vsm2.png'
 
@@ -108,9 +108,6 @@ def main():
     # Outliers estadístics: errors absoluts clarament grans respecte al conjunt.
     outlier_threshold = abs_errors.mean() + 2 * abs_errors.std(ddof=0)
     outlier_mask = abs_errors > outlier_threshold
-    # Etiquetes al gràfic: només punts amb mètode 2 molt negatiu.
-    label_mask = y_arr < -75.0
-
     # Creem la figura de mida 8x6 polzades.
     plt.figure(figsize=(8, 6))
     # Dibuix principal: punts + barres d'error horitzontals i verticals.
@@ -154,22 +151,10 @@ def main():
     y_line = slope * x_line + intercept
     plt.plot(x_line, y_line, '--', linewidth=1.2, color='red', label='regressió')
 
-    # Etiquetem només els punts amb mètode 2 per sota de -75 kcal/mol.
-    for x, y, ident in zip(x_arr[label_mask], y_arr[label_mask], ids_arr[label_mask]):
-        plt.annotate(
-            ident,
-            (x, y),
-            textcoords='offset points',
-            xytext=(5, 5),
-            ha='left',
-            fontsize=7,
-            color='darkred',
-        )
-
     # Etiquetes i títol.
     plt.xlabel('resultats a partir de mètode 1 (kcal/mol)')
     plt.ylabel('resultats a partir de mètode 2 (kcal/mol)')
-    plt.title('Comparació de ΔG d’hidratació: mètode 1 vs mètode 2')
+    plt.title('Comparació de ΔG lliure d’hidratació: mètode 1 vs mètode 2')
     # Graella suau per facilitar lectura.
     plt.grid(alpha=0.25)
     # Llegenda amb la línia y=x.
@@ -212,14 +197,8 @@ def main():
     print(f'Regressió y = pendent*x + intercepció: pendent={slope:.4f}, intercepció={intercept:.4f}')
     print(f'Llindar outlier |error|: {outlier_threshold:.4f} kcal/mol')
     print(f'Outliers estadístics: {int(outlier_mask.sum())}')
-    print(f'Punts etiquetats amb mètode 2 < -75 kcal/mol: {int(label_mask.sum())}')
-    for ident, x, y, err in zip(
-        ids_arr[label_mask],
-        x_arr[label_mask],
-        y_arr[label_mask],
-        residuals[label_mask],
-    ):
-        print(f'  {ident}: metode1={x:.4f}, metode2={y:.4f}, error={err:.4f}')
+    print(f'Incerteses X representades: {len(x_unc_arr)}')
+    print(f'Incerteses Y representades: {len(y_unc_arr)}')
 
 
 # Execució directa de l'script des de terminal.

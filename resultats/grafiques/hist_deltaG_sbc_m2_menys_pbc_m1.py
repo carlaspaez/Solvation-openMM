@@ -10,7 +10,7 @@ os.environ.setdefault("MPLCONFIGDIR", str(Path(tempfile.gettempdir()) / "matplot
 
 
 RESULTATS_DIR = Path(__file__).resolve().parents[1]
-CSV_PATH = RESULTATS_DIR / "database_carla.csv"
+CSV_PATH = RESULTATS_DIR / "database_final.csv"
 OUT_PATH = Path(__file__).resolve().parent / "hist_deltaG_sbc_m2_menys_pbc_m1.png"
 
 
@@ -48,6 +48,11 @@ def main():
     if diferencies.size == 0:
         raise ValueError("No hi ha dades numèriques vàlides per fer l'histograma.")
 
+    mitjana = diferencies.mean()
+    mediana = np.median(diferencies)
+    desviacio = diferencies.std(ddof=0)
+    sem = diferencies.std(ddof=1) / np.sqrt(diferencies.size)
+
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.hist(
         diferencies,
@@ -58,11 +63,11 @@ def main():
         alpha=0.85,
     )
     ax.axvline(0, color="black", linewidth=1.1, linestyle="--")
-    ax.axvline(diferencies.mean(), color="#C44E52", linewidth=1.3, label="mitjana")
+    ax.axvline(mitjana, color="#C44E52", linewidth=1.3, label="mitjana")
 
-    ax.set_xlabel("ΔG SBC (mètode 2) - ΔG PBC (mètode 1) (kcal/mol)")
+    ax.set_xlabel("ΔG SBC (mètode 2) - ΔG PBC (mètode 1) [kcal/mol]")
     ax.set_ylabel("Nombre de molècules")
-    ax.set_title("Distribució de diferències entre ΔG SBC i ΔG PBC")
+    ax.set_title("Distribució de les diferències entre ΔG SBC i ΔG PBC")
     ax.grid(axis="y", alpha=0.25)
     ax.legend()
 
@@ -71,9 +76,10 @@ def main():
         0.97,
         (
             f"n = {diferencies.size}\n"
-            f"mitjana = {diferencies.mean():.3f}\n"
-            f"mediana = {np.median(diferencies):.3f}\n"
-            f"std = {diferencies.std(ddof=0):.3f}"
+            f"mitjana = {mitjana:.3f}\n"
+            f"mediana = {mediana:.3f}\n"
+            f"desv. est. = {desviacio:.3f}\n"
+            f"SEM = {sem:.3f}"
         ),
         transform=ax.transAxes,
         va="top",
@@ -86,9 +92,10 @@ def main():
     fig.savefig(OUT_PATH, dpi=300)
     print(f"Histograma guardat a: {OUT_PATH}")
     print(f"Nombre de molècules: {diferencies.size}")
-    print(f"Mitjana: {diferencies.mean():.6f} kcal/mol")
-    print(f"Mediana: {np.median(diferencies):.6f} kcal/mol")
-    print(f"Desviació estàndard: {diferencies.std(ddof=0):.6f} kcal/mol")
+    print(f"Mitjana: {mitjana:.6f} kcal/mol")
+    print(f"Mediana: {mediana:.6f} kcal/mol")
+    print(f"Desviació estàndard: {desviacio:.6f} kcal/mol")
+    print(f"SEM: {sem:.6f} kcal/mol")
 
 
 if __name__ == "__main__":
